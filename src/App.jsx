@@ -52,6 +52,7 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission logic here
+    console.log('Search initiated');
   };
 
   const toggleDropdown = (type) => {
@@ -199,36 +200,38 @@ const App = () => {
 
       {/* New Section for Guests */}
       <h2>Guests</h2>
-      <div className="custom-select" onClick={() => toggleDropdown('adults')}>
-        <div className="selected">
-          {selectedAdults}
-          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-        </div>
-        {dropdownOpen.adults && (
-          <div className="options">
-            {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
-              <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
-                {num}
-              </div>
-            ))}
+      <div className="guest-selects"> {/* Container for Adults and Children selects */}
+        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+          <div className="selected">
+            {selectedAdults}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
-        )}
-      </div>
+          {dropdownOpen.adults && (
+            <div className="options">
+              {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+                <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
+                  {num}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
-      <div className="custom-select" onClick={() => toggleDropdown('children')}>
-        <div className="selected">
-          {selectedChildren}
-          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-        </div>
-        {dropdownOpen.children && (
-          <div className="options">
-            {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
-              <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
-                {num}
-              </div>
-            ))}
+        <div className="custom-select" onClick={() => toggleDropdown('children')}>
+          <div className="selected">
+            {selectedChildren}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
-        )}
+          {dropdownOpen.children && (
+            <div className="options">
+              {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+                <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
+                  {num}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <ul>
@@ -240,9 +243,24 @@ const App = () => {
           <li>No locations available</li>
         )}
       </ul>
+
+      {/* Search Button */}
+      <button onClick={handleSubmit} style={buttonStyle}>
+        Search
+      </button>
     </div>
-    
   );
+};
+
+// Styles for the button
+const buttonStyle = {
+  padding: '10px 20px',
+  marginTop: '20px',
+  backgroundColor: '#f24822',
+  color: '#fff',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer',
 };
 
 export default App;
