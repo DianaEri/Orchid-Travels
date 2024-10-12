@@ -52,6 +52,7 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission logic here
+    console.log('Search initiated');
   };
 
   const toggleDropdown = (type) => {
@@ -199,36 +200,38 @@ const App = () => {
 
       {/* New Section for Guests */}
       <h2>Guests</h2>
-      <div className="custom-select" onClick={() => toggleDropdown('adults')}>
-        <div className="selected">
-          {selectedAdults}
-          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-        </div>
-        {dropdownOpen.adults && (
-          <div className="options">
-            {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
-              <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
-                {num}
-              </div>
-            ))}
+      <div className="guest-selects"> {/* Container for Adults and Children selects */}
+        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+          <div className="selected">
+            {selectedAdults}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
-        )}
-      </div>
+          {dropdownOpen.adults && (
+            <div className="options">
+              {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+                <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
+                  {num}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
-      <div className="custom-select" onClick={() => toggleDropdown('children')}>
-        <div className="selected">
-          {selectedChildren}
-          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-        </div>
-        {dropdownOpen.children && (
-          <div className="options">
-            {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
-              <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
-                {num}
-              </div>
-            ))}
+        <div className="custom-select" onClick={() => toggleDropdown('children')}>
+          <div className="selected">
+            {selectedChildren}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
-        )}
+          {dropdownOpen.children && (
+            <div className="options">
+              {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+                <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
+                  {num}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <ul>
@@ -241,53 +244,10 @@ const App = () => {
         )}
       </ul>
 
-      <style jsx>{`
-        .custom-select {
-          position: relative;
-          width: 200px;
-          cursor: pointer;
-          margin-bottom: 20px; /* Add margin between selects */
-        }
-
-        .date-selects {
-          display: flex; /* Flexbox for horizontal layout */
-          gap: 10px; /* Space between the select boxes */
-        }
-
-        .selected {
-          padding: 10px;
-          background-color: #f1f1f1;
-          border: 1px solid #ccc;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .chevron-icon {
-          margin-left: auto;
-        }
-
-        .options {
-          display: block;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          z-index: 1;
-        }
-
-        .option {
-          padding: 10px;
-          background-color: #fff;
-          cursor: pointer;
-        }
-
-        .option:hover {
-          background-color: #ddd;
-        }
-      `}</style>
+      {/* Search Button */}
+      <button onClick={handleSubmit} style={buttonStyle}>
+        Search
+      </button>
     </div>
   );
 };
