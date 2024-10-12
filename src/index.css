@@ -31,51 +31,104 @@ body {
   flex-direction: column; /* Allow for vertical stacking of elements */
 }
 
+.form-container {
+  width: 90%; /* Set fixed width */
+  max-width: 1200px; /* Optional: Set a max width for large screens */
+  margin: 0 auto; /* Center align the div horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content inside the container */
+  text-align: center; /* Center text within the container */
+}
+
+.banner-image {
+  width: 100%; /* Ensure the image takes up the full width of the parent */
+  height: auto; /* Maintain aspect ratio */
+}
+
 h1 {
   font-size: 1.4em;
   line-height: 1.1;
 }
 
-h2 {
-  font-size: 1.3em;
+.center-heading {
+  text-align: center;
 }
 
-/* New container for Date of Departure selects */
-.date-selects {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: space-between; /* Space out the selects evenly */
-  gap: 10px; /* Optional: Adds space between select boxes */
-  margin-bottom: 20px; /* Adjust margin as needed */
-}
-
-/* New container for guests selects */
-.guest-selects {
+.form-container {
+  width: 90%; /* Set fixed width */
+  max-width: 1200px; /* Optional: Set a max width for large screens */
+  margin: 0 auto; /* Center align the div horizontally */
   display: flex;
-  gap: 10px; /* Space between the adults and children selects */
-  margin-bottom: 20px; /* Add margin for spacing below the guests section */
+  flex-direction: column;
+  align-items: flex-start; /* Align children to the left */
+  text-align: left; /* Align text to the left */
 }
 
-/* Updated custom-select to be 90% of the window width */
+h2 {
+  width: 100%; /* Make the h2 take the full width of the container */
+  margin: 10px 0; /* Add some margin for spacing */
+  font-size: 1.2em;
+}
+
+.date-selects,
+.guest-selects {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute items evenly */
+  width: 100%; /* Make these sections take the full width */
+}
+
 .custom-select {
-  position: relative;
-  width: 90%; /* Set width for individual selects to 90% */
-  max-width: 400px; /* Optional: Set a max width for better appearance */
-  cursor: pointer;
-  margin-bottom: 20px; /* Add margin for other select boxes */
+  flex: 1; /* Allow the selects to grow and fill the space evenly */
+  width: 100%; /* Ensure the custom-select takes full width */
+  margin-right: 10px; /* Space between select boxes */
 }
 
-/* Specific styles for date selects */
-.date-select {
-  width: 30%; /* Set width for each select to 30% */
+/* Remove margin from the last item in the row */
+.date-selects .custom-select:last-child,
+.guest-selects .custom-select:last-child {
+  margin-right: 0; /* No margin for the last item */
 }
 
-/* Specific styles for guest selects */
+/* Additional styles for the select boxes */
+.date-select,
 .guest-select {
-  width: 45%; /* Set width for adults and children selects to 45% */
+  width: 100%; /* Ensure select boxes take the full width */
+}
+
+.custom-select {
+  position: relative; /* Ensure the dropdown options are positioned relative to the parent */
+}
+
+.options {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 200px; /* Adjust as needed for your design */
+  overflow-y: auto; /* Enable vertical scrolling */
+  width: calc(100% - 2px); /* Ensure it aligns with the border width */
+  z-index: 1000; /* Keep dropdown above other elements */
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+}
+.option:hover {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Adjust button container for centering */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the button */
+  width: 100%; /* Full width */
+  margin-top: 20px; /* Space above the button */
 }
 
 .selected {
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #d9d9d9;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -84,32 +137,14 @@ h2 {
   align-items: center;
 }
 
+.custom-select,
+.date-select,
+.guest-select {
+  width: 100%;
+}
+
 .chevron-icon {
   margin-left: auto;
-}
-
-.options {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid grey;
-  z-index: 1;
-  max-height: 150px; /* Set a max height for the dropdown */
-  overflow-y: auto; /* Enable vertical scrolling */
-  overflow-x: hidden; /* Hide horizontal scrolling */
-}
-
-.option {
-  padding: 10px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.option:hover {
-  background-color: #ddd;
 }
 
 .disabled {
@@ -120,6 +155,12 @@ h2 {
 
 .custom-select.open .options {
   display: block;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 30px; /* Optional: Add some space above the button */
 }
 
 button {
@@ -143,6 +184,44 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.divider {
+  width: 100%; /* Full width */
+  height: 4em; /* Fixed height */
+  background-color: #f2e3cc;
+  margin: 30px 0px;
+}
+
+.dividerIcons {
+  width: 100%; /* Full width */
+  height: 20em; /* Fixed height */
+  display: flex;
+  justify-content: center; /* Center child elements horizontally */
+  align-items: center; /* Center child elements vertically */
+}
+
+.iconsList {
+  height: 90%; /* 90% of the dividerIcons height */
+  width: 90%; /* Flexing width */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center child elements vertically */
+  align-items: center; /* Center child elements horizontally */
+  text-align: center; /* Center text */
+}
+
+.iconsRow, .wordsRow {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute evenly */
+  width: 100%; /* Full width */
+  margin: 10px 0; /* Space between rows */
+}
+
+.iconsRow .fa-icon, .wordsRow span {
+  flex: 1; /* Allow each icon and word to grow */
+  text-align: center; /* Center text */
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
