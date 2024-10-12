@@ -131,7 +131,7 @@ const App = () => {
       {/* New Section for Date of Departure */}
       <h2>Date of departure</h2>
       <div className="date-selects"> {/* Container for Day, Month, Year selects */}
-        <div className="custom-select" onClick={() => toggleDropdown('day')}>
+        <div className="custom-select date-select" onClick={() => toggleDropdown('day')}>
           <div className="selected">
             {selectedDay}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
@@ -147,7 +147,7 @@ const App = () => {
           )}
         </div>
 
-        <div className="custom-select" onClick={() => toggleDropdown('month')}>
+        <div className="custom-select date-select" onClick={() => toggleDropdown('month')}>
           <div className="selected">
             {selectedMonth}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
@@ -164,7 +164,7 @@ const App = () => {
           )}
         </div>
 
-        <div className="custom-select" onClick={() => toggleDropdown('year')}>
+        <div className="custom-select date-select" onClick={() => toggleDropdown('year')}>
           <div className="selected">
             {selectedYear}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
