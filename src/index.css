@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  flex-direction: column; /* Allow for vertical stacking of elements */
 }
 
 h1 {
@@ -39,11 +40,19 @@ h2 {
   font-size: 1.3em;
 }
 
+/* New container for Date of Departure selects */
+.date-selects {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space out the selects evenly */
+  gap: 10px; /* Optional: Adds space between select boxes */
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
 .custom-select {
   position: relative;
-  width: 200px;
+  width: 200px; /* Width for individual selects */
   cursor: pointer;
-  margin-bottom: 20px; /* Add margin between selects */
+  margin-bottom: 20px; /* Add margin for other select boxes */
 }
 
 .selected {
