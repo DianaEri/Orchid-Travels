@@ -4,6 +4,8 @@ const App = () => {
   const [data, setData] = useState({ locations: [] }); // Initialize with an object containing locations
   const [loading, setLoading] = useState(true); // State to handle loading
   const [newLocation, setNewLocation] = useState(''); // State to manage the new location input
+  const [selectedCity, setSelectedCity] = useState('City'); // State for selected city
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for managing dropdown visibility
 
   useEffect(() => {
     fetch(
@@ -28,13 +30,22 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission
-    if (newLocation) {
+    if (selectedCity && selectedCity !== 'City') {
       setData((prevData) => ({
         ...prevData,
-        locations: [...prevData.locations, newLocation], // Add the new location to the list
+        locations: [...prevData.locations, selectedCity], // Add the selected location to the list
       }));
-      setNewLocation(''); // Clear the input field
+      setSelectedCity('City'); // Reset the selection
     }
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleOptionClick = (city) => {
+    setSelectedCity(city);
+    setDropdownOpen(false); // Close the dropdown after selection
   };
 
   return (
@@ -44,14 +55,34 @@ const App = () => {
 
       {/* Form for selecting a location */}
       <form onSubmit={handleSubmit}>
-        <select name="departureCity" id="departureCity">
-          <option value="City" disabled selected>
-            City
-          </option>
-          <option value="Stockholm-Arlanda">Stockholm-Arlanda</option>
-          <option value="Göteborg-Landvetter">Göteborg-Landvetter</option>
-          <option value="Malmö">Malmö</option>
-        </select>
+        <div className="custom-select" onClick={toggleDropdown}>
+          <div className="selected">{selectedCity}</div>
+          {dropdownOpen && (
+            <div className="options">
+              <div
+                className={`option ${selectedCity === 'City' ? 'disabled' : ''}`}
+                onClick={() => handleOptionClick('City')}
+              >
+                City
+              </div>
+              <div
+                className="option"
+                onClick={() => handleOptionClick('Stockholm-Arlanda')}
+              >
+                Stockholm-Arlanda
+              </div>
+              <div
+                className="option"
+                onClick={() => handleOptionClick('Göteborg-Landvetter')}
+              >
+                Göteborg-Landvetter
+              </div>
+              <div className="option" onClick={() => handleOptionClick('Malmö')}>
+                Malmö
+              </div>
+            </div>
+          )}
+        </div>
         <button type="submit">Search</button>
       </form>
 

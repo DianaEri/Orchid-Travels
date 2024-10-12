@@ -39,9 +39,48 @@ h2 {
   font-size: 1.3em;
 }
 
-form {
+.custom-select {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
 }
 
+.selected {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+}
+
+.options {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+.option {
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #ddd;
+}
+
+.disabled {
+  background-color: #f1f1f1;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.custom-select.open .options {
+  display: block;
+}
 button {
   border-radius: 4px;
   border: 1px solid transparent;
@@ -60,17 +99,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-select {
-  background-color: #d9d9d9;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 0px;
-}
-
-select option:disabled {
-  background-color: #d9d9d9;
 }
 
 @media (prefers-color-scheme: light) {
