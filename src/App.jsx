@@ -201,7 +201,7 @@ const App = () => {
       {/* New Section for Guests */}
       <h2>Guests</h2>
       <div className="guest-selects"> {/* Container for Adults and Children selects */}
-        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+        <div className="custom-select guest-select" onClick={() => toggleDropdown('adults')}>
           <div className="selected">
             {selectedAdults}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
@@ -217,7 +217,7 @@ const App = () => {
           )}
         </div>
 
-        <div className="custom-select" onClick={() => toggleDropdown('children')}>
+        <div className="custom-select guest-select" onClick={() => toggleDropdown('children')}>
           <div className="selected">
             {selectedChildren}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
