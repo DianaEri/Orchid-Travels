@@ -259,6 +259,15 @@ button:focus-visible {
   margin: 0.2em 0; /* Spacing between text elements */
 }
 
+.social-icon {
+  font-size: 3em;
+}
+
+.logoName {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #000000;

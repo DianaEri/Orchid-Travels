@@ -10,13 +10,13 @@ const Footer = () => {
   return (
     <div className="footer" style={{ width: '100%', textAlign: 'center', padding: '1em 0' }}>
       {/* Black Logo */}
-      <img src={BlackLogo} alt="Black Logo" style={{ height: '2em', width: 'auto' }} />
+      <img src={BlackLogo} alt="Black Logo" style={{ height: '4.5em', width: 'auto' }} />
       
-      <div>Orchid Travels</div>
+      <div className='logoName'>Orchid Travels</div>
 
       {/* TripAdvisor Logo and Social Media Icons on the same line */}
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '1em 0' }}>
-        <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '2em', width: 'auto', marginRight: '10px' }} />
+        <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '5em', width: 'auto', marginRight: '10px' }} />
 
         {/* Social Media Icons */}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
