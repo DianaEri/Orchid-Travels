@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'; // Import the specific icon
 
 const App = () => {
   const [data, setData] = useState({ locations: [] }); // Initialize with an object containing locations
@@ -56,7 +58,11 @@ const App = () => {
       {/* Form for selecting a location */}
       <form onSubmit={handleSubmit}>
         <div className="custom-select" onClick={toggleDropdown}>
-          <div className="selected">{selectedCity}</div>
+          <div className="selected">
+            {selectedCity}
+            {/* Add the chevron-down icon beside "City" */}
+            <FontAwesomeIcon icon={faChevronDown} style={{ marginLeft: '8px' }} />
+          </div>
           {dropdownOpen && (
             <div className="options">
               <div
