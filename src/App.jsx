@@ -6,8 +6,27 @@ const App = () => {
   const [data, setData] = useState({ locations: [] });
   const [loading, setLoading] = useState(true);
   const [newLocation, setNewLocation] = useState('');
+  
+  // State for each dropdown
   const [selectedCity, setSelectedCity] = useState('City');
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedDestination, setSelectedDestination] = useState('City');
+  const [selectedDay, setSelectedDay] = useState('Day');
+  const [selectedMonth, setSelectedMonth] = useState('Month');
+  const [selectedYear, setSelectedYear] = useState('Year');
+  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState('1 week');
+  const [selectedAdults, setSelectedAdults] = useState('Nr of adults');
+  const [selectedChildren, setSelectedChildren] = useState('Nr of children');
+
+  const [dropdownOpen, setDropdownOpen] = useState({
+    city: false,
+    destination: false,
+    day: false,
+    month: false,
+    year: false,
+    lengthOfStay: false,
+    adults: false,
+    children: false,
+  });
 
   useEffect(() => {
     fetch(
@@ -32,64 +51,183 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (selectedCity && selectedCity !== 'City') {
-      setData((prevData) => ({
-        ...prevData,
-        locations: [...prevData.locations, selectedCity],
-      }));
-      setSelectedCity('City');
+    // Handle form submission logic here
+  };
+
+  const toggleDropdown = (type) => {
+    setDropdownOpen((prev) => ({ ...prev, [type]: !prev[type] }));
+  };
+
+  const handleOptionClick = (type, value) => {
+    switch (type) {
+      case 'city':
+        setSelectedCity(value);
+        break;
+      case 'destination':
+        setSelectedDestination(value);
+        break;
+      case 'day':
+        setSelectedDay(value);
+        break;
+      case 'month':
+        setSelectedMonth(value);
+        break;
+      case 'year':
+        setSelectedYear(value);
+        break;
+      case 'lengthOfStay':
+        setSelectedLengthOfStay(value);
+        break;
+      case 'adults':
+        setSelectedAdults(value);
+        break;
+      case 'children':
+        setSelectedChildren(value);
+        break;
+      default:
+        break;
     }
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
-  const handleOptionClick = (city) => {
-    setSelectedCity(city);
-    setDropdownOpen(false);
+    setDropdownOpen((prev) => ({ ...prev, [type]: false })); // Close the dropdown
   };
 
   return (
     <div className="App">
       <h1>Where do you want to travel?</h1>
+      <h2>Point of departure</h2>
 
-      {/* Form for selecting a location */}
-      <form onSubmit={handleSubmit}>
-        <div className="custom-select" onClick={toggleDropdown}>
-        <h2>Point of departure</h2>
-          <div className="selected">
-            {selectedCity}
-            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-          </div>
-          {dropdownOpen && (
-            <div className="options">
-              <div
-                className={`option ${selectedCity === 'City' ? 'disabled' : ''}`}
-                onClick={() => handleOptionClick('City')}
-              >
-                City
-              </div>
-              <div
-                className="option"
-                onClick={() => handleOptionClick('Stockholm-Arlanda')}
-              >
-                Stockholm-Arlanda
-              </div>
-              <div
-                className="option"
-                onClick={() => handleOptionClick('Göteborg-Landvetter')}
-              >
-                Göteborg-Landvetter
-              </div>
-              <div className="option" onClick={() => handleOptionClick('Malmö')}>
-                Malmö
-              </div>
-            </div>
-          )}
+      {/* Customized Select for Departure City */}
+      <div className="custom-select" onClick={() => toggleDropdown('city')}>
+        <div className="selected">
+          {selectedCity}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
         </div>
-        <button type="submit">Search</button>
-      </form>
+        {dropdownOpen.city && (
+          <div className="options">
+            <div className="option" onClick={() => handleOptionClick('city', 'City')}>City</div>
+            <div className="option" onClick={() => handleOptionClick('city', 'Stockholm-Arlanda')}>Stockholm-Arlanda</div>
+            <div className="option" onClick={() => handleOptionClick('city', 'Göteborg-Landvetter')}>Göteborg-Landvetter</div>
+            <div className="option" onClick={() => handleOptionClick('city', 'Malmö')}>Malmö</div>
+          </div>
+        )}
+      </div>
+
+      {/* New Section for Destination */}
+      <h2>Destination</h2>
+      <div className="custom-select" onClick={() => toggleDropdown('destination')}>
+        <div className="selected">
+          {selectedDestination}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.destination && (
+          <div className="options">
+            <div className="option" onClick={() => handleOptionClick('destination', 'Bangkok')}>Bangkok</div>
+            <div className="option" onClick={() => handleOptionClick('destination', 'Phuket')}>Phuket</div>
+            <div className="option" onClick={() => handleOptionClick('destination', 'Krabi')}>Krabi</div>
+          </div>
+        )}
+      </div>
+
+      {/* New Section for Date of Departure */}
+      <h2>Date of departure</h2>
+      <div className="custom-select" onClick={() => toggleDropdown('day')}>
+        <div className="selected">
+          {selectedDay}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.day && (
+          <div className="options">
+            {Array.from({ length: 31 }, (_, i) => (
+              <div key={i + 1} className="option" onClick={() => handleOptionClick('day', String(i + 1).padStart(2, '0'))}>
+                {String(i + 1).padStart(2, '0')}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="custom-select" onClick={() => toggleDropdown('month')}>
+        <div className="selected">
+          {selectedMonth}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.month && (
+          <div className="options">
+            {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+              .map((month, index) => (
+                <div key={month} className="option" onClick={() => handleOptionClick('month', month)}>
+                  {month}
+                </div>
+              ))}
+          </div>
+        )}
+      </div>
+
+      <div className="custom-select" onClick={() => toggleDropdown('year')}>
+        <div className="selected">
+          {selectedYear}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.year && (
+          <div className="options">
+            {['2024', '2025', '2026'].map((year) => (
+              <div key={year} className="option" onClick={() => handleOptionClick('year', year)}>
+                {year}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* New Section for Length of Stay */}
+      <h2>Length of stay</h2>
+      <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
+        <div className="selected">
+          {selectedLengthOfStay}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.lengthOfStay && (
+          <div className="options">
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '1 week')}>1 week</div>
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '2 weeks')}>2 weeks</div>
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '3 weeks')}>3 weeks</div>
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '4 weeks')}>4 weeks</div>
+          </div>
+        )}
+      </div>
+
+      {/* New Section for Guests */}
+      <h2>Guests</h2>
+      <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+        <div className="selected">
+          {selectedAdults}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.adults && (
+          <div className="options">
+            {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+              <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
+                {num}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="custom-select" onClick={() => toggleDropdown('children')}>
+        <div className="selected">
+          {selectedChildren}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+        </div>
+        {dropdownOpen.children && (
+          <div className="options">
+            {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+              <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
+                {num}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
       <ul>
         {data.locations && data.locations.length > 0 ? (
