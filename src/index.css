@@ -48,8 +48,9 @@ h2 {
 
 .selected {
   padding: 10px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  border: 1px solid transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,7 +67,7 @@ h2 {
   left: 0;
   width: 100%;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid grey;
   z-index: 1;
   max-height: 150px; /* Set a max height for the dropdown */
   overflow-y: auto; /* Enable vertical scrolling */
