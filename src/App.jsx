@@ -14,15 +14,15 @@ const Footer = () => {
       
       <div>Orchid Travels</div>
 
-      {/* TripAdvisor Logo and Social Media Icons */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1em 0' }}>
-        <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '2em', width: 'auto' }} />
-        
+      {/* TripAdvisor Logo and Social Media Icons on the same line */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '1em 0' }}>
+        <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '2em', width: 'auto', marginRight: '10px' }} />
+
         {/* Social Media Icons */}
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '0.5em 0' }}>
-          <FontAwesomeIcon icon={faSquareInstagram} style={{ margin: '0 10px' }} />
-          <FontAwesomeIcon icon={faYoutube} style={{ margin: '0 10px' }} />
-          <FontAwesomeIcon icon={faSquareFacebook} style={{ margin: '0 10px' }} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <FontAwesomeIcon icon={faSquareInstagram} className="social-icon" style={{ margin: '0 10px' }} />
+          <FontAwesomeIcon icon={faYoutube} className="social-icon" style={{ margin: '0 10px' }} />
+          <FontAwesomeIcon icon={faSquareFacebook} className="social-icon" style={{ margin: '0 10px' }} />
         </div>
       </div>
 
@@ -276,10 +276,40 @@ const App = () => {
             </div>
           )}
         </div>
-
         {/* Search Button */}
-        <button onClick={handleSubmit}>Search</button>
+        <div className="button-container">
+          <button onClick={handleSubmit} className="search-button">
+            Search
+          </button>
+        </div>
       </div>
+        <div className="divider"></div>
+
+<h1 className="center-heading">Daily activities in our hotels</h1>
+
+<div className="dividerIcons">
+  <div className="iconsList">
+    <div className="iconsText">Hotel information provided with ease</div>
+
+    {/* Icons Row */}
+    <div className="iconsRow">
+      <FontAwesomeIcon icon={faMessage} />
+      <FontAwesomeIcon icon={faPhone} />
+      <FontAwesomeIcon icon={faLocationDot} />
+      <FontAwesomeIcon icon={faPlaneArrival} />
+      <FontAwesomeIcon icon={faUtensils} />
+    </div>
+
+    {/* Words Row */}
+    <div className="wordsRow">
+      <span>Reviews</span>
+      <span>Call us</span>
+      <span>Address</span>
+      <span>Arrivals</span>
+      <span>Restaurant</span>
+    </div>
+  </div>
+</div>
 
       {/* Render Footer */}
       <Footer />

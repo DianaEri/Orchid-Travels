@@ -245,18 +245,18 @@ button:focus-visible {
 }
 
 .footer {
-  background-color: #f8f8f8; /* Optional: Add background color */
-  border-top: 1px solid #ccc; /* Optional: Add a top border */
-  padding: 2em 0; /* Adjust padding */
-}
-
-.footer div {
-  margin: 0.5em 0; /* Space between lines */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 0;
 }
 
 .footer img {
-  display: block; /* Center images */
-  margin: 0 auto; /* Center images */
+  margin-bottom: 0.5em; /* Spacing between logos and text */
+}
+
+.footer div {
+  margin: 0.2em 0; /* Spacing between text elements */
 }
 
 @media (prefers-color-scheme: light) {
