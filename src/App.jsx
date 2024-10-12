@@ -30,11 +30,11 @@ const Footer = () => {
       <div>Reviews</div>
       <div>Contact us</div>
       <div>Address</div>
-      <div>Search</div>
-      <div>Hotel activities</div>
-      <div>Gallery</div>
-      <div>2024 Orchid Travels</div>
-      <div>Terms & conditions / Privacy policy</div>
+      <div className='largerText'>Search</div>
+      <div className='largerText'>Hotel activities</div>
+      <div className='largerText'>Gallery</div>
+      <div className='paddingText'>2024 Orchid Travels</div>
+      <div className='smallerText'>Terms & conditions / Privacy policy</div>
     </div>
   );
 };
