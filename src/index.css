@@ -43,20 +43,20 @@ h2 {
   position: relative;
   width: 200px;
   cursor: pointer;
+  margin-bottom: 20px; /* Add margin between selects */
 }
 
 .selected {
   padding: 10px;
-  background-color: #d9d9d9;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Align items on the left and right */
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .chevron-icon {
-  margin-left: auto; /* Ensures the icon is pushed to the far right */
+  margin-left: auto;
 }
 
 .options {
@@ -68,6 +68,9 @@ h2 {
   background-color: #fff;
   border: 1px solid #ccc;
   z-index: 1;
+  max-height: 150px; /* Set a max height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Hide horizontal scrolling */
 }
 
 .option {
@@ -89,6 +92,7 @@ h2 {
 .custom-select.open .options {
   display: block;
 }
+
 button {
   border-radius: 4px;
   border: 1px solid transparent;
@@ -101,6 +105,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
