@@ -117,6 +117,7 @@ h2 {
 .option:hover {
   padding: 10px;
   cursor: pointer;
+  background-color: #d9d9d9;
 }
 
 /* Adjust button container for centering */
@@ -243,6 +244,20 @@ button:focus-visible {
   text-align: center; /* Center text */
 }
 
+.footer {
+  background-color: #f8f8f8; /* Optional: Add background color */
+  border-top: 1px solid #ccc; /* Optional: Add a top border */
+  padding: 2em 0; /* Adjust padding */
+}
+
+.footer div {
+  margin: 0.5em 0; /* Space between lines */
+}
+
+.footer img {
+  display: block; /* Center images */
+  margin: 0 auto; /* Center images */
+}
 
 @media (prefers-color-scheme: light) {
   :root {

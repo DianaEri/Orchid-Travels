@@ -1,7 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons'; // Include the missing imports
+import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube, faSquareInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
 import Bild from './assets/Bild.jpg';
+import BlackLogo from './assets/Black logo.svg';
+import TripadvisorLogo from './assets/tripadvisor.svg';
+
+const Footer = () => {
+  return (
+    <div className="footer" style={{ width: '100%', textAlign: 'center', padding: '1em 0' }}>
+      {/* Black Logo */}
+      <img src={BlackLogo} alt="Black Logo" style={{ height: '2em', width: 'auto' }} />
+      
+      <div>Orchid Travels</div>
+
+      {/* TripAdvisor Logo and Social Media Icons */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1em 0' }}>
+        <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '2em', width: 'auto' }} />
+        
+        {/* Social Media Icons */}
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '0.5em 0' }}>
+          <FontAwesomeIcon icon={faSquareInstagram} style={{ margin: '0 10px' }} />
+          <FontAwesomeIcon icon={faYoutube} style={{ margin: '0 10px' }} />
+          <FontAwesomeIcon icon={faSquareFacebook} style={{ margin: '0 10px' }} />
+        </div>
+      </div>
+
+      {/* Footer Texts */}
+      <div>Reviews</div>
+      <div>Contact us</div>
+      <div>Address</div>
+      <div>Search</div>
+      <div>Hotel activities</div>
+      <div>Gallery</div>
+      <div>2024 Orchid Travels</div>
+      <div>Terms & conditions / Privacy policy</div>
+    </div>
+  );
+};
 
 const App = () => {
   const [data, setData] = useState({ locations: [] });
@@ -177,9 +213,9 @@ const App = () => {
             </div>
             {dropdownOpen.year && (
               <div className="options">
-                {['2024', '2025', '2026'].map((year) => (
-                  <div key={year} className="option" onClick={() => handleOptionClick('year', year)}>
-                    {year}
+                {Array.from({ length: 5 }, (_, i) => (
+                  <div key={2024 + i} className="option" onClick={() => handleOptionClick('year', String(2024 + i))}>
+                    {2024 + i}
                   </div>
                 ))}
               </div>
@@ -196,87 +232,57 @@ const App = () => {
           </div>
           {dropdownOpen.lengthOfStay && (
             <div className="options">
-              <div className="option" onClick={() => handleOptionClick('lengthOfStay', '1 week')}>1 week</div>
-              <div className="option" onClick={() => handleOptionClick('lengthOfStay', '2 weeks')}>2 weeks</div>
-              <div className="option" onClick={() => handleOptionClick('lengthOfStay', '3 weeks')}>3 weeks</div>
-              <div className="option" onClick={() => handleOptionClick('lengthOfStay', '4 weeks')}>4 weeks</div>
+              {['1 week', '2 weeks', '3 weeks', '1 month'].map((stay) => (
+                <div key={stay} className="option" onClick={() => handleOptionClick('lengthOfStay', stay)}>
+                  {stay}
+                </div>
+              ))}
             </div>
           )}
         </div>
 
-        {/* New Section for Guests */}
-        <h2>Guests</h2>
-        <div className="guest-selects">
-          {/* Container for Adults and Children selects */}
-          <div className="custom-select guest-select" onClick={() => toggleDropdown('adults')}>
-            <div className="selected">
-              {selectedAdults}
-              <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-            </div>
-            {dropdownOpen.adults && (
-              <div className="options">
-                {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
-                  <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
-                    {num}
-                  </div>
-                ))}
-              </div>
-            )}
+        {/* New Section for Number of Adults */}
+        <h2>Number of adults</h2>
+        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+          <div className="selected">
+            {selectedAdults}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
+          {dropdownOpen.adults && (
+            <div className="options">
+              {Array.from({ length: 5 }, (_, i) => (
+                <div key={i + 1} className="option" onClick={() => handleOptionClick('adults', String(i + 1))}>
+                  {i + 1}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
-          <div className="custom-select guest-select" onClick={() => toggleDropdown('children')}>
-            <div className="selected">
-              {selectedChildren}
-              <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-            </div>
-            {dropdownOpen.children && (
-              <div className="options">
-                {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
-                  <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
-                    {num}
-                  </div>
-                ))}
-              </div>
-            )}
+        {/* New Section for Number of Children */}
+        <h2>Number of children</h2>
+        <div className="custom-select" onClick={() => toggleDropdown('children')}>
+          <div className="selected">
+            {selectedChildren}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
+          {dropdownOpen.children && (
+            <div className="options">
+              {Array.from({ length: 5 }, (_, i) => (
+                <div key={i + 1} className="option" onClick={() => handleOptionClick('children', String(i + 1))}>
+                  {i + 1}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Search Button */}
-        <div className="button-container">
-          <button onClick={handleSubmit} className="search-button">
-            Search
-          </button>
-        </div>
+        <button onClick={handleSubmit}>Search</button>
       </div>
 
-      <div className="divider"></div>
-
-      <h1 className="center-heading">Daily activities in our hotels</h1>
-
-      <div className="dividerIcons">
-        <div className="iconsList">
-          <div className="iconsText">Hotel information provided with ease</div>
-
-          {/* Icons Row */}
-          <div className="iconsRow">
-            <FontAwesomeIcon icon={faMessage} />
-            <FontAwesomeIcon icon={faPhone} />
-            <FontAwesomeIcon icon={faLocationDot} />
-            <FontAwesomeIcon icon={faPlaneArrival} />
-            <FontAwesomeIcon icon={faUtensils} />
-          </div>
-
-          {/* Words Row */}
-          <div className="wordsRow">
-            <span>Reviews</span>
-            <span>Call us</span>
-            <span>Address</span>
-            <span>Arrivals</span>
-            <span>Restaurant</span>
-          </div>
-        </div>
-      </div>
-
+      {/* Render Footer */}
+      <Footer />
     </div>
   );
 };
