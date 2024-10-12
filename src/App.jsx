@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons'; // Include the missing imports
 import Bild from './assets/Bild.jpg';
 
 const App = () => {
@@ -50,7 +50,6 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
     console.log('Search initiated');
   };
 
@@ -254,35 +253,29 @@ const App = () => {
 
       <h1 className="center-heading">Daily activities in our hotels</h1>
 
-      <div className="dividerIcons"></div>
+      <div className="dividerIcons">
+        <div className="iconsList">
+          <div className="iconsText">Hotel information provided with ease</div>
 
-            {/* Divider */}
-            <div className="divider"></div>
+          {/* Icons Row */}
+          <div className="iconsRow">
+            <FontAwesomeIcon icon={faMessage} />
+            <FontAwesomeIcon icon={faPhone} />
+            <FontAwesomeIcon icon={faLocationDot} />
+            <FontAwesomeIcon icon={faPlaneArrival} />
+            <FontAwesomeIcon icon={faUtensils} />
+          </div>
 
-{/* Divider Icons Container */}
-<div className="dividerIcons">
-  <div className="iconsList">
-    <div className="iconsText">Hotel information provided with ease</div>
-
-    {/* Icons Row */}
-    <div className="iconsRow">
-      <FontAwesomeIcon icon={faMessage} />
-      <FontAwesomeIcon icon={faPhone} />
-      <FontAwesomeIcon icon={faLocationDot} />
-      <FontAwesomeIcon icon={faPlaneArrival} />
-      <FontAwesomeIcon icon={faUtensils} />
-    </div>
-
-    {/* Words Row */}
-    <div className="wordsRow">
-      <span>Reviews</span>
-      <span>Call us</span>
-      <span>Address</span>
-      <span>Arrival time</span>
-      <span>Restaurant</span>
-    </div>
-  </div>
-</div>
+          {/* Words Row */}
+          <div className="wordsRow">
+            <span>Reviews</span>
+            <span>Call us</span>
+            <span>Address</span>
+            <span>Arrivals</span>
+            <span>Restaurant</span>
+          </div>
+        </div>
+      </div>
 
     </div>
   );
