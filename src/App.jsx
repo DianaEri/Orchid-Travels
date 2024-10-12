@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      'https://vitejsvitelddqj7-ud4n--5000--134daa3c.local-corp.webcontainer.io/api/data'
+      'https://orchidtravels-yymu--5000--134daa3c.local-corp.webcontainer.io'
     )
       .then((response) => {
         if (!response.ok) {
