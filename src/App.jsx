@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'; // Import the specific icon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
-  const [data, setData] = useState({ locations: [] }); // Initialize with an object containing locations
-  const [loading, setLoading] = useState(true); // State to handle loading
-  const [newLocation, setNewLocation] = useState(''); // State to manage the new location input
-  const [selectedCity, setSelectedCity] = useState('City'); // State for selected city
-  const [dropdownOpen, setDropdownOpen] = useState(false); // State for managing dropdown visibility
+  const [data, setData] = useState({ locations: [] });
+  const [loading, setLoading] = useState(true);
+  const [newLocation, setNewLocation] = useState('');
+  const [selectedCity, setSelectedCity] = useState('City');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -20,24 +20,24 @@ const App = () => {
         return response.json();
       })
       .then((data) => {
-        console.log('Fetched data:', data); // Log the fetched data
-        setData(data); // Save the data into state
-        setLoading(false); // Stop loading once the data is fetched
+        console.log('Fetched data:', data);
+        setData(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Stop loading even if there is an error
+        setLoading(false);
       });
   }, []);
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
     if (selectedCity && selectedCity !== 'City') {
       setData((prevData) => ({
         ...prevData,
-        locations: [...prevData.locations, selectedCity], // Add the selected location to the list
+        locations: [...prevData.locations, selectedCity],
       }));
-      setSelectedCity('City'); // Reset the selection
+      setSelectedCity('City');
     }
   };
 
@@ -47,7 +47,7 @@ const App = () => {
 
   const handleOptionClick = (city) => {
     setSelectedCity(city);
-    setDropdownOpen(false); // Close the dropdown after selection
+    setDropdownOpen(false);
   };
 
   return (
@@ -60,8 +60,7 @@ const App = () => {
         <div className="custom-select" onClick={toggleDropdown}>
           <div className="selected">
             {selectedCity}
-            {/* Add the chevron-down icon beside "City" */}
-            <FontAwesomeIcon icon={faChevronDown} style={{ marginLeft: '8px' }} />
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
           {dropdownOpen && (
             <div className="options">
