@@ -48,11 +48,30 @@ h2 {
   margin-bottom: 20px; /* Adjust margin as needed */
 }
 
+/* New container for guests selects */
+.guest-selects {
+  display: flex;
+  gap: 10px; /* Space between the adults and children selects */
+  margin-bottom: 20px; /* Add margin for spacing below the guests section */
+}
+
+/* Updated custom-select to be 90% of the window width */
 .custom-select {
   position: relative;
-  width: 200px; /* Width for individual selects */
+  width: 90%; /* Set width for individual selects to 90% */
+  max-width: 400px; /* Optional: Set a max width for better appearance */
   cursor: pointer;
   margin-bottom: 20px; /* Add margin for other select boxes */
+}
+
+/* Specific styles for date selects */
+.date-select {
+  width: 30%; /* Set width for each select to 30% */
+}
+
+/* Specific styles for guest selects */
+.guest-select {
+  width: 45%; /* Set width for adults and children selects to 45% */
 }
 
 .selected {
@@ -101,12 +120,6 @@ h2 {
 
 .custom-select.open .options {
   display: block;
-}
-
-.guest-selects {
-  display: flex;
-  gap: 10px; /* Space between the adults and children selects */
-  margin-bottom: 20px; /* Add margin for spacing below the guests section */
 }
 
 button {
