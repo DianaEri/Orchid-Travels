@@ -53,11 +53,11 @@ const App = () => {
   return (
     <div className="App">
       <h1>Where do you want to travel?</h1>
-      <h2>Point of departure</h2>
 
       {/* Form for selecting a location */}
       <form onSubmit={handleSubmit}>
         <div className="custom-select" onClick={toggleDropdown}>
+        <h2>Point of departure</h2>
           <div className="selected">
             {selectedCity}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
