@@ -128,7 +128,6 @@ const App = () => {
       default:
         break;
     }
-    
     setDropdownOpen((prev) => {
       const newState = { ...prev, [type]: false };
       console.log('Dropdown state after selection:', newState);
