@@ -60,29 +60,29 @@ const SearchResult = () => {
                             ))}
                         </ul>
 
-<div className="dividerSearch">
-  <div className="iconsList">
-    <div className="iconsRow">
-      <FontAwesomeIcon icon={faMessage} />
-      <FontAwesomeIcon icon={faPhone} />
-      <FontAwesomeIcon icon={faLocationDot} />
-      <FontAwesomeIcon icon={faPlaneArrival} />
-      <FontAwesomeIcon icon={faUtensils} />
-    </div>
-    <div className="wordsRow">
-      <span>Reviews</span>
-      <span>Call us</span>
-      <span>Address</span>
-      <span>Arrivals</span>
-      <span>Restaurant</span>
-    </div>
-  </div>
-</div>
-                        <p>Flight and hotel</p>
-                        <p>Price per person: {hotel.price_per_person} kr</p>
-                        {/* Calculate total price based on number of adults and children */}
-                        <p>Total Price: {hotel.price_per_person * totalPersons} kr</p>
-                        <div className="divider"></div>
+                        <div className="dividerSearch">
+                        <div className="iconsList">
+                            <div className="iconsRow">
+                            <FontAwesomeIcon icon={faMessage} />
+                            <FontAwesomeIcon icon={faPhone} />
+                            <FontAwesomeIcon icon={faLocationDot} />
+                            <FontAwesomeIcon icon={faPlaneArrival} />
+                            <FontAwesomeIcon icon={faUtensils} />
+                            </div>
+                            <div className="wordsRow">
+                            <span>Reviews</span>
+                            <span>Call us</span>
+                            <span>Address</span>
+                            <span>Arrivals</span>
+                            <span>Restaurant</span>
+                            </div>
+                            </div>
+                            </div>
+                            <p>Flight and hotel</p>
+                            <p>Price per person: {hotel.price_per_person} kr</p>
+                            {/* Calculate total price based on number of adults and children */}
+                            <p>Total Price: {hotel.price_per_person * totalPersons} kr</p>
+                            <div className="divider"></div>
                     </div>
                 ))}
             </div>
