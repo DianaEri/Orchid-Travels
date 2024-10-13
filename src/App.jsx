@@ -201,24 +201,21 @@ const handleOptionClick = (type, value) => {
           </div>
 
           <div className="custom-select date-select" onClick={() => toggleDropdown('month')}>
-            <div className="selected">
-              {selectedMonth}
-              <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-            </div>
-            {dropdownOpen.month && (
-              <div className="options">
-                {Array.from({ length: 12 }, (_, i) => (
-                  <div
-                    key={i + 1}
-                    className="option"
-                    onClick={() => handleOptionClick('month', String(i + 1).padStart(2, '0'))}
-                  >
-                    {String(i + 1).padStart(2, '0')}
+          <div className="selected">
+            {selectedMonth}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+          </div>
+          {dropdownOpen.month && (
+            <div className="options">
+              {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                .map((month, index) => (
+                  <div key={month} className="option" onClick={() => handleOptionClick('month', month)}>
+                    {month}
                   </div>
                 ))}
-              </div>
-            )}
-          </div>
+            </div>
+          )}
+        </div>
 
           <div className="custom-select date-select" onClick={() => toggleDropdown('year')}>
             <div className="selected">
@@ -241,67 +238,59 @@ const handleOptionClick = (type, value) => {
           </div>
         </div>
 
-        <h2>Length of stay</h2>
-        <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
-          <div className="selected">
-            {selectedLengthOfStay}
-            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-          </div>
-          {dropdownOpen.lengthOfStay && (
-            <div className="options">
-              {Array.from({ length: 14 }, (_, i) => (
-                <div
-                  key={i + 1}
-                  className="option"
-                  onClick={() => handleOptionClick('lengthOfStay', String(i + 1))}
-                >
-                  {String(i + 1)}
-                </div>
-              ))}
-            </div>
-          )}
+      {/* New Section for Length of Stay */}
+      <h2>Length of stay</h2>
+      <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
+        <div className="selected">
+          {selectedLengthOfStay}
+          <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
         </div>
+        {dropdownOpen.lengthOfStay && (
+          <div className="options">
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '1 week')}>1 week</div>
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '2 weeks')}>2 weeks</div>
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '3 weeks')}>3 weeks</div>
+            <div className="option" onClick={() => handleOptionClick('lengthOfStay', '4 weeks')}>4 weeks</div>
+          </div>
+        )}
+      </div>
         
-        <h2>Number of guests</h2>
-        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+      {/* New Section for Guests */}
+      <h2>Guests</h2>
+      <div className="guest-selects">
+        {/* Container for Adults and Children selects */}
+        <div className="custom-select guest-select" onClick={() => toggleDropdown('adults')}>
           <div className="selected">
             {selectedAdults}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
           {dropdownOpen.adults && (
             <div className="options">
-              {Array.from({ length: 10 }, (_, i) => (
-                <div
-                  key={i + 1}
-                  className="option"
-                  onClick={() => handleOptionClick('adults', String(i + 1))}
-                >
-                  {String(i + 1)}
+              {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+                <div key={num} className="option" onClick={() => handleOptionClick('adults', num)}>
+                  {num}
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        <div className="custom-select" onClick={() => toggleDropdown('children')}>
+        <div className="custom-select guest-select" onClick={() => toggleDropdown('children')}>
           <div className="selected">
             {selectedChildren}
             <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
           </div>
           {dropdownOpen.children && (
             <div className="options">
-              {Array.from({ length: 10 }, (_, i) => (
-                <div
-                  key={i + 1}
-                  className="option"
-                  onClick={() => handleOptionClick('children', String(i + 1))}
-                >
-                  {String(i + 1)}
+              {['1', '2', '3', '4', '5', 'More than 5...'].map((num) => (
+                <div key={num} className="option" onClick={() => handleOptionClick('children', num)}>
+                  {num}
                 </div>
               ))}
             </div>
           )}
         </div>
+      </div>
 
         <div className="button-container">
           <button onClick={handleSubmit} className="search-button">
