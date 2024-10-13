@@ -241,6 +241,27 @@ const handleOptionClick = (type, value) => {
           </div>
         </div>
 
+        <h2>Length of stay</h2>
+        <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
+          <div className="selected">
+            {selectedLengthOfStay}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+          </div>
+          {dropdownOpen.lengthOfStay && (
+            <div className="options">
+              {Array.from({ length: 14 }, (_, i) => (
+                <div
+                  key={i + 1}
+                  className="option"
+                  onClick={() => handleOptionClick('lengthOfStay', String(i + 1))}
+                >
+                  {String(i + 1)}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+        
         <h2>Number of guests</h2>
         <div className="custom-select" onClick={() => toggleDropdown('adults')}>
           <div className="selected">
@@ -274,27 +295,6 @@ const handleOptionClick = (type, value) => {
                   key={i + 1}
                   className="option"
                   onClick={() => handleOptionClick('children', String(i + 1))}
-                >
-                  {String(i + 1)}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <h2>Length of stay</h2>
-        <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
-          <div className="selected">
-            {selectedLengthOfStay}
-            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-          </div>
-          {dropdownOpen.lengthOfStay && (
-            <div className="options">
-              {Array.from({ length: 14 }, (_, i) => (
-                <div
-                  key={i + 1}
-                  className="option"
-                  onClick={() => handleOptionClick('lengthOfStay', String(i + 1))}
                 >
                   {String(i + 1)}
                 </div>
