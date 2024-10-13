@@ -6,7 +6,9 @@ import cors from 'cors'; // Use import instead of require
 const app = express();
 const PORT = 5000; // Use port 5000 to avoid conflicts with React (which uses 3000)
 
-app.use(cors()); // Enable CORS to allow cross-origin requests
+app.use(cors({
+  origin: 'https://orchidtravels-yymu--5173--134daa3c.local-corp.webcontainer.io' // Allow requests from your frontend URL
+})); 
 app.use(express.json()); // Middleware to parse JSON
 
 // Basic API endpoint

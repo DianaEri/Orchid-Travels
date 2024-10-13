@@ -5,91 +5,55 @@ import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@
 import './index.css';
 
 const SearchResult = () => {
-    const location = useLocation(); // Get the location object from the hook
-    const { destination } = location.state || {}; // Use optional chaining to avoid errors
-    const [hotels, setHotels] = useState([]);
-    const [error, setError] = useState('');
+    const [hotels, setHotels] = useState([]); // State to hold hotel data
+    const [loading, setLoading] = useState(true); // State for loading status
+    const [error, setError] = useState(null); // State for error handling
+  
+    const fetchHotelData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/data'); // Update to your API endpoint
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setHotels(data.hotels); // Set the hotels state with fetched data
+      } catch (error) {
+        console.error('Error fetching hotel data:', error);
+        setError(error); // Set error state if an error occurs
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or failure
+      }
+    };
   
     useEffect(() => {
-      if (!destination) {
-        setError('No destination provided.');
-        return; // Exit if destination is not provided
-      }
+      fetchHotelData(); // Fetch hotel data on component mount
+    }, []);
   
-      const fetchHotelData = async () => {
-        try {
-          const response = await fetch(`https://your-api-url.com/api/hotels?destination=${destination}`);
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const data = await response.json();
-          setHotels(data.hotels); // Adjust based on your API response structure
-        } catch (error) {
-          console.error('Error fetching hotel data:', error);
-          setError('No hotels found for the selected destination.');
-        }
-      };
-
-    fetchHotelData();
-  }, [destination]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!hotels.length) {
-    return <div>No hotels found for the selected destination.</div>;
-  }
-
-  // Calculate total persons and total price
-  const totalPersons = parseInt(adults) + parseInt(children);
-
-  return (
-    <div className="search-results">
-      {hotels.map(hotel => (
-        <div key={hotel.name} className="hotel-card">
-          <img src={hotel.imageUrl} alt={hotel.name} className="hotel-image" />
-          <h2>{hotel.name}</h2>
-          <ul>
-            <li>{hotel.description}</li>
-          </ul>
-          <div className="dividerIcons">
-            <div className="iconsList">
-              <div className="iconsText">Hotel information provided with ease</div>
-              <div className="iconsRow">
-                <FontAwesomeIcon icon={faMessage} />
-                <FontAwesomeIcon icon={faPhone} />
-                <FontAwesomeIcon icon={faLocationDot} />
-                <FontAwesomeIcon icon={faPlaneArrival} />
-                <FontAwesomeIcon icon={faUtensils} />
-              </div>
-              <div className="wordsRow">
-                <span>Reviews</span>
-                <span>Call us</span>
-                <span>Address</span>
-                <span>Arrivals</span>
-                <span>Restaurant</span>
-              </div>
+    // Render loading, error, or hotel list
+    if (loading) {
+      return <div>Loading...</div>; // Show loading indicator
+    }
+  
+    if (error) {
+      return <div>Error: {error.message}</div>; // Show error message
+    }
+  
+    return (
+      <div>
+        <h1>Available Hotels</h1>
+        <div className="hotel-list">
+          {hotels.map((hotel) => (
+            <div key={hotel.name} className="hotel-card">
+              <img src={hotel.image} alt={hotel.name} />
+              <h2>{hotel.name}</h2>
+              <p>{hotel.description.join(', ')}</p> {/* Join description array into a string */}
+              <p>Price per person: {hotel.price_per_person}</p>
+              <p>Location: {hotel.location}</p>
             </div>
-          </div>
-
-          <div className="flight-hotel">
-            <p>Flight and hotel</p>
-            <p>{adults} adults and {children} children</p>
-            <p>{hotel.price_per_person * totalPersons} kr</p>
-            <p>Price details: {hotel.price_per_person} kr/person</p>
-
-            <div className="action-buttons">
-              <button className="read-more-button">Read More</button>
-              <button className="book-now-button">Book now</button>
-            </div>
-          </div>
-
-          <div className="divider"></div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
-};
-
-export default SearchResult;
+      </div>
+    );
+  };
+  
+  export default SearchResult;
