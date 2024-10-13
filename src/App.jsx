@@ -7,27 +7,32 @@ import Bild from './assets/Bild.jpg';
 import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
 
+const Dropdown = ({ options, onSelect }) => {
+  return (
+    <select onChange={(e) => onSelect(e.target.value)}>
+      <option value="">Select an option</option>
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  );
+};
+
 const Footer = () => {
   return (
     <div className="footer" style={{ width: '100%', textAlign: 'center', padding: '1em 0' }}>
-      {/* Black Logo */}
       <img src={BlackLogo} alt="Black Logo" style={{ height: '4.5em', width: 'auto' }} />
-      
       <div className='logoName'>Orchid Travels</div>
-
-      {/* TripAdvisor Logo and Social Media Icons on the same line */}
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '1em 0' }}>
         <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '5em', width: 'auto', marginRight: '10px' }} />
-
-        {/* Social Media Icons */}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <FontAwesomeIcon icon={faSquareInstagram} className="social-icon" style={{ margin: '0 10px' }} />
           <FontAwesomeIcon icon={faYoutube} className="social-icon" style={{ margin: '0 10px' }} />
           <FontAwesomeIcon icon={faSquareFacebook} className="social-icon" style={{ margin: '0 10px' }} />
         </div>
       </div>
-
-      {/* Footer Texts */}
       <div>Reviews</div>
       <div>Contact us</div>
       <div>Address</div>
@@ -40,20 +45,20 @@ const Footer = () => {
   );
 };
 
+
+
 const App = () => {
   const [selectedCity, setSelectedCity] = useState('City');
   const [selectedDestination, setSelectedDestination] = useState('City');
   const [selectedAdults, setSelectedAdults] = useState('Nr of adults');
   const [selectedChildren, setSelectedChildren] = useState('Nr of children');
-  
-  // Define selectedDay, selectedMonth, selectedYear, selectedLengthOfStay states
   const [selectedDay, setSelectedDay] = useState('Day'); 
   const [selectedMonth, setSelectedMonth] = useState('Month'); 
   const [selectedYear, setSelectedYear] = useState('Year'); 
   const [selectedLengthOfStay, setSelectedLengthOfStay] = useState('Length of Stay');
   
   const [dropdownOpen, setDropdownOpen] = useState({});
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -80,25 +85,23 @@ const App = () => {
       })
       .then((data) => {
         console.log('Fetched data:', data);
-        // Set data handling if necessary
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
 
-  useEffect(() => {
-    console.log('Dropdown open state changed:', dropdownOpen);
-  }, [dropdownOpen]);
-
   const toggleDropdown = (type) => {
-    setDropdownOpen((prev) => ({ ...prev, [type]: !prev[type] }));
-    console.log('Dropdown state:', dropdownOpen);
-  };
+    setDropdownOpen((prev) => {
+        const newState = { ...prev, [type]: !prev[type] }; // Toggle current dropdown
+        console.log('Dropdown open state changed:', newState); // Log state after toggling
+        return newState;
+    });
+};
 
-  const handleOptionClick = (type, value) => {
+const handleOptionClick = (type, value) => {
     console.log('Clicked option:', type, value); // Log option clicks
-    
+
     // Update the selected value based on the dropdown type
     switch (type) {
         case 'city':
@@ -131,16 +134,12 @@ const App = () => {
 
     // Close the dropdown for the selected type
     setDropdownOpen((prev) => {
-        const newState = { ...prev, [type]: false };
+        const newState = { ...prev, [type]: false }; // Explicitly close the clicked dropdown
         console.log('Dropdown state after selection:', newState); // Log the new state
         return newState; // Close the clicked dropdown
     });
-    
-    // Log the dropdown open state to verify it's changed
-    setTimeout(() => {
-        console.log('Dropdown open state changed:', dropdownOpen); // This will log the previous state since it's asynchronous
-    }, 0);
 };
+
   return (
     <div className="App">
       <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
@@ -148,8 +147,7 @@ const App = () => {
       </div>
       <h1 className="center-heading">Where do you want to travel?</h1>
       <div className="form-container">
-      <h2>Point of departure</h2>
-        {/* Customized Select for Departure City */}
+        <h2>Point of departure</h2>
         <div className="custom-select" onClick={() => toggleDropdown('city')}>
           <div className="selected">
             {selectedCity}
@@ -165,7 +163,6 @@ const App = () => {
           )}
         </div>
 
-        {/* New Section for Destination */}
         <h2>Destination</h2>
         <div className="custom-select" onClick={() => toggleDropdown('destination')}>
           <div className="selected">
@@ -180,6 +177,7 @@ const App = () => {
             </div>
           )}
         </div>
+
         <h2>Date of departure</h2>
         <div className="date-selects">
           <div className="custom-select date-select" onClick={() => toggleDropdown('day')}>
@@ -209,12 +207,15 @@ const App = () => {
             </div>
             {dropdownOpen.month && (
               <div className="options">
-                {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-                  .map((month, index) => (
-                    <div key={month} className="option" onClick={() => handleOptionClick('month', month)}>
-                      {month}
-                    </div>
-                  ))}
+                {Array.from({ length: 12 }, (_, i) => (
+                  <div
+                    key={i + 1}
+                    className="option"
+                    onClick={() => handleOptionClick('month', String(i + 1).padStart(2, '0'))}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                ))}
               </div>
             )}
           </div>
@@ -226,9 +227,13 @@ const App = () => {
             </div>
             {dropdownOpen.year && (
               <div className="options">
-                {Array.from({ length: 5 }, (_, i) => (
-                  <div key={2024 + i} className="option" onClick={() => handleOptionClick('year', String(2024 + i))}>
-                    {2024 + i}
+                {Array.from({ length: 10 }, (_, i) => (
+                  <div
+                    key={new Date().getFullYear() + i}
+                    className="option"
+                    onClick={() => handleOptionClick('year', String(new Date().getFullYear() + i))}
+                  >
+                    {new Date().getFullYear() + i}
                   </div>
                 ))}
               </div>
@@ -236,7 +241,47 @@ const App = () => {
           </div>
         </div>
 
-        {/* New Section for Length of Stay */}
+        <h2>Number of guests</h2>
+        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
+          <div className="selected">
+            {selectedAdults}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+          </div>
+          {dropdownOpen.adults && (
+            <div className="options">
+              {Array.from({ length: 10 }, (_, i) => (
+                <div
+                  key={i + 1}
+                  className="option"
+                  onClick={() => handleOptionClick('adults', String(i + 1))}
+                >
+                  {String(i + 1)}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="custom-select" onClick={() => toggleDropdown('children')}>
+          <div className="selected">
+            {selectedChildren}
+            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
+          </div>
+          {dropdownOpen.children && (
+            <div className="options">
+              {Array.from({ length: 10 }, (_, i) => (
+                <div
+                  key={i + 1}
+                  className="option"
+                  onClick={() => handleOptionClick('children', String(i + 1))}
+                >
+                  {String(i + 1)}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         <h2>Length of stay</h2>
         <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
           <div className="selected">
@@ -245,45 +290,13 @@ const App = () => {
           </div>
           {dropdownOpen.lengthOfStay && (
             <div className="options">
-              {['1 week', '2 weeks', '3 weeks', '1 month'].map((stay) => (
-                <div key={stay} className="option" onClick={() => handleOptionClick('lengthOfStay', stay)}>
-                  {stay}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* New Section for Number of Adults */}
-        <h2>Number of adults</h2>
-        <div className="custom-select" onClick={() => toggleDropdown('adults')}>
-          <div className="selected">
-            {selectedAdults}
-            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-          </div>
-          {dropdownOpen.adults && (
-            <div className="options">
-              {Array.from({ length: 5 }, (_, i) => (
-                <div key={i + 1} className="option" onClick={() => handleOptionClick('adults', String(i + 1))}>
-                  {i + 1}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* New Section for Number of Children */}
-        <h2>Number of children</h2>
-        <div className="custom-select" onClick={() => toggleDropdown('children')}>
-          <div className="selected">
-            {selectedChildren}
-            <FontAwesomeIcon icon={faChevronDown} className="chevron-icon" />
-          </div>
-          {dropdownOpen.children && (
-            <div className="options">
-              {Array.from({ length: 5 }, (_, i) => (
-                <div key={i + 1} className="option" onClick={() => handleOptionClick('children', String(i + 1))}>
-                  {i + 1}
+              {Array.from({ length: 14 }, (_, i) => (
+                <div
+                  key={i + 1}
+                  className="option"
+                  onClick={() => handleOptionClick('lengthOfStay', String(i + 1))}
+                >
+                  {String(i + 1)}
                 </div>
               ))}
             </div>
@@ -295,6 +308,7 @@ const App = () => {
             Search
           </button>
         </div>
+        
       </div>
 
       <div className="divider"></div>
