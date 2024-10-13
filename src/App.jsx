@@ -128,15 +128,19 @@ const App = () => {
         default:
             break;
     }
-    
+
     // Close the dropdown for the selected type
     setDropdownOpen((prev) => {
         const newState = { ...prev, [type]: false };
         console.log('Dropdown state after selection:', newState); // Log the new state
         return newState; // Close the clicked dropdown
     });
+    
+    // Log the dropdown open state to verify it's changed
+    setTimeout(() => {
+        console.log('Dropdown open state changed:', dropdownOpen); // This will log the previous state since it's asynchronous
+    }, 0);
 };
-
   return (
     <div className="App">
       <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
