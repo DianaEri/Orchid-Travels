@@ -101,39 +101,41 @@ const App = () => {
     
     // Update the selected value based on the dropdown type
     switch (type) {
-      case 'city':
-        setSelectedCity(value);
-        break;
-      case 'destination':
-        setSelectedDestination(value);
-        break;
-      case 'day':
-        setSelectedDay(value);
-        break;
-      case 'month':
-        setSelectedMonth(value);
-        break;
-      case 'year':
-        setSelectedYear(value);
-        break;
-      case 'lengthOfStay':
-        setSelectedLengthOfStay(value);
-        break;
-      case 'adults':
-        setSelectedAdults(value);
-        break;
-      case 'children':
-        setSelectedChildren(value);
-        break;
-      default:
-        break;
+        case 'city':
+            setSelectedCity(value);
+            break;
+        case 'destination':
+            setSelectedDestination(value);
+            break;
+        case 'day':
+            setSelectedDay(value);
+            break;
+        case 'month':
+            setSelectedMonth(value);
+            break;
+        case 'year':
+            setSelectedYear(value);
+            break;
+        case 'lengthOfStay':
+            setSelectedLengthOfStay(value);
+            break;
+        case 'adults':
+            setSelectedAdults(value);
+            break;
+        case 'children':
+            setSelectedChildren(value);
+            break;
+        default:
+            break;
     }
+    
+    // Close the dropdown for the selected type
     setDropdownOpen((prev) => {
-      const newState = { ...prev, [type]: false };
-      console.log('Dropdown state after selection:', newState);
-      return newState;
-  });
-  };
+        const newState = { ...prev, [type]: false };
+        console.log('Dropdown state after selection:', newState); // Log the new state
+        return newState; // Close the clicked dropdown
+    });
+};
 
   return (
     <div className="App">
