@@ -283,6 +283,15 @@ button:focus-visible {
   font-size: 0.7em;
 }
 
+.hotel-list {
+  width: 100%;
+}
+
+.hotel-list img {
+  height: 20em;
+  width: auto;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #000000;

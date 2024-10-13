@@ -28,7 +28,7 @@ app.get('/api/data', (req, res) => {
         price_per_person: 21491,
         family: "Kids friendly",
         location: "Phuket",
-        image: "https://cdn.pixabay.com/photo/2021/02/02/12/34/resort-5973816_1280.jpg"
+        image: "https://images.unsplash.com/photo-1651376318405-f1055f37a511?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         name: "Phuket Horizon Suites",
@@ -40,7 +40,7 @@ app.get('/api/data', (req, res) => {
         ],
         price_per_person: 22150,
         location: "Phuket",
-        image: "https://pixnio.com/free-images/2017/06/23/2017-06-23-07-15-38-1152x766.jpg"
+        image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         name: "Azure Sands Resort & Spa",
@@ -53,7 +53,7 @@ app.get('/api/data', (req, res) => {
         ],
         price_per_person: 21100,
         location: "Phuket",
-        image: "https://cdn.pixabay.com/photo/2015/09/07/19/12/hotel-928937_1280.jpg"
+        image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }
     ]
   });

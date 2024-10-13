@@ -15,7 +15,7 @@ const SearchResult = () => {
 
     const fetchHotelData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/data'); // Update to your API endpoint
+            const response = await fetch('https://orchidtravels-yymu--5000--134daa3c.local-corp.webcontainer.io/api/data'); // Update to your API endpoint
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -44,6 +44,8 @@ const SearchResult = () => {
 
     // Calculate total number of persons
     const totalPersons = adults + children;
+
+    const adultsAndChildrenText = `${adults} adult${adults !== 1 ? 's' : ''} and ${children} child${children !== 1 ? 'ren' : ''}`;
 
     return (
         <div>
@@ -79,9 +81,13 @@ const SearchResult = () => {
                             </div>
                             </div>
                             <p>Flight and hotel</p>
-                            <p>Price per person: {hotel.price_per_person} kr</p>
+                            {/* Display number of adults and children */}
+                            <p>{adultsAndChildrenText}</p>
+        
                             {/* Calculate total price based on number of adults and children */}
-                            <p>Total Price: {hotel.price_per_person * totalPersons} kr</p>
+                            <p>Total Price: {(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')} kr</p>
+                            <p>Price details</p>
+                            <p>Price per person: {hotel.price_per_person.toLocaleString('sv-SE')} kr</p>
                             <div className="divider"></div>
                     </div>
                 ))}
