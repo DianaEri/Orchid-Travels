@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faSquareInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -40,30 +41,34 @@ const Footer = () => {
 };
 
 const App = () => {
-  const [data, setData] = useState({ locations: [] });
-  const [loading, setLoading] = useState(true);
-  const [newLocation, setNewLocation] = useState('');
-
-  // State for each dropdown
   const [selectedCity, setSelectedCity] = useState('City');
   const [selectedDestination, setSelectedDestination] = useState('City');
-  const [selectedDay, setSelectedDay] = useState('Day');
-  const [selectedMonth, setSelectedMonth] = useState('Month');
-  const [selectedYear, setSelectedYear] = useState('Year');
-  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState('1 week');
   const [selectedAdults, setSelectedAdults] = useState('Nr of adults');
   const [selectedChildren, setSelectedChildren] = useState('Nr of children');
+  
+  // Define selectedDay, selectedMonth, selectedYear, selectedLengthOfStay states
+  const [selectedDay, setSelectedDay] = useState('Day'); 
+  const [selectedMonth, setSelectedMonth] = useState('Month'); 
+  const [selectedYear, setSelectedYear] = useState('Year'); 
+  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState('Length of Stay');
+  
+  const [dropdownOpen, setDropdownOpen] = useState({});
+  const navigate = useNavigate(); // Initialize navigate
 
-  const [dropdownOpen, setDropdownOpen] = useState({
-    city: false,
-    destination: false,
-    day: false,
-    month: false,
-    year: false,
-    lengthOfStay: false,
-    adults: false,
-    children: false,
-  });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (selectedDestination !== 'City' && selectedAdults !== 'Nr of adults') {
+      navigate('/search-result', {
+        state: {
+          destination: selectedDestination,
+          adults: selectedAdults,
+          children: selectedChildren,
+        },
+      });
+    } else {
+      console.log('Please select a valid destination and number of adults');
+    }
+  };
 
   useEffect(() => {
     fetch('https://orchidtravels-yymu--5000--134daa3c.local-corp.webcontainer.io/api/data')
@@ -75,19 +80,12 @@ const App = () => {
       })
       .then((data) => {
         console.log('Fetched data:', data);
-        setData(data);
-        setLoading(false);
+        // Set data handling if necessary
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false);
       });
   }, []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Search initiated');
-  };
 
   const toggleDropdown = (type) => {
     setDropdownOpen((prev) => ({ ...prev, [type]: !prev[type] }));
@@ -132,7 +130,7 @@ const App = () => {
       </div>
       <h1 className="center-heading">Where do you want to travel?</h1>
       <div className="form-container">
-        <h2>Point of departure</h2>
+      <h2>Point of departure</h2>
         {/* Customized Select for Departure City */}
         <div className="custom-select" onClick={() => toggleDropdown('city')}>
           <div className="selected">
@@ -164,11 +162,8 @@ const App = () => {
             </div>
           )}
         </div>
-
-        {/* New Section for Date of Departure */}
         <h2>Date of departure</h2>
         <div className="date-selects">
-          {/* Container for Day, Month, Year selects */}
           <div className="custom-select date-select" onClick={() => toggleDropdown('day')}>
             <div className="selected">
               {selectedDay}
@@ -276,42 +271,38 @@ const App = () => {
             </div>
           )}
         </div>
-        {/* Search Button */}
+
         <div className="button-container">
           <button onClick={handleSubmit} className="search-button">
             Search
           </button>
         </div>
       </div>
-        <div className="divider"></div>
 
-<h1 className="center-heading">Daily activities in our hotels</h1>
+      <div className="divider"></div>
 
-<div className="dividerIcons">
-  <div className="iconsList">
-    <div className="iconsText">Hotel information provided with ease</div>
+      <h1 className="center-heading">Daily activities in our hotels</h1>
 
-    {/* Icons Row */}
-    <div className="iconsRow">
-      <FontAwesomeIcon icon={faMessage} />
-      <FontAwesomeIcon icon={faPhone} />
-      <FontAwesomeIcon icon={faLocationDot} />
-      <FontAwesomeIcon icon={faPlaneArrival} />
-      <FontAwesomeIcon icon={faUtensils} />
-    </div>
+      <div className="dividerIcons">
+        <div className="iconsList">
+          <div className="iconsText">Hotel information provided with ease</div>
+          <div className="iconsRow">
+            <FontAwesomeIcon icon={faMessage} />
+            <FontAwesomeIcon icon={faPhone} />
+            <FontAwesomeIcon icon={faLocationDot} />
+            <FontAwesomeIcon icon={faPlaneArrival} />
+            <FontAwesomeIcon icon={faUtensils} />
+          </div>
+          <div className="wordsRow">
+            <span>Reviews</span>
+            <span>Call us</span>
+            <span>Address</span>
+            <span>Arrivals</span>
+            <span>Restaurant</span>
+          </div>
+        </div>
+      </div>
 
-    {/* Words Row */}
-    <div className="wordsRow">
-      <span>Reviews</span>
-      <span>Call us</span>
-      <span>Address</span>
-      <span>Arrivals</span>
-      <span>Restaurant</span>
-    </div>
-  </div>
-</div>
-
-      {/* Render Footer */}
       <Footer />
     </div>
   );
