@@ -23,7 +23,7 @@ app.get('/api/data', (req, res) => {
           "Airport Pick-up and Drop-off",
           "Adapted accommodation for all types of families"
         ],
-        price_per_person: "21 491kr",
+        price_per_person: "21491",
         family: "Kids friendly",
         location: "Phuket",
         image: "https://cdn.pixabay.com/photo/2021/02/02/12/34/resort-5973816_1280.jpg"
@@ -36,7 +36,7 @@ app.get('/api/data', (req, res) => {
           "WiFi is included throughout the hotel",
           "All-Inclusive at an additional cost"
         ],
-        price_per_person: "22 150kr/person",
+        price_per_person: "22150",
         location: "Phuket",
         image: "https://pixnio.com/free-images/2017/06/23/2017-06-23-07-15-38-1152x766.jpg"
       },
@@ -49,7 +49,7 @@ app.get('/api/data', (req, res) => {
           "Gym",
           "Environmentally friendly"
         ],
-        price_per_person: "21 100kr",
+        price_per_person: "21100",
         location: "Phuket",
         image: "https://cdn.pixabay.com/photo/2015/09/07/19/12/hotel-928937_1280.jpg"
       }
