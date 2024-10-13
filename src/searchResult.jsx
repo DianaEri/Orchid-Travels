@@ -4,26 +4,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
-const SearchResult = ({ location }) => {
-  const { destination } = location.state; // Assuming you're passing destination through the navigate state
-  const [hotels, setHotels] = useState([]);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const fetchHotelData = async () => {
-      try {
-        const response = await fetch(`https://orchidtravels-yymu--5000--134daa3c.local-corp.webcontainer.io/api/hotels?destination=${destination}`);
-        console.log('Response:', response);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setHotels(data.hotels); // Adjust based on your API response structure
-      } catch (error) {
-        console.error('Error fetching hotel data:', error);
-        setError('No hotels found for the selected destination.'); // Show user-friendly message
+const SearchResult = () => {
+    const location = useLocation(); // Get the location object from the hook
+    const { destination } = location.state || {}; // Use optional chaining to avoid errors
+    const [hotels, setHotels] = useState([]);
+    const [error, setError] = useState('');
+  
+    useEffect(() => {
+      if (!destination) {
+        setError('No destination provided.');
+        return; // Exit if destination is not provided
       }
-    };
+  
+      const fetchHotelData = async () => {
+        try {
+          const response = await fetch(`https://your-api-url.com/api/hotels?destination=${destination}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          setHotels(data.hotels); // Adjust based on your API response structure
+        } catch (error) {
+          console.error('Error fetching hotel data:', error);
+          setError('No hotels found for the selected destination.');
+        }
+      };
 
     fetchHotelData();
   }, [destination]);
