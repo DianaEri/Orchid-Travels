@@ -86,7 +86,7 @@ const SearchResult = () => {
         
                             {/* Calculate total price based on number of adults and children */}
                             <p>Total Price: {(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')} kr</p>
-                            <p>Price details</p>
+                            <p>Pricing Details &gt;</p>
                             <p>Price per person: {hotel.price_per_person.toLocaleString('sv-SE')} kr</p>
                             <div className="divider"></div>
                     </div>
