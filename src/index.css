@@ -195,15 +195,22 @@ button:focus-visible {
 
 .dividerIcons {
   width: 100%; /* Full width */
-  height: 10em; /* Fixed height */
+  height: 11em; /* Fixed height */
   display: flex;
   justify-content: center; /* Center child elements horizontally */
   align-items: center; /* Center child elements vertically */
   background-color: #f2e3cc;
 }
 
+.dividerSearch {
+  width: 100%; /* Full width */
+  height: 5em; /* Fixed height */
+  display: flex;
+  justify-content: center; /* Center child elements horizontally */
+  align-items: center; /* Center child elements vertically */
+}
+
 .iconsList {
-  height: 90%; /* 90% of the dividerIcons height */
   width: 100%; /* Flexing width */
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -215,21 +222,15 @@ button:focus-visible {
 .iconsText {
   font-weight: bold;
   font-size: large;
+  padding-bottom: 30px;
 }
 
 .iconsRow {
+  display: flex; 
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
   font-size: 2em;
-}
-
-.wordsRow {
-  font-size: small;
-}
-
-.iconsRow {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: space-between; /* Distribute evenly */
-  width: 90%; /* Full width */
-  margin: 10px 0; /* Space between rows */
 }
 
 .wordsRow {
@@ -237,6 +238,7 @@ button:focus-visible {
   justify-content: space-between; /* Distribute evenly */
   width: 100%; /* Full width */
   margin: 10px 0; /* Space between rows */
+  font-size: small;
 }
 
 .iconsRow .fa-icon, .wordsRow span {

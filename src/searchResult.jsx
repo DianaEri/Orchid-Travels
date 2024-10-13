@@ -60,7 +60,7 @@ const SearchResult = () => {
                             ))}
                         </ul>
 
-<div className="dividerIcons">
+<div className="dividerSearch">
   <div className="iconsList">
     <div className="iconsRow">
       <FontAwesomeIcon icon={faMessage} />
