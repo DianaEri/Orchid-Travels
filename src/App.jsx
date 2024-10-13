@@ -87,11 +87,19 @@ const App = () => {
       });
   }, []);
 
+  useEffect(() => {
+    console.log('Dropdown open state changed:', dropdownOpen);
+  }, [dropdownOpen]);
+
   const toggleDropdown = (type) => {
     setDropdownOpen((prev) => ({ ...prev, [type]: !prev[type] }));
+    console.log('Dropdown state:', dropdownOpen);
   };
 
   const handleOptionClick = (type, value) => {
+    console.log('Clicked option:', type, value); // Log option clicks
+    
+    // Update the selected value based on the dropdown type
     switch (type) {
       case 'city':
         setSelectedCity(value);
@@ -120,7 +128,12 @@ const App = () => {
       default:
         break;
     }
-    setDropdownOpen((prev) => ({ ...prev, [type]: false })); // Close the dropdown
+    
+    setDropdownOpen((prev) => {
+      const newState = { ...prev, [type]: false };
+      console.log('Dropdown state after selection:', newState);
+      return newState;
+  });
   };
 
   return (
