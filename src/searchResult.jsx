@@ -52,48 +52,6 @@ const SearchResult = () => {
         <div>
             <h1>Available Hotels</h1>
             <HotelList hotels={hotels} adultsAndChildrenText={adultsAndChildrenText} totalPersons={totalPersons} />
-            <div className="hotel-list">
-                {hotels.map((hotel) => (
-                    <div key={hotel.name} className="hotel-card">
-                        <img src={hotel.image} alt={hotel.name} />
-                        <h2>{hotel.name}</h2>
-                        {/* Unordered list for hotel description */}
-                        <ul>
-                            {hotel.description.map((descItem, index) => (
-                                <li key={index}>{descItem}</li> // List item for each description
-                            ))}
-                        </ul>
-
-                        <div className="dividerSearch">
-                        <div className="iconsList">
-                            <div className="iconsRow">
-                            <FontAwesomeIcon icon={faMessage} />
-                            <FontAwesomeIcon icon={faPhone} />
-                            <FontAwesomeIcon icon={faLocationDot} />
-                            <FontAwesomeIcon icon={faPlaneArrival} />
-                            <FontAwesomeIcon icon={faUtensils} />
-                            </div>
-                            <div className="wordsRow">
-                            <span>Reviews</span>
-                            <span>Call us</span>
-                            <span>Address</span>
-                            <span>Arrivals</span>
-                            <span>Restaurant</span>
-                            </div>
-                            </div>
-                            </div>
-                            <p>Flight and hotel</p>
-                            {/* Display number of adults and children */}
-                            <p>{adultsAndChildrenText}</p>
-        
-                            {/* Calculate total price based on number of adults and children */}
-                            <p>Total Price: {(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')} kr</p>
-                            <p>Pricing Details &gt;</p>
-                            <p>Price per person: {hotel.price_per_person.toLocaleString('sv-SE')} kr</p>
-                            <div className="divider"></div>
-                    </div>
-                ))}
-            </div>
         </div>
     );
 };
