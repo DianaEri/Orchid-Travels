@@ -45,7 +45,7 @@ const SearchResult = () => {
     }
 
     // Calculate total number of persons
-    const totalPersons = adults + children;
+    const totalPersons = parseInt(adults) + parseInt(children);
 
     const adultsAndChildrenText = `${adults} adult${adults !== 1 ? 's' : ''} and ${children} child${children !== 1 ? 'ren' : ''}`;
 
