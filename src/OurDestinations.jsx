@@ -17,9 +17,6 @@ const OurDestinations = () => {
       />
       <SubHeading 
         text="Explore Our Travel Destinations" 
-        fontSize="2.5rem" 
-        color="#4A90E2" 
-        textAlign="center" 
       />
       <TextBlock 
         text="Experience the stunning landscapes and outdoor activities in Krabi." 
