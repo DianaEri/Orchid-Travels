@@ -285,6 +285,10 @@ button:focus-visible {
   width: 100%;
 }
 
+.hotel-card {
+  width: 90%;
+}
+
 .Right {
   text-align: right;
 }
