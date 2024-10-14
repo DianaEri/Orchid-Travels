@@ -2,13 +2,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import ImageComponent from './ImageComponent';
 
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   return (
     <div className="hotel-list">
       {hotels.map((hotel) => (
         <div key={hotel.name} className="hotel-card">
-          <img src={hotel.image} alt={hotel.name} />
+          <ImageComponent src={hotel.image} alt={hotel.name} />
           <h2>{hotel.name}</h2>
           {/* Unordered list for hotel description */}
           <ul>
