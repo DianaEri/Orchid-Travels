@@ -9,7 +9,7 @@ https://codepen.io/naturalclar/pen/zEwvbg
 
 - Använde en färdig template från CodePen och anpassade koden för att passa utseendemålen för applikationen "Orchid Travels".
 - Modifierade koden för att använda Font Awesome för ikoner istället för ikoner skapade manuellt med CSS-styling.
-- Anpassade menu-arrayen för navigationsvalen. I vår applikation har vi tre val i menyn: "Orchid Travels", "About us" och "Our Hotels".
+- Anpassade menu-arrayen för navigationsvalen. I vår applikation har vi tre val i menyn: "Orchid Travels", "About us" och "Our Travel Destinations".
 - Gjorde komponenten responsiv med VW och rem.
 - Ändrade koden så att menyn kan öppnas med Font Awesome-ikoner.
 */
@@ -78,7 +78,7 @@ class Header extends React.Component {
       },
     };
 
-    const menu = ['Orchid Travels', 'About Us', 'Our Hotels'];
+    const menu = ['Orchid Travels', 'About Us', 'Our Travel Destinations'];
     const menuItems = menu.map((val, index) => (
       <MenuItem
         key={index}
