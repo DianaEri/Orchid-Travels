@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 import HotelList from './HotelList'; // Import the HotelList component
+import Footer from './Footer'; // Make sure this import is correct
 
 const SearchResult = () => {
     const [hotels, setHotels] = useState([]); // State to hold hotel data
@@ -52,6 +53,7 @@ const SearchResult = () => {
         <div>
             <h1>Available Hotels</h1>
             <HotelList hotels={hotels} adultsAndChildrenText={adultsAndChildrenText} totalPersons={totalPersons} />
+            <Footer />
         </div>
     );
 };

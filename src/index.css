@@ -290,6 +290,17 @@ button:focus-visible {
   width: auto;
 }
 
+.Right {
+  text-align: right;
+}
+
+.box {
+  display: flex;
+}
+.push {
+  margin-left: auto;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #000000;
