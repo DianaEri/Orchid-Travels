@@ -2,7 +2,7 @@ import React from 'react';
 
 const SubHeading = ({
   text,
-  fontSize = '1.1rem',     
+  fontSize = '1.2rem',     
   color = '#000',     
   textAlign = 'left',  
   margin = '1rem 2rem'      
