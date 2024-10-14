@@ -13,6 +13,7 @@ import TripadvisorLogo from './assets/tripadvisor.svg';
 import Header from './Header'; // Import the Header component
 import YellowLine from './YellowLine'; // Import the YellowLine component
 import Banner from './Banner';
+import { Link } from 'react-router-dom';
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
@@ -38,7 +39,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
+      {/* Temporary link to OurDestinations.jsx */}
+      <nav>
+        <Link to="/our-destinations">Our Destinations</Link>
+      </nav>
       <Banner />
       <h1 className="center-heading">Where do you want to travel?</h1>
       <YellowLine/>
