@@ -11,21 +11,28 @@ import React from 'react';
 */
 
 
+
 const HeadingBlock = ({ 
   text, 
   fontSize = '1.3rem',  
   color = 'black', 
   textAlign = 'center', 
-  paddingLeft = '2rem',  
-  paddingRight = '2rem',
+  margin = '1rem 0',
+  width = '88%',
+  paddingLeft = '1rem',  // Adding default value for paddingLeft
+  paddingRight = '1rem'  // Adding default value for paddingRight
 }) => {
   const style = {
     fontSize: fontSize,   
     color: color,        
     textAlign: textAlign,   
-    paddingLeft: paddingLeft,  
-    paddingRight: paddingRight, 
-    fontFamily: 'Roboto, sans-serif !important'
+    paddingLeft: paddingLeft,  // Now paddingLeft is defined
+    paddingRight: paddingRight,  // Now paddingRight is defined
+    fontFamily: 'Roboto, sans-serif !important',
+    width: width,
+    maxWidth: '1200px',  
+    boxSizing: 'border-box',  
+    margin: '0 auto' 
   };
 
   return <h1 style={style}>{text}</h1>;  
