@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import Button from './Button'; // Import the Button component
 
 const SearchForm = ({ onSubmit, selectedDestination, setSelectedDestination, selectedAdults, setSelectedAdults, selectedChildren, setSelectedChildren }) => {
   const [dropdownOpen, setDropdownOpen] = useState({
@@ -174,10 +175,10 @@ const SearchForm = ({ onSubmit, selectedDestination, setSelectedDestination, sel
 </select>
 
 
-      <div className="button-container">
-        {/* Remove onClick handler from the button; it's handled by the form's onSubmit */}
-        <button type="submit" className="search-button">Search</button>
-      </div>
+      {/* Use the Button component */}
+      <Button type="submit" className="search-button">
+        Search
+      </Button>
       </div>
     </form> // Closing form tag
   );
