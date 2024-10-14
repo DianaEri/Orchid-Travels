@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageComponent = ({ src, alt, width = 'auto', height = '20em' }) => {
+const ImageComponent = ({ src, alt, width = '100%', height = 'auto' }) => {
   return (
     <img 
       src={src} 

@@ -282,6 +282,11 @@ button:focus-visible {
 }
 
 .hotel-list {
+  display: flex;               /* Use flexbox for layout */
+  flex-wrap: wrap;            /* Allow wrapping of hotel cards */
+  justify-content: center;     /* Center the cards horizontally */
+  gap: 20px;                  /* Add space between cards, adjust as needed */
+  margin: 0 auto;             /* Center the list container */
   width: 100%;
 }
 
