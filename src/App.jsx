@@ -5,20 +5,21 @@ import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUte
 import { faYoutube, faSquareInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
 import Bild from './assets/Bild.jpg';
 import SearchForm from './SearchForm'; // Import the SearchForm component
+import Footer from './Footer'; // Make sure this import is correct
+import HotelInfoIcons from './HotelInfoIcons'; // Make sure this import is also correct
+import Divider from './Divider'; // Import the Divider component
 import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
-import Footer from './Footer';
-import HotelInfoIcons from './HotelInfoIcons'; // Import the new HotelInfoIcons component
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
   const [selectedAdults, setSelectedAdults] = useState('Nr of adults');
   const [selectedChildren, setSelectedChildren] = useState('Nr of children');
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission
     if (selectedDestination !== 'City' && selectedAdults !== 'Nr of adults') {
       navigate('/search-result', {
         state: {
@@ -31,7 +32,7 @@ const App = () => {
       console.log('Please select a valid destination and number of adults');
     }
   };
-
+  
   return (
     <div className="App">
       <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
@@ -41,7 +42,8 @@ const App = () => {
       {/* Render the SearchForm component and pass handleSubmit */}
       <SearchForm onSubmit={handleSubmit} />
 
-      <div className="divider"></div>
+      {/* Use the Divider component */}
+      <Divider />
 
       <h1 className="center-heading">Daily activities in our hotels</h1>
 

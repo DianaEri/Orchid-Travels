@@ -50,7 +50,7 @@ const SearchForm = ({ onSubmit }) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission
     if (selectedDestination !== 'City' && selectedAdults !== 'Nr of adults') {
       onSubmit({
         destination: selectedDestination,
@@ -63,7 +63,7 @@ const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="form-container">
+    <form onSubmit={handleSubmit} className="form-container"> {/* Wrap everything in a form element */}
       <h2>Point of departure</h2>
       <div className="custom-select" onClick={() => toggleDropdown('city')}>
         <div className="selected">
@@ -125,7 +125,7 @@ const SearchForm = ({ onSubmit }) => {
           {dropdownOpen.month && (
             <div className="options">
               {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-                .map((month, index) => (
+                .map((month) => (
                   <div key={month} className="option" onClick={() => handleOptionClick('month', month)}>
                     {month}
                   </div>
@@ -155,10 +155,8 @@ const SearchForm = ({ onSubmit }) => {
         </div>
       </div>
 
-      {/* New Section for Guests */}
       <h2>Guests</h2>
       <div className="guest-selects">
-        {/* Container for Adults and Children selects */}
         <div className="custom-select guest-select" onClick={() => toggleDropdown('adults')}>
           <div className="selected">
             {selectedAdults}
@@ -191,7 +189,6 @@ const SearchForm = ({ onSubmit }) => {
         </div>
       </div>
 
-      {/* New Section for Length of Stay */}
       <h2>Length of stay</h2>
       <div className="custom-select" onClick={() => toggleDropdown('lengthOfStay')}>
         <div className="selected">
@@ -209,11 +206,12 @@ const SearchForm = ({ onSubmit }) => {
       </div>
 
       <div className="button-container">
-        <button onClick={handleSubmit} className="search-button">
+        {/* Remove onClick handler from the button; it's handled by the form's onSubmit */}
+        <button type="submit" className="search-button">
           Search
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
