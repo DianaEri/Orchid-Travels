@@ -18,7 +18,7 @@ const TextBlock = ({
   paddingLeft = '2rem',  
   paddingRight = '2rem',
   paddingBottom = '1rem',
-  width = '95%'
+  width = '99%'
 }) => {
   const style = {
     fontSize: fontSize,   

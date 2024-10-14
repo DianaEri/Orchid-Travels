@@ -9,6 +9,7 @@ import Footer from './Footer'; // Import the footer component
 import YellowLine from './YellowLine'; // Import the YellowLine component
 import beach from './assets/beach.jpg';
 import getaway from './assets/getaway.jpg';
+import bangkok from './assets/bangkok.jpg';
 
 const OurDestinations = () => {
   return (
@@ -90,7 +91,7 @@ const OurDestinations = () => {
         to the bustling markets and street food stalls, Bangkok is 
         a sensory feast."
       />
-
+      <ImageComponent src={bangkok} alt="Bangkok during the night" />
       <TextBlock 
         text="Bangkok's lively streets offer something for every 
         traveler. Whether you’re navigating the colorful markets 
