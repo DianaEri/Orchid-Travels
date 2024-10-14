@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
+import HotelList from './HotelList'; // Import the HotelList component
 
 const SearchResult = () => {
     const [hotels, setHotels] = useState([]); // State to hold hotel data
@@ -50,6 +51,7 @@ const SearchResult = () => {
     return (
         <div>
             <h1>Available Hotels</h1>
+            <HotelList hotels={hotels} adultsAndChildrenText={adultsAndChildrenText} totalPersons={totalPersons} />
             <div className="hotel-list">
                 {hotels.map((hotel) => (
                     <div key={hotel.name} className="hotel-card">
