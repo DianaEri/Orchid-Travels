@@ -5,14 +5,19 @@ const SubHeading = ({
   fontSize = '1.2rem',     
   color = '#000',     
   textAlign = 'left',  
-  margin = '1rem 2rem'      
+  margin = '1rem 0',
+  width = '88%'  
 }) => {
   const style = {
     fontSize: fontSize,
     color: color,      
     textAlign: textAlign,
     margin: margin,
-    fontFamily: 'Roboto, sans-serif',  
+    fontFamily: 'Roboto, sans-serif', 
+    width: width,
+    maxWidth: '1200px',  
+    boxSizing: 'border-box',  
+    margin: '0 auto' 
   };
 
   return <h2 style={style}>{text}</h2>;

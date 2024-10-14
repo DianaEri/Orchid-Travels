@@ -17,7 +17,8 @@ const TextBlock = ({
   textAlign = 'left', 
   paddingLeft = '2rem',  
   paddingRight = '2rem',
-  paddingBottom = '1rem' 
+  paddingBottom = '1rem',
+  width = '95%'
 }) => {
   const style = {
     fontSize: fontSize,   
@@ -26,7 +27,9 @@ const TextBlock = ({
     paddingLeft: paddingLeft,  
     paddingRight: paddingRight, 
     paddingBottom: paddingBottom, 
-    fontFamily: 'Roboto, sans-serif !important'
+    fontFamily: 'Roboto, sans-serif !important',
+    width: width,
+    boxSizing: 'border-box'  
   };
 
   return <p style={style}>{text}</p>; 

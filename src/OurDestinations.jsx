@@ -7,9 +7,9 @@ const OurDestinations = () => {
   return (
     <div>
       {/* Heading for the page */}
-      <HeadingBlock
+      {/* <HeadingBlock
         text="Our Travel Destinations: Explore Thailand with Orchid Travels"
-      />
+      /> */}
 
       {/* Description for each destination */}
       <TextBlock 
