@@ -12,7 +12,7 @@ import React from 'react';
 
 const TextBlock = ({ 
   text, 
-  fontSize = '1.3rem', 
+  fontSize = '1.1rem', 
   color = 'black', 
   textAlign = 'left', 
   paddingLeft = '2rem',  
