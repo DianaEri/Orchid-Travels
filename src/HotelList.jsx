@@ -41,7 +41,7 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
           <p>{adultsAndChildrenText}</p>
           <p className='Right'>{(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')}kr</p>
           <div className='box'>
-            <p>Pricing Details &gt;</p>
+            <p className='linkStyle'>Pricing Details &gt;</p>
             <p className='push'>{hotel.price_per_person.toLocaleString('sv-SE')}kr/person</p>
           </div>
           <Divider />

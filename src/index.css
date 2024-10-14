@@ -301,6 +301,10 @@ button:focus-visible {
   margin-left: auto;
 }
 
+.linkStyle {
+  
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #000000;
