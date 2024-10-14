@@ -10,6 +10,7 @@ import HotelInfoIcons from './HotelInfoIcons'; // Make sure this import is also 
 import Divider from './Divider'; // Import the Divider component
 import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
+import Header from './Header'; // Import the Header component
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
@@ -35,6 +36,8 @@ const App = () => {
 
   return (
     <div className="App">
+     {/*Header component*/}
+      <Header />
       <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
         <img src={Bild} alt="Top banner" style={{ width: '100%', height: 'auto' }} />
       </div>
