@@ -302,7 +302,7 @@ button:focus-visible {
 }
 
 .linkStyle {
-  
+  color: #BE8730;
 }
 
 @media (prefers-color-scheme: light) {
