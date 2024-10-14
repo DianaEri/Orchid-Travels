@@ -75,13 +75,12 @@ h2 {
 .guest-selects {
   display: flex; /* Use flexbox for alignment */
   justify-content: space-between; /* Distribute items evenly */
-  width: 100%; /* Make these sections take the full width */
+  width: 102%; /* Make these sections take the full width */
 }
 
 .custom-select {
   flex: 1; /* Allow the selects to grow and fill the space evenly */
   width: 100%; /* Ensure the custom-select takes full width */
-  margin-right: 10px; /* Space between select boxes */
 }
 
 /* Remove margin from the last item in the row */
