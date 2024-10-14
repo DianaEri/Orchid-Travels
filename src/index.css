@@ -306,6 +306,37 @@ button:focus-visible {
   margin-top: 10px;
 }
 
+/* Button.css (or your existing stylesheet) */
+.custom-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+}
+
+.custom-button.read-more-btn {
+  background-color: #28a745; /* Green for Read more */
+}
+
+.custom-button.book-now-btn {
+  background-color: #ff5722; /* Orange for Book now */
+}
+
+/* Flexbox for the buttons */
+.hotel-card-buttons {
+  display: flex;
+  justify-content: space-between; /* Even spacing */
+  gap: 10px; /* Space between the buttons */
+  width: 100%; /* Ensure full width */
+}
+
+.custom-button {
+  flex: 1; /* Make buttons equally take up space */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #000000;

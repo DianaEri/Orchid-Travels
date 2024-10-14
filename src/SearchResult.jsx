@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import './index.css';
 import HotelList from './HotelList'; // Import the HotelList component
 import Footer from './Footer'; // Make sure this import is correct
+import Header from './Header'; // Import the Header component
 
 const SearchResult = () => {
     const [hotels, setHotels] = useState([]); // State to hold hotel data
@@ -49,6 +50,7 @@ const SearchResult = () => {
 
     return (
         <div>
+            <Header />
             <h1>Available Hotels</h1>
             <HotelList hotels={hotels} adultsAndChildrenText={adultsAndChildrenText} totalPersons={totalPersons} />
             <Footer />

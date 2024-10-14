@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import ImageComponent from './ImageComponent';
 import Divider from './Divider'; // Import the Divider component
+import Button from './Button'; // Import the Button component
 
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   return (
@@ -43,6 +44,17 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
           <div className='box'>
             <div className='linkStyle'>Pricing Details &gt;</div>
             <div className='push'>{hotel.price_per_person.toLocaleString('sv-SE')}kr/person</div>
+          </div>
+                    {/* Flex container for the buttons */}
+                    <div className="hotel-card-buttons">
+            {/* Use the Button component for each button */}
+            <Button type="button" className="read-more-btn" onClick={() => handleReadMore(hotel)}>
+              Read more
+            </Button>
+
+            <Button type="button" className="book-now-btn" onClick={() => handleBookNow(hotel)}>
+              Book now
+            </Button>
           </div>
           <Divider />
         </div>

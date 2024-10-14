@@ -58,8 +58,6 @@ const App = () => {
 
       <h1 className="center-heading">Daily activities in our hotels</h1>
 
-      <YellowLine/>
-
       <HotelInfoIcons />
 
       <Footer />
