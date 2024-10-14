@@ -13,6 +13,7 @@ import TripadvisorLogo from './assets/tripadvisor.svg';
 import Header from './Header'; // Import the Header component
 import YellowLine from './YellowLine'; // Import the YellowLine component
 import BlackLine from './BlackLine'; // Import the BlackLine component
+import TextBlock from './TextBlock'; // Import the TextBlock component
 import Banner from './Banner';
 import { Link } from 'react-router-dom';
 
@@ -63,6 +64,12 @@ const App = () => {
       <Divider />
 
       <h1 className="center-heading">Daily activities in our hotels</h1>
+      
+      <TextBlock 
+        text="Now our best hotels are getting even better. By the summer of 2024, we will launch more
+        new daily activities than ever."
+      />
+
 
       <HotelInfoIcons />
 
