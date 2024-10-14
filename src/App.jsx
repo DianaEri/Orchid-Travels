@@ -32,7 +32,7 @@ const App = () => {
       console.log('Please select a valid destination and number of adults');
     }
   };
-  
+
   return (
     <div className="App">
       <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
@@ -40,7 +40,15 @@ const App = () => {
       </div>
       <h1 className="center-heading">Where do you want to travel?</h1>
       {/* Render the SearchForm component and pass handleSubmit */}
-      <SearchForm onSubmit={handleSubmit} />
+      <SearchForm 
+        onSubmit={handleSubmit} 
+        selectedDestination={selectedDestination} 
+        setSelectedDestination={setSelectedDestination}
+        selectedAdults={selectedAdults}
+        setSelectedAdults={setSelectedAdults}
+        selectedChildren={selectedChildren}
+        setSelectedChildren={setSelectedChildren}
+      />
 
       {/* Use the Divider component */}
       <Divider />

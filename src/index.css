@@ -110,14 +110,9 @@ h2 {
   z-index: 1000; /* Keep dropdown above other elements */
 }
 
-.option {
-  padding: 10px;
+option:hover {
   cursor: pointer;
-}
-.option:hover {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #d9d9d9;
+  background-color: white;
 }
 
 /* Adjust button container for centering */
@@ -128,7 +123,7 @@ h2 {
   margin-top: 20px; /* Space above the button */
 }
 
-.selected {
+select {
   padding: 10px 10px;
   background-color: #d9d9d9;
   border-radius: 8px;
@@ -136,6 +131,9 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1; /* Allow the selects to grow and fill the space evenly */
+  width: 100%; /* Ensure the custom-select takes full width */
+  margin-right: 10px; /* Space between select boxes */
 }
 
 .custom-select,
