@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 import HotelList from './HotelList'; // Import the HotelList component
 import Footer from './Footer'; // Make sure this import is correct
