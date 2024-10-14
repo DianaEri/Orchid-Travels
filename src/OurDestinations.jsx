@@ -1,5 +1,5 @@
 import React from 'react';
-import TextBlock from './TextBlock'; // Adjust the path as necessary
+import TextBlock from './TextBlock'; 
 
 const OurDestinations = () => {
   return (

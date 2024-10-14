@@ -12,9 +12,7 @@ import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
 import Header from './Header'; // Import the Header component
 import YellowLine from './YellowLine'; // Import the YellowLine component
-import TextBlock from './TextBlock'; // Import the YellowLine component
 import Banner from './Banner';
-import HeadingBlock from './HeadingBlock';
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
@@ -42,11 +40,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Banner />
-      
-      <HeadingBlock 
-        text="Where do you want to travel?" 
-      />
-
+      <h1 className="center-heading">Where do you want to travel?</h1>
       <YellowLine/>
       {/* Render the SearchForm component and pass handleSubmit */}
       <SearchForm 
@@ -62,18 +56,8 @@ const App = () => {
       {/* Use the Divider component */}
       <Divider />
 
+      <h1 className="center-heading">Daily activities in our hotels</h1>
 
-      <HeadingBlock 
-        text="Daily activities in our hotels" 
-      />
-
-      <YellowLine/>
-
-      <TextBlock 
-        text="Now our best hotels are getting even better. By the summer of 2024, we will launch more
-        new daily activities than ever."
-      />
-    
       <HotelInfoIcons />
 
       <Footer />
