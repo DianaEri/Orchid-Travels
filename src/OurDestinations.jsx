@@ -23,10 +23,37 @@ const OurDestinations = () => {
       />
 
       <TextBlock 
-        text="Discover the rich history and bustling life of Bangkok." 
+        text="Explore Phuket's vibrant nightlife, where the streets of Patong Beach come alive with entertainment and dining options. For a more serene experience, visit the island’s cultural landmarks, like the Big Buddha or the historic Old Town. From luxury resorts to beachfront bungalows, Orchid Travels will ensure your stay in Phuket is both relaxing and exhilarating." 
       />
 
-      {/* You can add more TextBlock components for additional text or descriptions as needed */}
+      <SubHeading 
+        text="Krabi: Nature’s Hidden Gem" 
+      />
+
+      <TextBlock 
+        text="For travelers looking to escape into nature, Krabi is the perfect destination. Known for its dramatic limestone cliffs, crystal-clear waters, and mangrove forests, Krabi offers a mix of adventure and serenity. Famous landmarks like Railay Beach, the Phi Phi Islands, and the Emerald Pool are ideal for those who love outdoor activities such as rock climbing, snorkeling, and kayaking."
+      />
+
+      <TextBlock 
+        text="Krabi’s charm lies in its ability to blend luxury with untouched natural beauty. Whether you prefer a peaceful boat ride through its islands or exploring the vibrant coral reefs, Krabi is a destination where nature takes center stage. With Orchid Travels, your journey to this beautiful province will be nothing short of spectacular, offering a peaceful retreat from the everyday."
+      />
+
+      <SubHeading 
+        text="Bangkok: The City that Never Sleeps" 
+      />
+
+      <TextBlock 
+        text="A trip to Thailand wouldn’t be complete without experiencing the vibrant capital city, Bangkok. This bustling metropolis is where ancient culture meets modern luxury. From the majestic Grand Palace and the intricate Wat Arun to the bustling markets and street food stalls, Bangkok is a sensory feast."
+      />
+
+      <TextBlock 
+        text="Bangkok's lively streets offer something for every traveler. Whether you’re navigating the colorful markets of Chatuchak, dining at world-class restaurants, or shopping at high-end malls, the city is a hub of activity day and night. Known for its floating markets and a rich history of temples, Bangkok promises a mix of traditional Thai culture with the modern conveniences of a global city. Orchid Travels provides tailored itineraries to explore the best that Bangkok has to offer, ensuring your trip is a seamless blend of adventure and relaxation."
+      />
+
+      <TextBlock 
+       text="At Orchid Travels, we believe every journey is unique. Whether you are dreaming of Phuket’s sunny beaches, Krabi’s natural wonders, or Bangkok’s cityscape, our travel experts are here to make your dream holiday a reality. Join us, and discover the beauty of Thailand like never before."
+      />
+
     </div>
   );
 };
