@@ -44,7 +44,7 @@ const OurDestinations = () => {
         beaches, such as Patong, Kata, and Karon, this island 
         offers more than just stunning coastlines." 
       />
-      <ImageComponent src={beach} alt="Boats along the beach" />
+      <ImageComponent src={beach} alt="Beach surrounded by cliffs" />
       <TextBlock 
         text="Explore Phuket's vibrant nightlife, where the 
         streets of Patong Beach come alive with entertainment 
@@ -68,7 +68,7 @@ const OurDestinations = () => {
         Pool are ideal for those who love outdoor activities such 
         as rock climbing, snorkeling, and kayaking."
       />
-      <ImageComponent src={getaway} alt="Luxurious hotel near cliffs" />
+      <ImageComponent src={getaway} alt="Statue with flowers" />
       <TextBlock 
         text="Krabi’s charm lies in its ability to blend luxury with 
         untouched natural beauty. Whether you prefer a peaceful boat 
