@@ -12,6 +12,7 @@ import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
 import Header from './Header'; // Import the Header component
 import YellowLine from './YellowLine'; // Import the YellowLine component
+import BlackLine from './BlackLine'; // Import the BlackLine component
 import Banner from './Banner';
 import { Link } from 'react-router-dom';
 
