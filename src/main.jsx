@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';  // Import rout
 import App from './App.jsx';
 import SearchResult from './SearchResult.jsx';  // Import your search result page
 import './index.css';
+import OurDestinations from './OurDestinations.jsx'; // Adjust the path as necessary
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />  {/* Home Route */}
         <Route path="/search-result" element={<SearchResult />} />  {/* Search Result Route */}
+        <Route path="/our-destinations" element={<OurDestinations />} /> {/* New route */}
       </Routes>
     </BrowserRouter>
   </StrictMode>
