@@ -20,7 +20,8 @@ const HeadingBlock = ({
   margin = '1rem 0',
   width = '88%',
   paddingLeft = '1rem',  // Adding default value for paddingLeft
-  paddingRight = '1rem'  // Adding default value for paddingRight
+  paddingRight = '1rem',  // Adding default value for paddingRight
+  paddingTop = '1rem'
 }) => {
   const style = {
     fontSize: fontSize,   
@@ -28,6 +29,7 @@ const HeadingBlock = ({
     textAlign: textAlign,   
     paddingLeft: paddingLeft,  // Now paddingLeft is defined
     paddingRight: paddingRight,  // Now paddingRight is defined
+    paddingTop: paddingTop,
     fontFamily: 'Roboto, sans-serif !important',
     width: width,
     maxWidth: '1200px',  
