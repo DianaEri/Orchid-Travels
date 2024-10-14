@@ -7,7 +7,8 @@ import statue from './assets/statue.jpg'
 import Divider from './Divider'; // Import the Divider component
 import Footer from './Footer'; // Import the footer component
 import YellowLine from './YellowLine'; // Import the YellowLine component
-import beach from './assets/beach.jpg'
+import beach from './assets/beach.jpg';
+import getaway from './assets/getaway.jpg';
 
 const OurDestinations = () => {
   return (
@@ -66,7 +67,7 @@ const OurDestinations = () => {
         Pool are ideal for those who love outdoor activities such 
         as rock climbing, snorkeling, and kayaking."
       />
-
+      <ImageComponent src={getaway} alt="Luxurious hotel near cliffs" />
       <TextBlock 
         text="Krabi’s charm lies in its ability to blend luxury with 
         untouched natural beauty. Whether you prefer a peaceful boat 
