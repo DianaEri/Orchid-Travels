@@ -356,37 +356,89 @@ button:focus-visible {
 
 
 /*Styling för Header.jsx START*/
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.topnav {
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-@keyframes slideIn {
-  0% {
-    transform: translateX(-2%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+#myLinks {
+  display: none;
 }
 
-@keyframes shrink {
-  0% {
-    width: 95%;
-  }
-  100% {
-    width: 90%;
-  }
+#myLinks.open {
+  display: block;
+  position: fixed;       
+  top: 0;
+  left: 0;
+  width: 100vw;       
+  height: 100vh;        
+  background-color: white; 
+  z-index: 999;          
+  padding: 2rem;        
+
 }
 
-.orchidTravelsText {
+.menuOptions {
+color: black !important;
+}
+
+.topnav a {
+  color: white;
+  padding: 1rem 1rem; 
+  text-decoration: none;
+  font-size: 1.5rem; 
+  display: block;
+}
+
+.menuItems {
+  padding-top: 5rem;
+}
+
+.orchidTravelsMenu{
   color: #D4A355!important; 
 }
 
+.topnav a.icon {
+  display: block;
+  margin-right: auto;
+  font-size: 1.5rem; 
+  color: black;
+}
+
+
+.wrapLogoTogether {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
+  width: 100%;
+}
+
+.centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem; 
+}
+
+.wrapLogoTogether a.icon {
+  position: absolute;
+  left: 0; 
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+.closeIcon {
+  position: absolute;
+  top: 1rem;
+  right: 2.1rem; 
+  color: black !important; 
+  font-size: 2rem; 
+  cursor: pointer; 
+}
 
 /*Styling för Header.jsx END*/

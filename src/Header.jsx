@@ -1,232 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './index.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import reactLogo from './assets/goldLogo.svg'; 
-import './index.css';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; 
+import goldLogo from './assets/goldLogo.svg'; 
 
 /*
-https://codepen.io/naturalclar/pen/zEwvbg
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar
 
-- Använde en färdig template från CodePen och anpassade koden för att passa utseendemålen för applikationen "Orchid Travels".
-- Modifierade koden för att använda Font Awesome för ikoner istället för ikoner skapade manuellt med CSS-styling.
-- Anpassade menu-arrayen för navigationsvalen. I vår applikation har vi tre val i menyn: "Orchid Travels", "About us" och "Our Travel Destinations".
-- Gjorde komponenten responsiv med VW och rem.
-- Ändrade koden så att menyn kan öppnas med Font Awesome-ikoner.
+-Använde mig av mallen från w3shool och som jag modifierade så att den passar
+applikationen "Orchid Travels" utseende mål.
+
+- Modifierade koden så att den använder Font Awesome ikoner. 
+- Modifierade koden i menu array för navigations valen. I vår applikation har vi tre val (Undersidor) i 
+menyn: "Orchid Travels" "About us" och "Our Travel destinations".
+- Modifierade koden så att menyn går att öppnas med FontAwesome ikonerna.
+- Modifierade koden så att komponenten blir responsiv med VW and rem.
 */
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuOpen: false,
-    };
-  }
 
-  handleMenuClick() {
-    this.setState({ menuOpen: !this.state.menuOpen });
-  }
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  handleLinkClick() {
-    this.setState({ menuOpen: false });
-  }
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-  render() {
-    const styles = {
-      container: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: '99',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: 'white',
-        width: '100%',
-        height: '10vh',
-        padding: '0 20px',
-        fontFamily: 'Roboto, sans-serif !important',  
-      },
-      logoContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'absolute',
-        left: '50%',
-        transform: 'translateX(-50%)',
-      },
-      logoImage: {
-        width: '4rem',
-        height: '4rem',
-      },
-      logoText: {
-        fontSize: '1.6rem',
-        marginLeft: '10px',
-        color: 'black',
-      },
-      body: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100vw',
-        filter: this.state.menuOpen ? 'blur(2px)' : null,
-        transition: 'filter 0.5s ease',
-        fontFamily: 'Roboto, sans-serif !important',  
-      },
-      menuButtonContainer: {
-        position: 'absolute',
-        left: '20px',
-      },
-    };
-
-    const menu = ['Orchid Travels', 'About Us', 'Our Travel Destinations'];
-    const menuItems = menu.map((val, index) => (
-      <MenuItem
-        key={index}
-        delay={`${index * 0.1}s`}
-        className={val === 'Orchid Travels' ? 'orchidTravelsText' : ''}
-        onClick={() => {
-          this.handleLinkClick();
-        }}
-      >
-        {val} 
-      </MenuItem>
-    ));
-
-    return (
-      <div>
-    
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-          rel="stylesheet"
-        />
-
-  
-        {!this.state.menuOpen && (
-          <div style={styles.container}>
-            <div style={styles.menuButtonContainer}>
-              <MenuButton
-                open={this.state.menuOpen}
-                onClick={() => this.handleMenuClick()}
-              />
-            </div>
-            <div style={styles.logoContainer}>
-              <img src={reactLogo} alt="React Logo" style={styles.logoImage} /> 
-              <span style={styles.logoText}>Orchid Travels</span> 
-            </div>
+  return (
+    <div className="mobile-container">
+      <div className="topnav">
+        <div className="wrapLogoTogether">
+          <a href="javascript:void(0);" className="icon" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} size="2x" />
+          </a>
+          <div className="centerContent">
+            <img 
+              src={goldLogo} 
+              alt="Gold Logo" 
+              style={{ width: '4rem', height: '4rem', marginRight: '0.5rem' }} 
+            />
+            Orchid Travels
           </div>
-        )}
-
-   
-        <Menu open={this.state.menuOpen} onClose={() => this.handleMenuClick()}>
-          {menuItems}
-        </Menu>
-        <div style={styles.body}></div>
-      </div>
-    );
-  }
-}
-
-class MenuButton extends React.Component {
-  render() {
-    const icon = this.props.open ? faTimes : faBars;
-    const buttonSize = { fontSize: '3rem', color: 'black' };
-
-    const buttonStyle = this.props.open
-      ? { position: 'absolute', top: '20px', right: '20px', cursor: 'pointer' }
-      : { cursor: 'pointer', marginRight: '10px' };
-
-    return (
-      <div onClick={this.props.onClick} style={buttonStyle}>
-        <FontAwesomeIcon icon={icon} style={buttonSize} /> 
-      </div>
-    );
-  }
-}
-
-class MenuItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-    };
-  }
-
-  handleHover() {
-    this.setState({ hover: !this.state.hover });
-  }
-
-  render() {
-    const styles = {
-      container: {
-        opacity: 0,
-        animation: '1s appear forwards',
-        animationDelay: this.props.delay,
-      },
-      menuItem: {
-        fontFamily: `'Roboto', sans-serif !important`, 
-        fontSize: '2rem', 
-        padding: '1rem 0',
-        margin: '0 5%',
-        cursor: 'pointer',
-        fontWeight: '800', 
-        color: this.state.hover ? 'gray' : 'black',
-        transition: 'color 0.2s ease-in-out',
-        animation: '0.5s slideIn forwards',
-        animationDelay: this.props.delay,
-      },
-    };
-    return (
-      <div style={styles.container}>
-        <div
-          className={`menuItem ${this.props.className}`}
-          style={styles.menuItem}
-          onMouseEnter={() => {
-            this.handleHover();
-          }}
-          onMouseLeave={() => {
-            this.handleHover();
-          }}
-          onClick={this.props.onClick}
-        >
-          {this.props.children} 
+        </div>
+        <div id="myLinks" className={menuOpen ? 'open' : ''}>
+          <a href="javascript:void(0);" className="closeIcon" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faTimes} size="2x" />
+          </a>
+          <div className='menuItems'>
+          <a className='orchidTravelsMenu' href="#orchidTravels">Orchid Travels</a>
+          <a className='menuOptions' href="#aboutUs">About Us</a>
+          <a className='menuOptions' href="#ourTravelDestination">Our Travel Destinations</a>
+          </div>
         </div>
       </div>
-    );
-  }
-}
-
-class Menu extends React.Component {
-  render() {
-    const styles = {
-      container: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        height: this.props.open ? '100%' : 0,
-        width: '100vw',
-        display: 'flex',
-        flexDirection: 'column',
-        background: 'white',
-        color: '#fafafa',
-        transition: 'height 0.3s ease',
-        zIndex: 2,
-      },
-      menuList: {
-        paddingTop: '3rem',
-        visibility: this.props.open ? 'visible' : 'hidden',
-      },
-    };
-    return (
-      <div style={styles.container}>
-    
-        {this.props.open && (
-          <MenuButton open={this.props.open} onClick={this.props.onClose} />
-        )}
-      
-        {this.props.open && <div style={styles.menuList}>{this.props.children}</div>}
-      </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Header;
