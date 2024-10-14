@@ -12,6 +12,7 @@ import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
 import Header from './Header'; // Import the Header component
 import YellowLine from './YellowLine'; // Import the YellowLine component
+import Banner from './Banner';
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
@@ -38,9 +39,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-        <img src={Bild} alt="Top banner" style={{ width: '100%', height: 'auto' }} />
-      </div>
+      <Banner />
       <h1 className="center-heading">Where do you want to travel?</h1>
       <YellowLine/>
       {/* Render the SearchForm component and pass handleSubmit */}
