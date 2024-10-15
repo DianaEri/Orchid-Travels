@@ -286,6 +286,7 @@ button:focus-visible {
   justify-content: center;     /* Center the cards horizontally */
   gap: 20px;                  /* Add space between cards, adjust as needed */            /* Center the list container */
   width: 100%;
+  text-align: left;
 }
 
 .hotel-card {
