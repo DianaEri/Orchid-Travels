@@ -7,6 +7,7 @@ import './index.css';
 import OurDestinations from './OurDestinations.jsx'; // Adjust the path as necessary
 import HotelList from './HotelList';
 import HotelDetail from './hotels/HotelDetail.jsx';
+import AboutUs from './AboutUs'; // Example component
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/our-travel-destinations" element={<OurDestinations />} />
         <Route path="/" element={<HotelList />} />
         <Route path="/hotels/:hotelName" element={<HotelDetail />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
