@@ -16,6 +16,7 @@ import buss from './assets/buss.jpg';
 import paradise from './assets/paradise.jpg';
 import romance from './assets/romance.jpg';
 import Footer from './Footer';
+import poolside from './assets/poolside.jpg'
 
 const LagunaPearlRetreat = () => {
   return (
@@ -101,6 +102,10 @@ const LagunaPearlRetreat = () => {
         our spa facilities, which are designed to 
         melt away stress and revitalize both body 
         and mind." 
+      />
+      <ImageComponent 
+        src={poolside} 
+        alt="View of hotel pool" 
       />
       <BlackLine />
       <SubHeading 
