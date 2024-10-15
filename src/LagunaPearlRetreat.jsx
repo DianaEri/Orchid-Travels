@@ -10,6 +10,8 @@ import HotelReviews from './HotelReviews';
 import Button from './Button';
 import TextBlock from './TextBlock';
 import BlackLine from './BlackLine';
+import bottle from './assets/bottle.jpg'
+import food from './assets/food.jpg'
 
 const LagunaPearlRetreat = () => {
   return (
@@ -23,7 +25,6 @@ const LagunaPearlRetreat = () => {
       <ImageComponent 
         src={cozyPool} 
         alt="Pool lounge area" 
-        style={{ marginBottom: '0', paddingBottom: '0' }} 
       />
       <HotelReviews />
       <div className="button-container">
@@ -48,9 +49,59 @@ const LagunaPearlRetreat = () => {
       />
       <BlackLine />
       <SubHeading 
-        text="Welcome to Laguna Pearl Retreat – 
-        Your Tropical Haven in Phuket, Thailand"
+        text="Luxury Accommodation for Every Traveler"
       />
+            <TextBlock 
+        text="At Laguna Pearl Retreat, we take pride 
+        in offering tailored accommodation options 
+        to suit the needs of every guest. Whether 
+        you're traveling solo, as a couple, with 
+        family, or in a larger group, we have 
+        something for everyone. Our family-friendly 
+        rooms and suites are designed with spacious 
+        layouts, ensuring comfort for families of 
+        all sizes, including those with young 
+        children, teenagers, or multi-generational 
+        groups. We also offer fully adapted 
+        accommodations for guests with special 
+        needs, ensuring accessibility and ease 
+        throughout the resort." 
+      />
+      <ImageComponent 
+        src={bottle} 
+        alt="Fancy hotel room" 
+      />
+      <BlackLine />
+      <SubHeading 
+        text="Relax and Unwind with 16 Stunning 
+        Pools & World-Class Spa"
+      />
+      <TextBlock 
+        text="Dining at Laguna Pearl Retreat 
+        is an unforgettable experience. Our 
+        all-inclusive restaurant offers a 
+        diverse menu featuring authentic Thai 
+        cuisine and international favorites. 
+        We understand the importance of dietary 
+        preferences and restrictions, which is 
+        why we are proud to offer a wide range 
+        of options, including vegetarian, vegan, 
+        gluten-free, and allergen-friendly 
+        meals. Whether you’re craving a taste 
+        of Thailand or something more 
+        familiar, our culinary team is 
+        committed to meeting your needs 
+        with delicious, high-quality dishes." 
+      />
+      <TextBlock 
+        text="Check out the hotel restaurant
+        Saffron Breeze Café" 
+      />
+      <ImageComponent 
+        src={food} 
+        alt="Refreshing meal" 
+      />
+      <BlackLine />
     </div>
   );
 };
