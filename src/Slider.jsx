@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import SliderOne from './assets/SliderOne.svg';
 import SliderTwo from './assets/SliderTwo.svg';
 import SliderThree from './assets/SliderThree.svg';
@@ -9,13 +11,17 @@ import SliderSix from './assets/SliderSix.svg';
 import SliderSeven from './assets/SliderSeven.svg';
 import SliderEight from './assets/SliderEight.svg';
 
-
 /*
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
 
--Använde mig av mallen från w3shool och som jag modifierade så att den passar
-applikationen "Orchid Travels" utseende mål.
+- Jag använde en mall från W3Schools och modifierade den för att passa applikationen 
+  "Orchid Travels" utseendemål.
+
+- Jag modifierade koden för att använda Font Awesome ikoner. 
+- Jag anpassade komponenten för att bli responsiv med VW och Rem enheter.
+- Jag ändrade koden för att använda SVG bilder istället för URL länkar.
 */
+
 
 const slides = [
   { src: SliderOne },
@@ -64,8 +70,12 @@ const Slider = () => {
           </div>
         ))}
 
-        <a className="prev" onClick={() => plusSlides(-1)}>❮</a>
-        <a className="next" onClick={() => plusSlides(1)}>❯</a>
+        <a className="prev" onClick={() => plusSlides(-1)}>
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </a>
+        <a className="next" onClick={() => plusSlides(1)}>
+          <FontAwesomeIcon icon={faAngleRight} />
+        </a>
       </div>
 
       <div className="dot-container">
