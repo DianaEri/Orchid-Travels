@@ -453,3 +453,31 @@ button:focus-visible {
 }
 /*Styling för Header.jsx END*/
 
+.reviewList {
+  display: flex;                      /* Enables flexbox on the container */
+  justify-content: center;            /* Center the boxes horizontally */
+  align-items: center;                /* Center the boxes vertically */
+  width: 100%;
+  background-color: #f2e3cc;
+  height: 8em;                        /* Fixed height for alignment */
+}
+
+.boxRow {
+  width: 200px;                       /* Fixed width for each box */
+  padding: 20px;                     /* Padding for visual clarity */
+  margin: 0 10px;                    /* Horizontal margin for spacing between boxRow items */
+  background-color: #f4f4f4;         /* Background color */
+  text-align: center;                /* Center the text inside the box */
+}
+
+/* Adjustments for boxRow2 */
+.boxRow2 {
+  display: flex;                      /* Enables flexbox on the second box */
+  flex-direction: column;             /* Stack items in a column */
+  justify-content: center;            /* Center items vertically within the column */
+  align-items: center;                /* Center items horizontally */
+}
+
+.boxRow2 div {
+  margin: 5px 0;                     /* Space between column items */
+}

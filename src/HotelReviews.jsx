@@ -5,12 +5,12 @@ import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@
 
 const HotelReviews = () => {
   return (
-    <div className="dividerIcons">
-      <div className="iconsList">
-        <div className="iconsRow">
+    <div className="reviewIcons">
+      <div className="reviewList">
+        <div className="boxRow1">
         <span>From Total price</span>
         </div>
-        <div className="wordsRow">
+        <div className="boxRow2">
           <FontAwesomeIcon icon={faMessage} />
           <span>Call us</span>
           <FontAwesomeIcon icon={faPhone} />
