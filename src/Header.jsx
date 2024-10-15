@@ -27,19 +27,22 @@ const Header = () => {
   return (
     <div className="mobile-container">
       <div className="topnav">
-        <div className="wrapLogoTogether">
-          <a href="javascript:void(0);" className="icon" onClick={toggleMenu}>
-            <FontAwesomeIcon icon={faBars} size="2x" />
-          </a>
-          <div className="centerContent">
-            <img 
-              src={goldLogo} 
-              alt="Gold Logo" 
-              style={{ width: '4rem', height: '4rem', marginRight: '0.5rem' }} 
-            />
-            Orchid Travels
+        {!menuOpen && (
+          <div className="wrapLogoTogether">
+            <a href="javascript:void(0);" className="icon" onClick={toggleMenu}>
+              <FontAwesomeIcon icon={faBars} size="2x" />
+            </a>
+            <div className="centerContent">
+              <img 
+                src={goldLogo} 
+                alt="Gold Logo" 
+                style={{ width: '4rem', height: '4rem', marginRight: '0.5rem' }} 
+              />
+              Orchid Travels
+            </div>
           </div>
-        </div>
+        )}
+
         <div id="myLinks" className={menuOpen ? 'open' : ''}>
           <a href="javascript:void(0);" className="closeIcon" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faTimes} size="2x" />
