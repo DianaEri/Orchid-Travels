@@ -1,9 +1,3 @@
-import React, { useState } from 'react';
-import './index.css'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; 
-import goldLogo from './assets/goldLogo.svg'; 
-
 /*
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar
 
@@ -17,6 +11,11 @@ menyn: "Orchid Travels" "About us" och "Our Travel destinations".
 - Modifierade koden så att komponenten blir responsiv med VW and rem.
 */
 
+import React, { useState } from 'react';
+import './App.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; 
+import goldLogo from './assets/goldLogo.svg'; 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,9 +45,9 @@ const Header = () => {
             <FontAwesomeIcon icon={faTimes} size="2x" />
           </a>
           <div className='menuItems'>
-          <a className='orchidTravelsMenu' href="#orchidTravels">Orchid Travels</a>
-          <a className='menuOptions' href="#aboutUs">About Us</a>
-          <a className='menuOptions' href="#ourTravelDestination">Our Travel Destinations</a>
+            <a className='orchidTravelsMenu' href="#orchidTravels">Orchid Travels</a>
+            <a className='menuOptions' href="#aboutUs">About Us</a>
+            <a className='menuOptions' href="#ourTravelDestination">Our Travel Destinations</a>
           </div>
         </div>
       </div>
