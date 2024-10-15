@@ -11,7 +11,7 @@ import YellowLine from './YellowLine'; // Import the YellowLine component
 import beach from './assets/beach.jpg';
 import getaway from './assets/getaway.jpg';
 import bangkok from './assets/bangkok.jpg';
-
+import BlackLine from './BlackLine';
 
 
 const OurDestinations = () => {
@@ -35,6 +35,7 @@ const OurDestinations = () => {
         three of Thailand’s most iconic locations: Phuket, Krabi, 
         and Bangkok." 
       />
+      <BlackLine/>
       <SubHeading 
         text="Phuket: Paradise Island Escape" 
       />
@@ -58,7 +59,7 @@ const OurDestinations = () => {
         to beachfront bungalows, Orchid Travels will ensure 
         your stay in Phuket is both relaxing and exhilarating." 
       />
-
+      <BlackLine/>
       <SubHeading 
         text="Krabi: Nature’s Hidden Gem" 
       />
@@ -82,7 +83,7 @@ const OurDestinations = () => {
         be nothing short of spectacular, offering a peaceful retreat 
         from the everyday."
       />
-
+      <BlackLine/>
       <SubHeading 
         text="Bangkok: The City that Never Sleeps" 
       />
@@ -108,7 +109,7 @@ const OurDestinations = () => {
         the best that Bangkok has to offer, ensuring your trip 
         is a seamless blend of adventure and relaxation."
       />
-
+      <BlackLine/>
       <TextBlock 
        text="At Orchid Travels, we believe every journey is unique. 
        Whether you are dreaming of Phuket’s sunny beaches, Krabi’s 
