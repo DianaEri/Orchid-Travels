@@ -1,10 +1,23 @@
 // HotelList.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // For routing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import ImageComponent from './ImageComponent';
 import Divider from './Divider'; // Import the Divider component
 import Button from './Button'; // Import the Button component
+
+  // Function to handle "Read more" button click
+  const handleReadMore = (hotel) => {
+    // Redirect to the hotel detail page, pass hotel name or ID in URL
+    navigate(`/hotels/${hotel.name}`);
+  };
+
+  // Function to handle "Book now" button click
+  const handleBookNow = (hotel) => {
+    // Redirect to the booking page for this hotel
+    navigate(`/hotels/${hotel.name}/book`);
+  };
 
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   return (

@@ -13,6 +13,12 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />  {/* Home Route */}
         <Route path="/search-result" element={<SearchResult />} />  {/* Search Result Route */}
         <Route path="/our-travel-destinations" element={<OurDestinations />} />
+        {/* Other routes */}
+        <Route path="/hotels" element={<HotelList />} />
+        {/* Route for hotel details */}
+        <Route path="/hotels/:hotelName" element={<HotelDetail />} />
+        {/* Route for hotel booking */}
+        <Route path="/hotels/:hotelName/book" element={<HotelBooking />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
