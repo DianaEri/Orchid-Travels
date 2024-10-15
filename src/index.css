@@ -416,10 +416,11 @@ button:focus-visible {
   color: #D4A355 !important;
 }
 
-.topnav a.icon {
+.topnav button.icon {
   font-size: 1.5rem;
   color: black;
   padding-left: 0.5rem; 
+  background-color: white;
 }
 
 .wrapLogoTogether {
