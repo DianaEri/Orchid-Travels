@@ -15,6 +15,7 @@ import food from './assets/food.jpg';
 import buss from './assets/buss.jpg';
 import paradise from './assets/paradise.jpg';
 import romance from './assets/romance.jpg';
+import Footer from './Footer';
 
 const LagunaPearlRetreat = () => {
   return (
@@ -179,6 +180,7 @@ const LagunaPearlRetreat = () => {
         src={romance} 
         alt="Drawn heart in sand" 
       />
+      <Footer />
     </div>
   );
 };
