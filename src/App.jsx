@@ -15,7 +15,6 @@ import YellowLine from './YellowLine'; // Import the YellowLine component
 import BlackLine from './BlackLine'; // Import the BlackLine component
 import TextBlock from './TextBlock'; // Import the TextBlock component
 import Banner from './Banner';
-import { Link } from 'react-router-dom';
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');

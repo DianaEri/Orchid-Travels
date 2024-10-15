@@ -12,6 +12,7 @@ menyn: "Orchid Travels" "About us" och "Our Travel destinations".
 */
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 import './App.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; 
@@ -48,9 +49,9 @@ const Header = () => {
             <FontAwesomeIcon icon={faTimes} size="2x" />
           </a>
           <div className='menuItems'>
-            <a className='orchidTravelsMenu' href="#orchidTravels">Orchid Travels</a>
-            <a className='menuOptions' href="#aboutUs">About Us</a>
-            <a className='menuOptions' href="#ourTravelDestination">Our Travel Destinations</a>
+            <Link className='orchidTravelsMenu' to="/">Orchid Travels</Link>
+            <Link className='menuOptions' to="/about-us">About Us</Link>
+            <Link className='menuOptions' to="/our-travel-destinations">Our Travel Destinations</Link>
           </div>
         </div>
       </div>

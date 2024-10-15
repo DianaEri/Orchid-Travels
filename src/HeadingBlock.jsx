@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 /*
   Skapar en specifikt stylad textlåda (För "Headings") där innehåll, storlek, färg och 
