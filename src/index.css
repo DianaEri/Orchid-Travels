@@ -448,7 +448,8 @@ button:focus-visible {
   margin-left: 0; 
   position: absolute; 
   right: 5rem; 
-  top: 1rem; 
+  top: 1rem;
+  background-color: white;
 }
 /*Styling för Header.jsx END*/
 
