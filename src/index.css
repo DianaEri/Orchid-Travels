@@ -396,7 +396,7 @@ button:focus-visible {
   color: black !important;
 }
 
-.topnav a {
+.topnav button {
   color: white;
   padding: 1rem 1rem;
   text-decoration: none;
