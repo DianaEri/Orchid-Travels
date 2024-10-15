@@ -3,7 +3,7 @@ import React from 'react';
 import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faSquareInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faSquareInstagram, faSquareFacebook, faAirbnb } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -11,8 +11,8 @@ const Footer = () => {
       <img src={BlackLogo} alt="Black Logo" style={{ height: '4.5em', width: 'auto' }} />
       <div className='logoName'>Orchid Travels</div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '1em 0' }}>
-        <img src={TripadvisorLogo} alt="Tripadvisor Logo" style={{ height: '5em', width: 'auto', marginRight: '10px' }} />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <FontAwesomeIcon icon={faAirbnb} className="social-icon" style={{ margin: '0 10px' }} />
           <FontAwesomeIcon icon={faSquareInstagram} className="social-icon" style={{ margin: '0 10px' }} />
           <FontAwesomeIcon icon={faYoutube} className="social-icon" style={{ margin: '0 10px' }} />
           <FontAwesomeIcon icon={faSquareFacebook} className="social-icon" style={{ margin: '0 10px' }} />

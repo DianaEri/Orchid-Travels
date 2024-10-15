@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faYelp } from '@fortawesome/free-brands-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faAirbnb } from '@fortawesome/free-brands-svg-icons';
 
 const HotelReviews = () => {
   return (
@@ -18,11 +18,11 @@ const HotelReviews = () => {
           <span>Orchid Travels guests</span>
         </div>
         <div className="reviewItem">
-          <FontAwesomeIcon icon={faYelp} />
+          <FontAwesomeIcon icon={faAirbnb} />
           <span> 4.7/5</span>
         </div>
         <div className="reviewItem">
-        <span>Yelp</span>
+        <span>Airbnb</span>
       </div>
       </div>
     </div>
