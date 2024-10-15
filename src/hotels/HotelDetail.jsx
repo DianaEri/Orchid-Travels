@@ -1,9 +1,8 @@
-// HotelDetail.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const HotelDetail = () => {
-  const { hotelName } = useParams(); // Extract the hotel name from the URL parameters
+  const { hotelName } = useParams(); // Get the hotel name from the URL
 
   // Fetch or define hotel details based on the hotelName
   const hotelDetails = {
@@ -16,6 +15,7 @@ const HotelDetail = () => {
     // Add more hotels here as needed
   };
 
+  // Find hotel details based on the hotelName from URL
   const hotel = hotelDetails[hotelName];
 
   return (
@@ -25,7 +25,6 @@ const HotelDetail = () => {
           <h1>{hotel.name}</h1>
           <p>{hotel.description}</p>
           <p>Price: {hotel.price} kr per night</p>
-          {/* Add more hotel details and styling as needed */}
         </>
       ) : (
         <p>Hotel not found.</p>
