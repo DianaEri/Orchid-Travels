@@ -7,11 +7,14 @@ import YellowLine from './YellowLine'; // Import the YellowLine component
 import ImageComponent from './ImageComponent';
 import cozyPool from './assets/cozyPool.jpg';
 import HotelReviews from './HotelReviews';
-import Button from './Button'
+import Button from './Button';
+import TextBlock from './TextBlock';
+import BlackLine from './BlackLine';
 
 const LagunaPearlRetreat = () => {
   return (
-    <div className="laguna-pearl-retreat" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className="laguna-pearl-retreat" style={{ display: 'flex', 
+    flexDirection: 'column', alignItems: 'center' }}>
       <Header />
       <HeadingBlock
         text="Hotel Laguna Pearl Retreat"
@@ -29,12 +32,25 @@ const LagunaPearlRetreat = () => {
         </button>
       </div>
       <SubHeading 
-        text="Phuket: Paradise Island Escape" 
-        style={{ paddingTop: '20px' }} // Adjust the value as needed
+        text="Welcome to Laguna Pearl Retreat – 
+        Your Tropical Haven in Phuket, Thailand" 
       />
-      <p>A beautiful retreat with stunning views of the Laguna coast.</p>
-      <p>Price: 150 kr per night</p>
-      {/* Add more detailed information about Laguna Pearl Retreat */}
+      <TextBlock 
+        text="Nestled just 100 meters from the pristine 
+        shores of Phuket’s famous coastline, Laguna 
+        Pearl Retreat is the ultimate destination for 
+        those seeking luxury, relaxation, and 
+        unforgettable island experiences. With stunning
+         views of the Andaman Sea and an unrivaled 
+         array of amenities, our resort offers a 
+         perfect blend of modern comforts and 
+         traditional Thai hospitality." 
+      />
+      <BlackLine />
+      <SubHeading 
+        text="Welcome to Laguna Pearl Retreat – 
+        Your Tropical Haven in Phuket, Thailand"
+      />
     </div>
   );
 };
