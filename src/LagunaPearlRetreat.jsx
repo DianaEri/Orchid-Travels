@@ -10,9 +10,11 @@ import HotelReviews from './HotelReviews';
 import Button from './Button';
 import TextBlock from './TextBlock';
 import BlackLine from './BlackLine';
-import bottle from './assets/bottle.jpg'
-import food from './assets/food.jpg'
-import buss from './assets/buss.jpg'
+import bottle from './assets/bottle.jpg';
+import food from './assets/food.jpg';
+import buss from './assets/buss.jpg';
+import paradise from './assets/paradise.jpg';
+import romance from './assets/romance.jpg';
 
 const LagunaPearlRetreat = () => {
   return (
@@ -125,6 +127,58 @@ const LagunaPearlRetreat = () => {
         alt="Airpoart transfer with buss" 
       />
       <BlackLine />
+      <SubHeading 
+        text="A Short Stroll to Paradise: 
+        Beachfront Bliss Just 100 Meters Away"
+      />
+      <TextBlock 
+        text="One of the highlights of 
+        Laguna Pearl Retreat is its 
+        unbeatable location, just a short 
+        100-meter walk from the nearest 
+        beach. Spend your days lounging 
+        on soft, white sands, swimming 
+        in the turquoise waters of the 
+        Andaman Sea, or trying out a 
+        range of exciting water sports. 
+        Our staff can assist with beach 
+        equipment rentals and 
+        recommendations for nearby 
+        attractions to make your 
+        stay even more memorable." 
+      />
+      <ImageComponent 
+        src={paradise} 
+        alt="Beatiful beach with warm weather" 
+      />
+      <BlackLine />
+      <SubHeading 
+        text="An Unforgettable Stay 
+        Awaits at Laguna Pearl Retreat"
+      />
+      <TextBlock 
+        text="Whether you’re here for 
+        a romantic getaway, a fun-filled 
+        family vacation, or a serene 
+        escape, Laguna Pearl Retreat 
+        promises a luxurious and 
+        unforgettable experience. 
+        With world-class amenities, 
+        personalized service, and the 
+        perfect location just steps 
+        from the beach, we invite 
+        you to indulge in the best 
+        that Phuket has to offer." 
+      />
+      <TextBlock 
+        text="Book your stay with 
+        us today, and let your journey 
+        to paradise begin." 
+      />
+      <ImageComponent 
+        src={romance} 
+        alt="Drawn heart in sand" 
+      />
     </div>
   );
 };
