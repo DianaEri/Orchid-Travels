@@ -22,7 +22,7 @@ const OurDestinations = () => {
       <HeadingBlock
         text="Our Travel Destinations: Explore Thailand with Orchid Travels"
       />
-      <YellowLine/>
+      <YellowLine />
       <ImageComponent src={statue} alt="Statue in front of a temple" />
       {/* Description for each destination */}
       <TextBlock 
