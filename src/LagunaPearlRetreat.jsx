@@ -12,6 +12,7 @@ import TextBlock from './TextBlock';
 import BlackLine from './BlackLine';
 import bottle from './assets/bottle.jpg'
 import food from './assets/food.jpg'
+import buss from './assets/buss.jpg'
 
 const LagunaPearlRetreat = () => {
   return (
@@ -100,6 +101,28 @@ const LagunaPearlRetreat = () => {
       <ImageComponent 
         src={food} 
         alt="Refreshing meal" 
+      />
+      <BlackLine />
+      <SubHeading 
+        text="Seamless Travel with Complimentary 
+        Airport Transfers"
+      />
+      <TextBlock 
+        text="Start your vacation stress-free 
+        with our complimentary airport pick-up 
+        and drop-off service. From the moment 
+        you arrive at Phuket International 
+        Airport, our dedicated team will be 
+        there to ensure your transition to 
+        paradise is smooth and effortless. 
+        Enjoy a comfortable ride to and 
+        from the hotel, allowing you to 
+        focus on making the most of your 
+        time at Laguna Pearl Retreat." 
+      />
+      <ImageComponent 
+        src={buss} 
+        alt="Airpoart transfer with buss" 
       />
       <BlackLine />
     </div>
