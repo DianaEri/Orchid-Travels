@@ -2,6 +2,7 @@ import React from 'react';
 import TextBlock from './TextBlock';
 import HeadingBlock from './HeadingBlock';
 import SubHeading from './SubHeading';
+import Header from './Header'; // Import the Header component
 import ImageComponent from './ImageComponent';
 import statue from './assets/statue.jpg'
 import Divider from './Divider'; // Import the Divider component
@@ -11,9 +12,12 @@ import beach from './assets/beach.jpg';
 import getaway from './assets/getaway.jpg';
 import bangkok from './assets/bangkok.jpg';
 
+
+
 const OurDestinations = () => {
   return (
     <div>
+      <Header /> 
       {/* Heading for the page */}
       <HeadingBlock
         text="Our Travel Destinations: Explore Thailand with Orchid Travels"
