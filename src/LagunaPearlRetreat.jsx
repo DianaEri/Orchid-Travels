@@ -16,7 +16,11 @@ const LagunaPearlRetreat = () => {
         text="Hotel Laguna Pearl Retreat"
       />
       <YellowLine />
-      <ImageComponent src={cozyPool} alt="Pool lounge area" />
+      <ImageComponent 
+        src={cozyPool} 
+        alt="Pool lounge area" 
+        style={{ marginBottom: '0' }} 
+      />
       <HotelReviews />
       <p>A beautiful retreat with stunning views of the Laguna coast.</p>
       <p>Price: 150 kr per night</p>
