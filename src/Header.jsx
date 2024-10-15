@@ -38,7 +38,7 @@ const Header = () => {
               <img 
                 src={goldLogo} 
                 alt="Gold Logo" 
-                style={{ width: '4rem', height: '4rem', marginRight: '0.5rem' }} 
+                style={{ width: '4rem', height: '4rem', marginRight: '0.5rem', marginLeft: '-4rem' }} 
               />
               Orchid Travels
             </div>
