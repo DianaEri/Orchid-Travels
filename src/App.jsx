@@ -42,10 +42,6 @@ const App = () => {
   return (
     <div className="App">
        <Header /> 
-      {/* Temporary link to OurDestinations.jsx */}
-      <nav>
-        <Link to="/our-destinations">Our Destinations</Link>
-      </nav>
       <Banner />
       <h1 className="center-heading">Where do you want to travel?</h1>
       <YellowLine/>
