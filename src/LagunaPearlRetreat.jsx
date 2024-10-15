@@ -11,7 +11,7 @@ import Button from './Button'
 
 const LagunaPearlRetreat = () => {
   return (
-    <div className="laguna-pearl-retreat" style={{ margin: '0', padding: '0' }}>
+    <div className="laguna-pearl-retreat" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Header />
       <HeadingBlock
         text="Hotel Laguna Pearl Retreat"

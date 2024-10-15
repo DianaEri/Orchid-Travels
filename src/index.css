@@ -397,6 +397,10 @@ button:focus-visible {
   justify-content: flex-start; 
 }
 
+.mobile-container {
+  width: 100%;
+}
+
 #myLinks {
   display: none;
 }
