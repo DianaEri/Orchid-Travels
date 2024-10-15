@@ -15,7 +15,7 @@ const HotelReviews = () => {
           <span> 4.5/5</span>
         </div>
         <div className="reviewItem">
-          <span>Orchid Travels guests</span>
+          <span>Hotel guests</span>
         </div>
         <div className="reviewItem">
           <FontAwesomeIcon icon={faAirbnb} />

@@ -55,7 +55,7 @@ const LagunaPearlRetreat = () => {
       <SubHeading 
         text="Luxury Accommodation for Every Traveler"
       />
-            <TextBlock 
+      <TextBlock 
         text="At Laguna Pearl Retreat, we take pride 
         in offering tailored accommodation options 
         to suit the needs of every guest. Whether 
@@ -79,6 +79,27 @@ const LagunaPearlRetreat = () => {
       <SubHeading 
         text="Relax and Unwind with 16 Stunning 
         Pools & World-Class Spa"
+      />
+      <TextBlock 
+        text="At Laguna Pearl Retreat, we take pride 
+        in offering tailored accommodation options 
+        to suit the needs of every guest. Whether 
+        you're traveling solo, as a couple, with 
+        family, or in a larger group, we have 
+        something for everyone. Our family-friendly 
+        rooms and suites are designed with spacious 
+        layouts, ensuring comfort for families of 
+        all sizes, including those with young 
+        children, teenagers, or multi-generational 
+        groups. We also offer fully adapted 
+        accommodations for guests with special 
+        needs, ensuring accessibility and ease 
+        throughout the resort." 
+      />
+      <BlackLine />
+      <SubHeading 
+        text="Culinary Excellence at Our 
+        All-Inclusive Restaurant"
       />
       <TextBlock 
         text="Dining at Laguna Pearl Retreat 

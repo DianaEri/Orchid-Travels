@@ -345,6 +345,10 @@ button:focus-visible {
   text-align: center;                    /* Horizontal margin for spacing between boxes */
 }
 
+.reviewRow2 .reviewItem:nth-child(2) {
+  margin-bottom: 15px; /* Adjust spacing as needed */
+}
+
 /* Adjustments for boxRow2 */
 .reviewRow2 {
   display: flex;                      /* Enables flexbox on the second box */
