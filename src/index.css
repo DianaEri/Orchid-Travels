@@ -384,6 +384,7 @@ button:focus-visible {
   z-index: 999;
   padding: 2rem;
   box-sizing: border-box; 
+  padding-bottom: 10000rem;
 }
 
 #myLinks.open + .wrapLogoTogether {
