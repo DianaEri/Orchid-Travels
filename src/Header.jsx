@@ -30,9 +30,10 @@ const Header = () => {
       <div className="topnav">
         {!menuOpen && (
           <div className="wrapLogoTogether">
-            <a href="javascript:void(0);" className="icon" onClick={toggleMenu}>
+            {/* Change <a> to <button> */}
+            <button className="icon" onClick={toggleMenu} aria-label="Open Menu">
               <FontAwesomeIcon icon={faBars} size="2x" />
-            </a>
+            </button>
             <div className="centerContent">
               <img 
                 src={goldLogo} 
@@ -45,9 +46,10 @@ const Header = () => {
         )}
 
         <div id="myLinks" className={menuOpen ? 'open' : ''}>
-          <a href="javascript:void(0);" className="closeIcon" onClick={toggleMenu}>
+          {/* Change <a> to <button> for the close icon */}
+          <button className="closeIcon" onClick={toggleMenu} aria-label="Close Menu">
             <FontAwesomeIcon icon={faTimes} size="2x" />
-          </a>
+          </button>
           <div className='menuItems'>
             <Link className='orchidTravelsMenu' to="/">Orchid Travels</Link>
             <Link className='menuOptions' to="/about-us">About Us</Link>

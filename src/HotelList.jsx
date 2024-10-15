@@ -1,4 +1,3 @@
-// HotelList.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // For routing
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,9 +6,12 @@ import ImageComponent from './ImageComponent';
 import Divider from './Divider'; // Import the Divider component
 import Button from './Button'; // Import the Button component
 
+const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   // Function to handle "Read more" button click
   const handleReadMore = (hotel) => {
-    // Redirect to the hotel detail page, pass hotel name or ID in URL
+    // Redirect to the hotel detail page, passing hotel name in URL
     navigate(`/hotels/${hotel.name}`);
   };
 
@@ -19,7 +21,6 @@ import Button from './Button'; // Import the Button component
     navigate(`/hotels/${hotel.name}/book`);
   };
 
-const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   return (
     <div className="hotel-list">
       {hotels.map((hotel) => (
@@ -58,8 +59,9 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
             <div className='linkStyle'>Pricing Details &gt;</div>
             <div className='push'>{hotel.price_per_person.toLocaleString('sv-SE')}kr/person</div>
           </div>
-                    {/* Flex container for the buttons */}
-                    <div className="hotel-card-buttons">
+          
+          {/* Flex container for the buttons */}
+          <div className="hotel-card-buttons">
             {/* Use the Button component for each button */}
             <Button type="button" className="read-more-btn" onClick={() => handleReadMore(hotel)}>
               Read more

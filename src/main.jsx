@@ -6,6 +6,7 @@ import SearchResult from './SearchResult.jsx';  // Import your search result pag
 import './index.css';
 import OurDestinations from './OurDestinations.jsx'; // Adjust the path as necessary
 import HotelList from './HotelList';
+import HotelDetail from './Hotels/HotelDetail';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,12 +15,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />  {/* Home Route */}
         <Route path="/search-result" element={<SearchResult />} />  {/* Search Result Route */}
         <Route path="/our-travel-destinations" element={<OurDestinations />} />
-        {/* Other routes */}
-        <Route path="/hotels" element={<HotelList />} />
-        {/* Route for hotel details */}
+        <Route path="/" element={<HotelList />} />
         <Route path="/hotels/:hotelName" element={<HotelDetail />} />
-        {/* Route for hotel booking */}
-        <Route path="/hotels/:hotelName/book" element={<HotelBooking />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
