@@ -6,7 +6,7 @@ import SearchResult from './SearchResult.jsx';  // Import your search result pag
 import './index.css';
 import OurDestinations from './OurDestinations.jsx'; // Adjust the path as necessary
 import HotelList from './HotelList';
-import HotelDetail from './Hotels/HotelDetail';
+import HotelDetail from './hotels/HotelDetail';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
