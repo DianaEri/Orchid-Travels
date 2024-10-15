@@ -8,7 +8,7 @@ import { faYoutube, faSquareInstagram, faSquareFacebook, faAirbnb } from '@forta
 const Footer = () => {
   return (
     <div className="footer" style={{ width: '100%', textAlign: 'center', padding: '1em 0' }}>
-      <img src={BlackLogo} alt="Black Logo" style={{ height: '4.5em', width: 'auto' }} />
+      <img src={BlackLogo} alt="Black Logo" style={{ height: '5em', width: 'auto' }} />
       <div className='logoName'>Orchid Travels</div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '1em 0' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>

@@ -267,6 +267,7 @@ button:focus-visible {
 
 .logoName {
   font-size: 1.5em;
+  padding-bottom: 1rem;
 }
 
 .largerText {
