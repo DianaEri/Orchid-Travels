@@ -81,20 +81,26 @@ const LagunaPearlRetreat = () => {
         Pools & World-Class Spa"
       />
       <TextBlock 
-        text="At Laguna Pearl Retreat, we take pride 
-        in offering tailored accommodation options 
-        to suit the needs of every guest. Whether 
-        you're traveling solo, as a couple, with 
-        family, or in a larger group, we have 
-        something for everyone. Our family-friendly 
-        rooms and suites are designed with spacious 
-        layouts, ensuring comfort for families of 
-        all sizes, including those with young 
-        children, teenagers, or multi-generational 
-        groups. We also offer fully adapted 
-        accommodations for guests with special 
-        needs, ensuring accessibility and ease 
-        throughout the resort." 
+        text="Discover pure bliss as you unwind 
+        by one of our 16 crystal-clear pools, 
+        each offering a unique ambiance for every 
+        mood. Whether you’re looking to soak up 
+        the sun at our beachfront infinity pool 
+        or enjoy a quiet retreat in a more 
+        secluded area, there’s always a perfect 
+        spot waiting for you. Families with 
+        children will love our dedicated kids’ 
+        pools, complete with water features and 
+        shallow areas for safe fun. For those 
+        seeking deeper relaxation, our luxurious 
+        spa offers a range of rejuvenating 
+        treatments inspired by traditional 
+        Thai therapies. Indulge in soothing 
+        massages, body scrubs, and facials 
+        while enjoying the serene ambiance of 
+        our spa facilities, which are designed to 
+        melt away stress and revitalize both body 
+        and mind." 
       />
       <BlackLine />
       <SubHeading 
