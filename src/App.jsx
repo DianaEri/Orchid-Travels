@@ -11,6 +11,7 @@ import Divider from './Divider'; // Import the Divider component
 import BlackLogo from './assets/Black logo.svg';
 import TripadvisorLogo from './assets/tripadvisor.svg';
 import Header from './Header'; // Import the Header component
+import Slider from './Slider'; // Import the Slider component
 import YellowLine from './YellowLine'; // Import the YellowLine component
 import BlackLine from './BlackLine'; // Import the BlackLine component
 import TextBlock from './TextBlock'; // Import the TextBlock component
@@ -43,7 +44,7 @@ const App = () => {
        <Header /> 
       <Banner />
       <h1 className="center-heading">Where do you want to travel?</h1>
-      <YellowLine/>
+      <YellowLine />
       {/* Render the SearchForm component and pass handleSubmit */}
       <SearchForm 
         onSubmit={handleSubmit} 
@@ -64,6 +65,8 @@ const App = () => {
         text="Now our best hotels are getting even better. By the summer of 2024, we will launch more
         new daily activities than ever."
       />
+
+      <Slider />
 
 
       <HotelInfoIcons />
