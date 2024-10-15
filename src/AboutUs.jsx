@@ -1,7 +1,9 @@
 import React from 'react';
 
 const AboutUs = () => {
-  return <div className="divider"></div>;
+  return <div>
+    Some content
+  </div>;
 };
 
 export default AboutUs;
