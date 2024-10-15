@@ -175,7 +175,7 @@ button {
 }
 
 button:hover {
-  color: black;
+  border-color: #646cff;
 }
 
 button:focus,
