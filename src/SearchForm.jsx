@@ -174,11 +174,12 @@ const SearchForm = ({ onSubmit, selectedDestination, setSelectedDestination, sel
   <option value="4 weeks">4 weeks</option>
 </select>
 
-
-      {/* Use the Button component */}
-      <Button type="submit" className="search-button">
-        Search
-      </Button>
+      <div className="button-container">
+        {/* Remove onClick handler from the button; it's handled by the form's onSubmit */}
+        <button type="submit" className="search-button">
+          Search
+        </button>
+      </div>
       </div>
     </form> // Closing form tag
   );

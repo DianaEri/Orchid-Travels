@@ -5,10 +5,10 @@ import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@
 const HotelReviews = () => {
   return (
     <div className="reviewList"> {/* Removed outer div */}
-      <div className="boxRow1">
+      <div className="reviewRow1">
         <span>From Total price</span>
       </div>
-      <div className="boxRow2">
+      <div className="reviewRow2">
         <FontAwesomeIcon icon={faMessage} />
         <span>Call us</span>
         <FontAwesomeIcon icon={faPhone} />

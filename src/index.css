@@ -120,6 +120,7 @@ option:hover {
   justify-content: center; /* Center the button */
   width: 100%; /* Full width */
   margin-top: 20px; /* Space above the button */
+  margin-bottom: 20px;
 }
 
 select {
@@ -325,6 +326,32 @@ button:focus-visible {
   color: white;
 }
 
+.reviewList {
+  display: flex;                      /* Enables flexbox on the container */
+  justify-content: space-around;      /* Distributes boxes evenly with space around */
+  align-items: center;                /* Center the boxes vertically */
+  width: 100%;
+  background-color: #f2e3cc;
+  height: 8em;                        /* Fixed height for alignment */
+  padding: 0;                         /* No padding to prevent extra space */
+  margin-top: 0;  
+}
+
+.reviewRow {
+  flex: 1;                           /* Allow the boxes to grow equally */                   /* Padding for visual clarity, adjust as necessary */
+  margin: 0;                        /* Remove margin to prevent extra space */
+  background-color: #f4f4f4;        /* Background color */
+  text-align: center;                    /* Horizontal margin for spacing between boxes */
+}
+
+/* Adjustments for boxRow2 */
+.reviewRow2 {
+  display: flex;                      /* Enables flexbox on the second box */
+  flex-direction: column;             /* Stack items in a column */
+  justify-content: center;            /* Center items vertically within the column */
+  align-items: center;                /* Center items horizontally */                     /* Ensure the second box has a fixed width */
+}
+
 .custom-button.read-more-btn {
   background-color: #28a745; /* Green for Read more */
 }
@@ -452,35 +479,3 @@ button:focus-visible {
   background-color: white;
 }
 /*Styling för Header.jsx END*/
-
-.reviewList {
-  display: flex;                      /* Enables flexbox on the container */
-  justify-content: space-around;      /* Distributes boxes evenly with space around */
-  align-items: center;                /* Center the boxes vertically */
-  width: 100%;
-  background-color: #f2e3cc;
-  height: 8em;                        /* Fixed height for alignment */
-  padding: 0;                         /* No padding to prevent extra space */
-  margin-top: 0;  
-}
-
-.boxRow {
-  flex: 1;                           /* Allow the boxes to grow equally */
-  padding: 20px;                    /* Padding for visual clarity, adjust as necessary */
-  margin: 0;                        /* Remove margin to prevent extra space */
-  background-color: #f4f4f4;        /* Background color */
-  text-align: center;                    /* Horizontal margin for spacing between boxes */
-}
-
-/* Adjustments for boxRow2 */
-.boxRow2 {
-  display: flex;                      /* Enables flexbox on the second box */
-  flex-direction: column;             /* Stack items in a column */
-  justify-content: center;            /* Center items vertically within the column */
-  align-items: center;                /* Center items horizontally */
-  width: 200px;                       /* Ensure the second box has a fixed width */
-}
-
-.boxRow2 div {
-  margin: 5px 0;                     /* Space between column items */
-}
