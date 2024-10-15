@@ -9,10 +9,11 @@ import Button from './Button'; // Import the Button component
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   const navigate = useNavigate(); // Initialize useNavigate
 
-  // Function to handle "Read more" button click
+  // Function to handle "Read more" button click for Laguna Pearl Retreat only
   const handleReadMore = (hotel) => {
-    // Redirect to the hotel detail page, passing hotel name in URL
-    navigate(`/hotels/${hotel.name}`);
+    if (hotel.name === "Laguna Pearl Retreat") {
+      navigate('/laguna-pearl-retreat'); // Directly navigate to the specific route
+    }
   };
 
   // Function to handle "Book now" button click
@@ -62,7 +63,6 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
           
           {/* Flex container for the buttons */}
           <div className="hotel-card-buttons">
-            {/* Use the Button component for each button */}
             <Button type="button" className="read-more-btn" onClick={() => handleReadMore(hotel)}>
               Read more
             </Button>

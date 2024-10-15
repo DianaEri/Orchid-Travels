@@ -6,7 +6,7 @@ import SearchResult from './SearchResult.jsx';  // Import your search result pag
 import './index.css';
 import OurDestinations from './OurDestinations.jsx'; // Adjust the path as necessary
 import HotelList from './HotelList';
-import HotelDetail from './hotels/HotelDetail.jsx';
+import LagunaPearlRetreat from './LagunaPearlRetreat'; // Import the component
 import AboutUs from './AboutUs'; // Example component
 
 createRoot(document.getElementById('root')).render(
@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/search-result" element={<SearchResult />} />  {/* Search Result Route */}
         <Route path="/our-travel-destinations" element={<OurDestinations />} />
         <Route path="/" element={<HotelList />} />
-        <Route path="/hotels/:hotelName" element={<HotelDetail />} />
+        <Route path="/laguna-pearl-retreat" element={<LagunaPearlRetreat />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
