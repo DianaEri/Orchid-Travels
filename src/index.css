@@ -623,3 +623,48 @@ button:focus-visible {
   color: #BE8730;
   text-decoration: underline;
 }
+
+.event-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.event-card {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: white;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.overlay-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
