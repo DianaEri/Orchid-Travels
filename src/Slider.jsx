@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import SliderOne from './assets/SliderOne.svg';
 import SliderTwo from './assets/SliderTwo.svg';
 import SliderThree from './assets/SliderThree.svg';
@@ -71,10 +71,10 @@ const Slider = () => {
         ))}
 
         <a className="prev" onClick={() => plusSlides(-1)}>
-          <FontAwesomeIcon icon={faAngleLeft} />
+          <FontAwesomeIcon icon={faCircleChevronLeft} />
         </a>
         <a className="next" onClick={() => plusSlides(1)}>
-          <FontAwesomeIcon icon={faAngleRight} />
+          <FontAwesomeIcon icon={faCircleChevronRight} />
         </a>
       </div>
 
