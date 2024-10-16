@@ -76,7 +76,7 @@ app.get('/api/data', (req, res) => {
         name: "Thai Cooking Class",
         duration: "Event duration: 8 July - 22 July",
         description: "Immerse yourself in Thai culture by visiting bustling local markets to handpick fresh ingredients, then learn to cook authentic Thai dishes under the guidance of expert chefs. This hands-on experience offers a deeper connection to Thailand’s rich culinary traditions.",
-        image: "https://drive.google.com/uc?export=view&id=1D8sS71wLWqEcsAGY-cPMNHS8qEvgot9S"
+        image: "https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         date: "8 July",
@@ -90,7 +90,7 @@ app.get('/api/data', (req, res) => {
         name: "Monkey Temple",
         duration: "Event duration: 2 July - 23 July",
         description: "Explore the ancient Khmer temple ruins of Phra Prang Sam Yot, where hundreds of mischievous monkeys roam freely among the stone structures. You can feed them (with caution!) while soaking in the rich history of the site. Afterwards, continue your adventure by visiting other fascinating historical landmarks in Lopburi, a town known for its unique blend of culture and wildlife.",
-        image: "https://drive.google.com/uc?export=view&id=11icC3BujsCZp9sz3FStGH3XPyrVE9Fk4"
+        image: "https://images.unsplash.com/photo-1603649637473-1aaeff93d311?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM4fHxtb25rZXklMjB0ZW1wbGV8ZW58MHx8MHx8fDA%3D"
       }
     ]
   });
