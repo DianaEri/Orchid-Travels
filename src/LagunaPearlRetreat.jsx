@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import HeadingBlock from './HeadingBlock';
 import SubHeading from './SubHeading';
@@ -135,8 +135,10 @@ const LagunaPearlRetreat = () => {
         with delicious, high-quality dishes." 
       />
       <TextBlock 
-        text="Check out the hotel restaurant
-        Saffron Breeze Café" 
+        text={<span>Check out the hotel restaurant 
+          <button onClick={() => navigate
+          ('/hotel-restaurant-saffron-breeze-café')}
+          >Saffron Breeze Café</button></span>}
       />
       <ImageComponent 
         src={food} 

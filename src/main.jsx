@@ -8,6 +8,7 @@ import OurDestinations from './OurDestinations.jsx'; // Adjust the path as neces
 import HotelList from './HotelList';
 import LagunaPearlRetreat from './LagunaPearlRetreat'; // Import the component
 import AboutUs from './AboutUs'; // Example component
+import HotelRestaurantSaffronBreezeCafé from './HotelRestaurantSaffronBreezeCafé.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<HotelList />} />
         <Route path="/laguna-pearl-retreat" element={<LagunaPearlRetreat />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/hotel-restaurant-saffron-breeze-café" element={<HotelRestaurantSaffronBreezeCafé />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
