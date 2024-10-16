@@ -7,19 +7,19 @@ const HotelReviews = () => {
   return (
     <div className="reviewList"> {/* Removed outer div */}
       <div className="reviewRow1">
-        <span>From Total price</span>
+        <span className='bold'>From Total price</span>
       </div>
       <div className="reviewRow2">
         <div className="reviewItem">
           <FontAwesomeIcon icon={faStar} />
-          <span> 4.5/5</span>
+          <span className='bold'> 4.5/5</span>
         </div>
         <div className="reviewItem">
           <span>Hotel guests</span>
         </div>
         <div className="reviewItem">
           <FontAwesomeIcon icon={faAirbnb} />
-          <span> 4.7/5</span>
+          <span className='bold'> 4.7/5</span>
         </div>
         <div className="reviewItem">
         <span>Airbnb</span>

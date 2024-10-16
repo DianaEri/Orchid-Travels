@@ -613,3 +613,7 @@ button:focus-visible {
 }
 
 /* Slider END */
+
+.bold {
+  font-weight: bold;
+}
