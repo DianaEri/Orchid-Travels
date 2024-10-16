@@ -491,6 +491,18 @@ button:focus-visible {
   top: 1rem;
   background-color: white;
 }
+
+.topnav button.icon,
+.closeIcon {
+  outline: none; 
+  border: none; 
+}
+
+.topnav button.icon:focus,
+.closeIcon:focus {
+  outline: none;
+  border: none;  
+}
 /*Styling för Header.jsx END*/
 
 
