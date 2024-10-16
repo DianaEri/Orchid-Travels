@@ -21,7 +21,7 @@ import poolside from './assets/poolside.jpg';
 const LagunaPearlRetreat = () => {
   const location = useLocation();
   const navigate = useNavigate(); // Initialize useNavigate
-  const { totalPrice } = location.state || {}; // Retrieve totalPrice from location.state
+  const { totalPrice, hotelName } = location.state || {}; // Retrieve totalPrice and hotelName from location.state
 
   console.log("Received Total Price:", totalPrice); // Log totalPrice for debugging
 
@@ -29,9 +29,7 @@ const LagunaPearlRetreat = () => {
     <div className="laguna-pearl-retreat" style={{ display: 'flex', 
     flexDirection: 'column', alignItems: 'center' }}>
       <Header />
-      <HeadingBlock
-        text="Hotel Laguna Pearl Retreat"
-      />
+      <HeadingBlock text={`Hotel ${hotelName}`} /> {/* Inject hotelName dynamically */}
       <YellowLine />
       <ImageComponent 
         src={cozyPool} 

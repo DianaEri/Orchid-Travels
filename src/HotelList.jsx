@@ -11,9 +11,8 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
 
   const handleReadMore = (hotel) => {
     if (hotel.name === "Laguna Pearl Retreat") {
-      const totalPrice = hotel.price_per_person * totalPersons; // Calculate total price
-      console.log("Total Price:", totalPrice); // Log totalPrice for debugging
-      navigate('/laguna-pearl-retreat', { state: { totalPrice } }); // Pass totalPrice to LagunaPearlRetreat
+      const totalPrice = hotel.price_per_person * totalPersons; 
+      navigate('/laguna-pearl-retreat', { state: { totalPrice, hotelName: hotel.name } }); // Pass hotelName
     }
   };
 
