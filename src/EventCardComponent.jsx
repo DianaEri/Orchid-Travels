@@ -3,7 +3,6 @@ import ImageComponent from './ImageComponent'; // Assuming this component handle
 import HeadingBlock from './HeadingBlock'; // For displaying the hotel name
 import SubHeading from './SubHeading'; // For displaying the event duration
 import TextBlock from './TextBlock'; // For displaying the event description
-import './EventCardComponent.css'; // Custom CSS for styling overlays
 
 const EventCardComponent = ({ hotelName }) => {
   const [events, setEvents] = useState([]); // State to hold the event data

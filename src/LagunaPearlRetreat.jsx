@@ -17,6 +17,7 @@ import paradise from './assets/paradise.jpg';
 import romance from './assets/romance.jpg';
 import Footer from './Footer';
 import poolside from './assets/poolside.jpg';
+import EventCardComponent from './EventCardComponent'; // Import the new event card component
 
 const LagunaPearlRetreat = () => {
   const location = useLocation();
@@ -223,6 +224,7 @@ const LagunaPearlRetreat = () => {
         src={romance} 
         alt="Drawn heart in sand" 
       />
+      <EventCardComponent hotelName={hotelName} />
       <Footer />
     </div>
   );

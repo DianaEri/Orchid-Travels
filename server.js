@@ -62,7 +62,7 @@ app.get('/api/data', (req, res) => {
         name: "Ramayana Festival",
         duration: "Event duration: 12 July - 15 July",
         description: "Embark on an enchanting journey through one of Thailand's most revered cultural festivals, the Ramayana Festival. Immerse yourself in mesmerizing performances where the epic tale of Ramayana comes to life through captivating dance, vibrant costumes, and traditional music. This celebration of ancient mythology and art offers a vivid display of Thailand’s rich heritage and theatrical traditions.",
-        image: "https://drive.google.com/uc?export=view&id=13skJH13GS2vG_Ao3djWAusy3QtYiU1cM"
+        image: "https://images.unsplash.com/photo-1578167635630-a74f0e723dd7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         date: "∞ July",
