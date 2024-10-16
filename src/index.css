@@ -430,6 +430,8 @@ button:focus-visible {
 
 .menuOptions {
   color: black !important;
+  font-size: 1.6rem; 
+  padding-bottom: 1rem; 
 }
 
 .topnav button {
@@ -450,6 +452,8 @@ button:focus-visible {
 
 .orchidTravelsMenu {
   color: #D4A355 !important;
+  font-size: 1.6rem; 
+  padding-bottom: 1rem; 
 }
 
 .topnav button.icon {
