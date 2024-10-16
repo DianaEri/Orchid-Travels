@@ -9,7 +9,7 @@ const HotelReviews = ({ totalPrice }) => {
       <div className="reviewRow1">
         {/* Display the Total Price */}
         <span className="bold">
-          From Total Price: {totalPrice !== undefined ? `${totalPrice.toLocaleString('sv-SE')} kr` : 'N/A'}
+          From {totalPrice !== undefined ? `${totalPrice.toLocaleString('sv-SE')}kr` : 'N/A'}
         </span>
       </div>
       <div className="reviewRow2">
