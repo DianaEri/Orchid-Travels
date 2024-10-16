@@ -53,10 +53,10 @@ const LagunaPearlRetreat = () => {
         Pearl Retreat is the ultimate destination for 
         those seeking luxury, relaxation, and 
         unforgettable island experiences. With stunning
-         views of the Andaman Sea and an unrivaled 
-         array of amenities, our resort offers a 
-         perfect blend of modern comforts and 
-         traditional Thai hospitality." 
+        views of the Andaman Sea and an unrivaled 
+        array of amenities, our resort offers a 
+        perfect blend of modern comforts and 
+        traditional Thai hospitality." 
       />
       <BlackLine />
       <SubHeading 
