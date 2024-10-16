@@ -9,10 +9,11 @@ import Button from './Button'; // Import the Button component
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   const navigate = useNavigate(); // Initialize useNavigate
 
-  // Function to handle "Read more" button click for Laguna Pearl Retreat only
   const handleReadMore = (hotel) => {
     if (hotel.name === "Laguna Pearl Retreat") {
-      navigate('/laguna-pearl-retreat'); // Directly navigate to the specific route
+      const totalPrice = hotel.price_per_person * totalPersons; // Calculate total price
+      console.log("Total Price:", totalPrice); // Log totalPrice for debugging
+      navigate('/laguna-pearl-retreat', { state: { totalPrice } }); // Pass totalPrice to LagunaPearlRetreat
     }
   };
 

@@ -1,5 +1,6 @@
 // src/LagunaPearlRetreat.jsx
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './Header';
 import HeadingBlock from './HeadingBlock';
 import SubHeading from './SubHeading';
@@ -18,7 +19,13 @@ import romance from './assets/romance.jpg';
 import Footer from './Footer';
 import poolside from './assets/poolside.jpg'
 
+
 const LagunaPearlRetreat = () => {
+  const location = useLocation();
+  const { totalPrice } = location.state || {}; // Retrieve totalPrice from location.state
+
+  console.log("Received Total Price:", totalPrice); // Log totalPrice for debugging
+
   return (
     <div className="laguna-pearl-retreat" style={{ display: 'flex', 
     flexDirection: 'column', alignItems: 'center' }}>
