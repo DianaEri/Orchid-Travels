@@ -136,10 +136,15 @@ const LagunaPearlRetreat = () => {
         with delicious, high-quality dishes." 
       />
       <TextBlock 
-        text={<span>Check out the hotel restaurant
-          <button className="linkRestaurant" onClick={() => navigate
-          ('/hotel-restaurant-saffron-breeze-café')}>
-            Saffron Breeze Café</button></span>}
+        text={
+          <div style={{ textAlign: 'center' }}> {/* Center the text and add underline */}
+            Check out the hotel restaurant
+            <br /> {/* This creates a new line */}
+            <button className="linkRestaurant" onClick={() => navigate('/hotel-restaurant-saffron-breeze-café')}>
+              Saffron Breeze Café
+            </button>
+          </div>
+        }
       />
       <ImageComponent 
         src={food} 

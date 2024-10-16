@@ -620,5 +620,6 @@ button:focus-visible {
 
 .linkRestaurant {
   background-color: white;
-  color: #000000;
+  color: #BE8730;
+  text-decoration: underline;
 }
