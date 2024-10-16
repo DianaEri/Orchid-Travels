@@ -1,4 +1,3 @@
-// src/LagunaPearlRetreat.jsx
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './Header';
@@ -17,8 +16,7 @@ import buss from './assets/buss.jpg';
 import paradise from './assets/paradise.jpg';
 import romance from './assets/romance.jpg';
 import Footer from './Footer';
-import poolside from './assets/poolside.jpg'
-
+import poolside from './assets/poolside.jpg';
 
 const LagunaPearlRetreat = () => {
   const location = useLocation();
@@ -38,7 +36,7 @@ const LagunaPearlRetreat = () => {
         src={cozyPool} 
         alt="Pool lounge area" 
       />
-      <HotelReviews />
+      <HotelReviews totalPrice={totalPrice} /> {/* Pass totalPrice as a prop */}
       <div className="button-container">
         <button type="submit" className="search-button">
           Book now
