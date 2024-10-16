@@ -83,7 +83,7 @@ app.get('/api/data', (req, res) => {
         name: "Fruit Buffet",
         duration: "Event duration: 5 November - 19 November",
         description: "Indulge in all-you-can-eat fruit buffets at local orchards, where you can savor an array of exotic fruits freshly picked from the trees. From the king of fruits, durian, to sweet mangosteen and rambutan, this delicious experience offers a true taste of Thailand’s tropical harvest.",
-        image: "https://images.unsplash.com/photo-1654508590628-21c717998f6b?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image: "https://images.unsplash.com/photo-1665589048355-579bc80169d1?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         date: "2 Nov",
