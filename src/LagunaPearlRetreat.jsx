@@ -18,6 +18,7 @@ import romance from './assets/romance.jpg';
 import Footer from './Footer';
 import poolside from './assets/poolside.jpg';
 import EventCardComponent from './EventCardComponent'; // Import the new event card component
+import Divider from './Divider';
 
 const LagunaPearlRetreat = () => {
   const location = useLocation();
@@ -224,6 +225,8 @@ const LagunaPearlRetreat = () => {
         src={romance} 
         alt="Drawn heart in sand" 
       />
+      <HeadingBlock text="Hotel activities" />
+      <YellowLine />
       <EventCardComponent hotelName={hotelName} />
       <Footer />
     </div>
