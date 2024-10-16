@@ -8,8 +8,8 @@ import Divider from './Divider';
 import Footer from './Footer'; 
 import YellowLine from './YellowLine'; 
 import BlackLine from './BlackLine';
-import imageOneAboutUs from './assets/imageOneAboutUs.avif';
-import imageTwoAboutUs from './assets/imageTwoAboutUs.avif';
+import imageOneAboutUs from './assets/imageOneAboutUs.svg';
+import imageTwoAboutUs from './assets/imageTwoAboutUs.svg';
 
 
 const AboutUs = () => {
