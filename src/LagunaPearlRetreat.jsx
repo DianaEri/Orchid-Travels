@@ -23,6 +23,7 @@ import poolside from './assets/poolside.jpg'
 const LagunaPearlRetreat = () => {
   const location = useLocation();
   const { totalPrice } = location.state || {}; // Retrieve totalPrice from location.state
+
   console.log("Received Total Price:", totalPrice); // Log totalPrice for debugging
 
   return (
