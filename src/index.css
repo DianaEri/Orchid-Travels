@@ -617,3 +617,8 @@ button:focus-visible {
 .bold {
   font-weight: bold;
 }
+
+.linkRestaurant {
+  background-color: white;
+  color: #000000;
+}

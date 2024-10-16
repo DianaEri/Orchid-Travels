@@ -20,6 +20,7 @@ import poolside from './assets/poolside.jpg';
 
 const LagunaPearlRetreat = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // Initialize useNavigate
   const { totalPrice } = location.state || {}; // Retrieve totalPrice from location.state
 
   console.log("Received Total Price:", totalPrice); // Log totalPrice for debugging
@@ -135,10 +136,10 @@ const LagunaPearlRetreat = () => {
         with delicious, high-quality dishes." 
       />
       <TextBlock 
-        text={<span>Check out the hotel restaurant 
-          <button onClick={() => navigate
-          ('/hotel-restaurant-saffron-breeze-café')}
-          >Saffron Breeze Café</button></span>}
+        text={<span>Check out the hotel restaurant
+          <button className="linkRestaurant" onClick={() => navigate
+          ('/hotel-restaurant-saffron-breeze-café')}>
+            Saffron Breeze Café</button></span>}
       />
       <ImageComponent 
         src={food} 
