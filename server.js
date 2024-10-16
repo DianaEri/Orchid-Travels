@@ -8,7 +8,7 @@ const PORT = 5000; // Use port 5000 to avoid conflicts with React (which uses 30
 
 app.use(cors({
   origin: 'https://orchidtravels-yymu--5173--134daa3c.local-corp.webcontainer.io' // Allow requests from your frontend URL
-})); 
+}));
 app.use(express.json()); // Middleware to parse JSON
 
 // Basic API endpoint
@@ -54,6 +54,38 @@ app.get('/api/data', (req, res) => {
         price_per_person: 21100,
         location: "Phuket",
         image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+    ],
+    events: [
+      {
+        date: "12 July",
+        name: "Ramayana Festival",
+        duration: "Event duration: 12 July - 15 July",
+        description: "Embark on an enchanting journey through one of Thailand's most revered cultural festivals, the Ramayana Festival. Immerse yourself in mesmerizing performances where the epic tale of Ramayana comes to life through captivating dance, vibrant costumes, and traditional music. This celebration of ancient mythology and art offers a vivid display of Thailand’s rich heritage and theatrical traditions."
+      },
+      {
+        date: "∞ July",
+        name: "Chiang Mai Sunday Night Market",
+        duration: "Event duration: All-year-round event on Sundays",
+        description: "Chiang Mai Sunday Night Market, a vibrant evening bazaar where you can leisurely stroll through streets lined with stalls offering a wide array of local handicrafts, delicious street food, and captivating performances by local artists. The lively atmosphere, combined with traditional Northern Thai flavors and arts, creates an immersive cultural experience for visitors."
+      },
+      {
+        date: "5 July",
+        name: "Thai Cooking Class",
+        duration: "Event duration: 8 July - 22 July",
+        description: "Immerse yourself in Thai culture by visiting bustling local markets to handpick fresh ingredients, then learn to cook authentic Thai dishes under the guidance of expert chefs. This hands-on experience offers a deeper connection to Thailand’s rich culinary traditions."
+      },
+      {
+        date: "8 July",
+        name: "Fruit Buffet",
+        duration: "Event duration: 5 July - 19 July",
+        description: "Indulge in all-you-can-eat fruit buffets at local orchards, where you can savor an array of exotic fruits freshly picked from the trees. From the king of fruits, durian, to sweet mangosteen and rambutan, this delicious experience offers a true taste of Thailand’s tropical harvest."
+      },
+      {
+        date: "2 July",
+        name: "Monkey Temple",
+        duration: "Event duration: 2 July - 23 July",
+        description: "Explore the ancient Khmer temple ruins of Phra Prang Sam Yot, where hundreds of mischievous monkeys roam freely among the stone structures. You can feed them (with caution!) while soaking in the rich history of the site. Afterwards, continue your adventure by visiting other fascinating historical landmarks in Lopburi, a town known for its unique blend of culture and wildlife."
       }
     ]
   });
