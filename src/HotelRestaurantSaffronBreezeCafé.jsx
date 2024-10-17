@@ -12,8 +12,8 @@ const HotelRestaurantSaffronBreezeCafé = () => {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-  // This will be your menu link (PDF stored in the public folder)
-  const menuLink = '/menu.pdf'; // Replace with your actual PDF path
+  // The menu PDF file path in the public folder
+  const menuLink = '/menu.pdf'; // Make sure 'menu.pdf' is in the public folder
 
   return (
     <div className="restaurant-page">
@@ -23,12 +23,12 @@ const HotelRestaurantSaffronBreezeCafé = () => {
         Welcome to Saffron Breeze Café! Here, you can enjoy a delightful dining experience with authentic Thai cuisine and international favorites. Our restaurant offers a wide range of dishes to cater to all dietary preferences, ensuring a satisfying meal for every guest.
       </p>
 
-      {/* Menu Link */}
+      {/* Button to open the modal */}
       <p>
         <button onClick={openModal}>View Our Menu</button>
       </p>
 
-      {/* Modal Popup */}
+      {/* Modal Popup with the PDF */}
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Menu PDF">
         <button onClick={closeModal}>Close</button>
         <iframe src={menuLink} width="100%" height="600px" title="Restaurant Menu"></iframe>
