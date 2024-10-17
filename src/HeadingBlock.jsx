@@ -22,7 +22,7 @@ const HeadingBlock = ({
   width = '88%',
   paddingLeft = '1rem',  // Adding default value for paddingLeft
   paddingRight = '1rem',  // Adding default value for paddingRight
-  paddingTop = '1rem'
+  paddingTop = '2.5rem'
 }) => {
   const style = {
     fontSize: fontSize,   

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils, faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faSquareInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Bild from './assets/Bild.jpg';
 import SearchForm from './SearchForm'; // Import the SearchForm component
 import Footer from './Footer'; // Make sure this import is correct
@@ -17,6 +16,9 @@ import YellowLine from './YellowLine'; // Import the YellowLine component
 import BlackLine from './BlackLine'; // Import the BlackLine component
 import TextBlock from './TextBlock'; // Import the TextBlock component
 import Banner from './Banner';
+import HeadingBlock from './HeadingBlock';
+import location from './assets/location.jpg';
+import ImageComponent from './ImageComponent';
 
 const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
@@ -44,7 +46,7 @@ const App = () => {
     <div className="App">
        <Header /> 
       <Banner />
-      <h1 className="center-heading">Where do you want to travel?</h1>
+      <HeadingBlock text="Where do you want to travel?" />
       <YellowLine />
       {/* Render the SearchForm component and pass handleSubmit */}
       <SearchForm 
@@ -57,7 +59,7 @@ const App = () => {
         setSelectedChildren={setSelectedChildren}
       />
 
-      {/* Use the Divider component */}
+      {/* Divider component */}
       <Divider />
 
       <h1 className="center-heading">Daily activities in our hotels</h1>
@@ -71,7 +73,17 @@ const App = () => {
 
 
       <HotelInfoIcons />
-
+      <HeadingBlock text="Our location - Find us" />
+      <YellowLine />
+      <div className="image-container">
+        <ImageComponent 
+          src={location} 
+          alt="Location of office in Bangkok" 
+        />
+        <div className="image-overlay">
+          <FontAwesomeIcon icon={faLocationDot} />
+        </div>
+      </div>
       <Footer />
     </div>
   );
