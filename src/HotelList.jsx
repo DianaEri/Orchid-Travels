@@ -6,6 +6,7 @@ import ImageComponent from './ImageComponent';
 import Divider from './Divider'; // Import the Divider component
 import Button from './Button'; // Import the Button component
 import SubHeading from './SubHeading';
+import UnOrderedList from './UnOrderedList';
 
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -27,16 +28,20 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
     <div className="hotel-list">
       {hotels.map((hotel) => (
         <div key={hotel.name} className="hotel-card">
-          <ImageComponent src={hotel.image} alt={hotel.name} />
-          {/* <h2>{hotel.name}</h2> */}
+          <div className="image-container">  {/* Use a CSS class for relative positioning */}
+            <ImageComponent src={hotel.image} alt={hotel.name} />
+
+            {/* Conditionally render the "Kids friendly" overlay if the hotel is family friendly */}
+            {hotel.family === "Kids friendly" && (
+              <div className="kids-friendly-overlay">
+                Kids friendly
+              </div>
+            )}
+          </div>
+
           <SubHeading text={hotel.name} />
           {/* Unordered list for hotel description */}
-          <ul>
-            {hotel.description.map((descItem, index) => (
-              <li key={index}>{descItem}</li>
-            ))}
-          </ul>
-
+          <UnOrderedList items={hotel.description} />
           <div className="dividerSearch">
             <div className="iconsList">
               <div className="iconsRow">
@@ -55,12 +60,16 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
               </div>
             </div>
           </div>
-          <div className='textMargin'>Flight and hotel</div>
-          <div>{adultsAndChildrenText}</div>
-          <div className='Right'>{(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')}kr</div>
-          <div className='box'>
-            <div className='linkStyle'>Pricing Details &gt;</div>
-            <div className='push'>{hotel.price_per_person.toLocaleString('sv-SE')}kr/person</div>
+
+          {/* New container div for flight and pricing details */}
+          <div className="info-container">
+            <div className='textMargin'>Flight and hotel</div>
+            <div>{adultsAndChildrenText}</div>
+            <div className='Right'>{(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')}kr</div>
+            <div className='box'>
+              <div className='linkStyle'>Pricing Details &gt;</div>
+              <div className='push'>{hotel.price_per_person.toLocaleString('sv-SE')}kr/person</div>
+            </div>
           </div>
           
           {/* Flex container for the buttons */}
