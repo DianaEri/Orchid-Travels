@@ -9,7 +9,7 @@ const BlackLine = () => {
     width: '90%',
     height: '1px',  // Use px for more consistent line thickness
     backgroundColor: 'black',
-    margin: '2rem auto',
+    margin: '1.5rem auto',
   };
 
   return <div style={style}></div>;

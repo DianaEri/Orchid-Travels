@@ -24,7 +24,7 @@ const AboutUs = () => {
 
       <ImageComponent src={imageOneAboutUs} alt="imageOneAboutUs" />
 
-      <HeadingBlock
+      <SubHeading
         text="Who We Are"
       />
 
@@ -64,7 +64,7 @@ const AboutUs = () => {
 
         <BlackLine/>
 
-        <HeadingBlock
+        <SubHeading
         text="Our Hotels"
        />
 
