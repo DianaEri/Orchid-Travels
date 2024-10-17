@@ -1,5 +1,5 @@
 // I (Diana) started implementing the basics for our main page in 
-// app.jsx and added the following components made by me aswell: Banner,
+// app.jsx and added the following components made by me as well: Banner,
 // SearchForm, Divider, HotelInfoIcons, ImageComponent with CSS overlay 
 // and Footer. The components Header, HeadingBlock, YellowLine, TextBlock 
 // and slider were made and implemented by Madelene.
