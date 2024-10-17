@@ -8,25 +8,27 @@ import Divider from './Divider';
 import Footer from './Footer'; 
 import YellowLine from './YellowLine'; 
 import BlackLine from './BlackLine';
+import UnOrderedList from './UnOrderedList';  // Import the UnOrderedList component
 import imageOneAboutUs from './assets/imageOneAboutUs.svg';
 import imageTwoAboutUs from './assets/imageTwoAboutUs.svg';
 
-
 const AboutUs = () => {
+  // List of destinations for UnOrderedList
+  const destinations = [
+    "Phuket – Known for its stunning beaches, lively nightlife, and crystal-clear waters.",
+    "Krabi – A paradise of limestone cliffs, serene islands, and picturesque sunsets.",
+    "Bangkok – The vibrant capital city, rich in culture, history, and modern wonders."
+  ];
+
   return (
     <div>
       <Header /> 
-      {/* Heading for the page */}
-      <HeadingBlock
-        text="About Us - Orchid Travels"
-      />
+      <HeadingBlock text="About Us - Orchid Travels" />
       <YellowLine />
 
       <ImageComponent src={imageOneAboutUs} alt="imageOneAboutUs" />
 
-      <SubHeading
-        text="Who We Are"
-      />
+      <SubHeading text="Who We Are" />
 
       <TextBlock 
         text="Founded in the heart of Bangkok, Orchid Travels has been dedicated 
@@ -36,22 +38,8 @@ const AboutUs = () => {
          in three of Thailand’s most breathtaking destinations:" 
       />
 
-      <TextBlock 
-        text="•
-        Phuket – Known for its stunning beaches, lively nightlife, and crystal-clear waters." 
-      />
-
-      <TextBlock 
-        text="•
-        Krabi – A paradise of limestone cliffs, serene islands, and picturesque 
-        sunsets." 
-      />
-
-      <TextBlock 
-        text="•
-        Bangkok – The vibrant capital city, rich in culture, history, and modern 
-        wonders." 
-      />
+      {/* Adding a className to UnOrderedList */}
+      <UnOrderedList items={destinations} className="destinations-list" />
 
       <TextBlock 
         text="Our team of travel experts works tirelessly to ensure that every 
@@ -60,43 +48,30 @@ const AboutUs = () => {
         cultural immersion." 
       />
 
-        <ImageComponent src={imageTwoAboutUs} alt="imageTwoAboutUs" />
+      <ImageComponent src={imageTwoAboutUs} alt="imageTwoAboutUs" />
 
-        <BlackLine/>
+      <BlackLine/>
 
-        <SubHeading
-        text="Our Hotels"
-       />
+      <SubHeading text="Our Hotels" />
 
-        <TextBlock 
+      <TextBlock 
         text="At Orchid Travels, we are proud to own and operate a collection of 
         handpicked hotels that promise comfort, luxury, and unforgettable
         hospitality:" 
       />
 
-       <TextBlock 
-        text="• 
-        Orchid Beachfront Resort in Phuket – Perfectly positioned on the island’s
-         stunning western coast, this resort offers breathtaking ocean views and a 
-         peaceful escape from the bustling city life." 
+      <TextBlock 
+        text="• Orchid Beachfront Resort in Phuket – Perfectly positioned on the island’s stunning western coast, this resort offers breathtaking ocean views and a peaceful escape from the bustling city life." 
       />
 
-       <TextBlock 
-        text="• 
-        Orchid Hideaway in Krabi – Nestled among Krabi’s iconic limestone cliffs,
-         this tranquil haven is ideal for those seeking natural beauty and adventure." 
+      <TextBlock 
+        text="• Orchid Hideaway in Krabi – Nestled among Krabi’s iconic limestone cliffs, this tranquil haven is ideal for those seeking natural beauty and adventure." 
       />
 
-
-       <TextBlock 
-        text="• 
-        Orchid City Suites in Bangkok: Situated in the heart of the city, our Bangkok hotel 
-        offers modern comfort with easy access to the city’s top attractions, shopping, and dining." 
+      <TextBlock 
+        text="• Orchid City Suites in Bangkok: Situated in the heart of the city, our Bangkok hotel offers modern comfort with easy access to the city’s top attractions, shopping, and dining." 
       />
 
-    
-
-     
       <Footer />
     </div>
   );

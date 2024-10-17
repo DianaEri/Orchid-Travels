@@ -701,3 +701,14 @@ button:focus-visible {
 .info-container {
   padding: 0px 20px; /* Adjust padding as needed */
 }
+
+.destinations-list {
+ width: 90%;
+ text-align: start;
+ margin-left: 20px;
+}
+
+.destinations-list li {
+  font-size: 16px;
+  line-height: 1.5;
+}

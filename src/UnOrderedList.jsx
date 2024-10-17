@@ -1,8 +1,8 @@
 import React from 'react';
 
-const UnOrderedList = ({ items }) => {
+const UnOrderedList = ({ items, className }) => {
   return (
-    <ul>
+    <ul className={className}>
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
