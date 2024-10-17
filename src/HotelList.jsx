@@ -5,6 +5,7 @@ import { faMessage, faPhone, faLocationDot, faPlaneArrival, faUtensils } from '@
 import ImageComponent from './ImageComponent';
 import Divider from './Divider'; // Import the Divider component
 import Button from './Button'; // Import the Button component
+import SubHeading from './SubHeading';
 
 const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -27,7 +28,8 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
       {hotels.map((hotel) => (
         <div key={hotel.name} className="hotel-card">
           <ImageComponent src={hotel.image} alt={hotel.name} />
-          <h2>{hotel.name}</h2>
+          {/* <h2>{hotel.name}</h2> */}
+          <SubHeading text={hotel.name} />
           {/* Unordered list for hotel description */}
           <ul>
             {hotel.description.map((descItem, index) => (
