@@ -18,10 +18,15 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
     }
   };
 
-  // Function to handle "Book now" button click
+  // Updated "Book now" button click handler
   const handleBookNow = (hotel) => {
-    // Redirect to the booking page for this hotel
-    navigate(`/hotels/${hotel.name}/book`);
+    if (hotel.name === "Laguna Pearl Retreat") {
+      // Navigate to the booking page for Laguna Pearl Retreat
+      navigate('/hotels/laguna-pearl-retreat/book');
+    } else {
+      // Show an alert for hotels that are not bookable
+      alert(`${hotel.name} is not available for booking.`);
+    }
   };
 
   return (
