@@ -675,10 +675,9 @@ button:focus-visible {
 
 .image-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 55px;
+  left: 170px;
   padding: 10px;
-  color: white; /* Change color as needed */
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: for better visibility */
-  font-size: 24px; /* Adjust size as needed */
+  color: black; /* Change color as needed */
+  font-size: 1.7rem; /* Adjust size as needed */
 }
