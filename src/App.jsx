@@ -96,7 +96,7 @@ const App = () => {
         new daily activities than ever."
       />
 
-      {/* Render the Slider component for displaying images/content */}
+      {/* Render the Slider component for displaying images */}
       <Slider />
 
       {/* Render the HotelInfoIcons component to display hotel information icons */}
