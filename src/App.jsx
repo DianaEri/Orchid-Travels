@@ -33,6 +33,7 @@ import ImageComponent from './ImageComponent'; // Import reusable ImageComponent
 import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
 import ScrollToTopButton from './ScrollToTopButton'; 
+import Socials from './Socials'; 
 
 const App = () => {
   // State to store selected values for destination, adults, and children

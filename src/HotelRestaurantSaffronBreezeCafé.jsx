@@ -16,6 +16,7 @@ import SubHeading from './SubHeading';
 import ImageComponent from './ImageComponent';
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
 import ScrollToTopButton from './ScrollToTopButton';
+import Socials from './Socials'; 
 import imageOneHotelRestaurant  from './assets/imageOneHotelRestaurant .svg';
 import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg';
 import imageThreeHotelRestaurant  from './assets/imageThreeHotelRestaurant .svg';
@@ -168,6 +169,8 @@ const HotelRestaurantSaffronBreezeCafé = () => {
       <YellowFlower /> 
 
       <Gallery />
+
+      <Socials />
 
       <ScrollToTopButton />
 

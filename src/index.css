@@ -707,6 +707,29 @@ button:focus-visible {
 /* ScrollToTopButton END */
 
 
+/* Socials START */
+.socials-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto; 
+  text-align: center;
+}
+
+.socials-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.instagram-icon {
+  color: black;
+  font-size: 3rem; 
+}
+/* Socials END */
+
+
 
 
 
