@@ -672,6 +672,42 @@ button:focus-visible {
 
 
 
+/* ScrollToTopButton START */
+.scroll-to-top-container {
+  position: fixed; 
+  bottom: 2rem; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.scroll-to-top-button {
+  background-color: black;
+  color: #BE8730;
+  font-weight: bolder;
+  border: none;
+  padding: 0.5rem 1.5rem; 
+  border-radius: 15px; 
+  font-size: 0.8rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none; 
+}
+
+.scroll-to-top-button:hover {
+  background-color: #BE8730;
+}
+
+.scroll-to-top-button:focus {
+  outline: none; 
+}
+/* ScrollToTopButton END */
+
+
+
 
 
 

@@ -15,6 +15,7 @@ import HeadingBlock from './HeadingBlock';
 import SubHeading from './SubHeading';
 import ImageComponent from './ImageComponent';
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
+import ScrollToTopButton from './ScrollToTopButton';
 import imageOneHotelRestaurant  from './assets/imageOneHotelRestaurant .svg';
 import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg';
 import imageThreeHotelRestaurant  from './assets/imageThreeHotelRestaurant .svg';
@@ -168,12 +169,7 @@ const HotelRestaurantSaffronBreezeCafé = () => {
 
       <Gallery />
 
-
-
-
-
-
-
+      <ScrollToTopButton />
 
       {/* Render the Footer component at the bottom of the page */}
       <Footer />
