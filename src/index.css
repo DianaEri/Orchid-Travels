@@ -614,6 +614,35 @@ button:focus-visible {
 
 /* Slider END */
 
+
+
+/* Yellow flower START */
+.yellow-flower-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  background-color: transparent; 
+}
+
+.centered-logo {
+  width: 2rem; 
+  height: auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+/* Yellow flower END */
+
+
+
+
+
+
+
+
+
+
+
 .bold {
   font-weight: bold;
 }

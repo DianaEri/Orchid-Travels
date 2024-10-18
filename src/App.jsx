@@ -30,6 +30,7 @@ import Banner from './Banner'; // Import Banner component for a top-banner or he
 import HeadingBlock from './HeadingBlock'; // Import HeadingBlock for rendering section headings
 import location from './assets/location.jpg'; // Import an image for the location section
 import ImageComponent from './ImageComponent'; // Import reusable ImageComponent for displaying images
+import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
 
 const App = () => {
   // State to store selected values for destination, adults, and children

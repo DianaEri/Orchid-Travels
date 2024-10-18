@@ -7,6 +7,7 @@ import Modal from 'react-modal'; // Import the react-modal library for the modal
 import Header from './Header'; // Import the Header component for the top of the page
 import Footer from './Footer'; // Import the Footer component for the bottom of the page
 import menuPDF from './assets/menu.pdf'; // Import the PDF file that contains the restaurant menu
+import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
 import YellowLine from './YellowLine'; 
 import BlackLine from './BlackLine';
 import TextBlock from './TextBlock';
@@ -18,6 +19,7 @@ import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg';
 import imageThreeHotelRestaurant  from './assets/imageThreeHotelRestaurant .svg';
 import imageFourHotelRestaurant  from './assets/imageFourHotelRestaurant .svg';
 import imageFiveHotelRestaurant  from './assets/imageFiveHotelRestaurant .svg';
+
 
 // Set the app element for accessibility purposes (used by Modal)
 Modal.setAppElement('#root');
@@ -160,6 +162,8 @@ const HotelRestaurantSaffronBreezeCafé = () => {
         text="Come discover the flavors of Thailand at Saffron Breeze Café—where every bite is a breeze 
         of pure indulgence." 
       />
+
+      <YellowFlower /> 
 
 
 
