@@ -732,6 +732,55 @@ button:focus-visible {
 
 
 
+/* TravelDetailsData Styling */
+.travel-details-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  margin: 0 auto;
+}
+
+.top-options, .bottom-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  width: 48%; 
+}
+
+.option-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  min-width: 9rem; 
+}
+
+.details-value {
+  font-size: 1rem;
+  color: #333;
+  padding: 0.5rem 0;
+  border-radius: 0.25rem; 
+  text-align: center;
+  display: block;
+  direction: ltr;
+  background-color: #f5f5f5; 
+}
+/* TravelDetailsData Styling */
+
+
+
+
 
 
 

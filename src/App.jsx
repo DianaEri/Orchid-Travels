@@ -35,6 +35,8 @@ import Gallery from './Gallery'; // Import the Gallery component. Displaying a g
 import ScrollToTopButton from './ScrollToTopButton'; 
 import Socials from './Socials'; 
 import book from './hotels/book.jsx';
+import TravelDetailsData from './TravelDetailsData'; 
+
 
 const App = () => {
   // State to store selected values for destination, adults, and children
