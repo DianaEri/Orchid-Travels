@@ -31,6 +31,7 @@ import HeadingBlock from './HeadingBlock'; // Import HeadingBlock for rendering 
 import location from './assets/location.jpg'; // Import an image for the location section
 import ImageComponent from './ImageComponent'; // Import reusable ImageComponent for displaying images
 import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
+import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
 
 const App = () => {
   // State to store selected values for destination, adults, and children

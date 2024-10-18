@@ -636,6 +636,44 @@ button:focus-visible {
 
 
 
+/* Gallery START */
+
+.gallery-container {
+  width: 100%; 
+  max-width: 75rem; 
+  margin: 0 auto; 
+  padding: 1.25rem; 
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 0.6rem; 
+  width: 100%; 
+}
+
+.gallery-item {
+  overflow: hidden; 
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; 
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); 
+}
+
+/* Gallery END */
+
+
+
+
+
+
+
 
 
 
