@@ -7,6 +7,17 @@ import Modal from 'react-modal'; // Import the react-modal library for the modal
 import Header from './Header'; // Import the Header component for the top of the page
 import Footer from './Footer'; // Import the Footer component for the bottom of the page
 import menuPDF from './assets/menu.pdf'; // Import the PDF file that contains the restaurant menu
+import YellowLine from './YellowLine'; 
+import BlackLine from './BlackLine';
+import TextBlock from './TextBlock';
+import HeadingBlock from './HeadingBlock';
+import SubHeading from './SubHeading';
+import ImageComponent from './ImageComponent';
+import imageOneHotelRestaurant  from './assets/imageOneHotelRestaurant .svg';
+import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg';
+import imageThreeHotelRestaurant  from './assets/imageThreeHotelRestaurant .svg';
+import imageFourHotelRestaurant  from './assets/imageFourHotelRestaurant .svg';
+import imageFiveHotelRestaurant  from './assets/imageFiveHotelRestaurant .svg';
 
 // Set the app element for accessibility purposes (used by Modal)
 Modal.setAppElement('#root');
@@ -44,11 +55,8 @@ const HotelRestaurantSaffronBreezeCafé = () => {
       {/* Render the Header component at the top of the page */}
       <Header />
 
-      {/* Main title and description of the restaurant */}
-      <h1>Saffron Breeze Café</h1>
-      <p>
-        Welcome to Saffron Breeze Café! Enjoy a delightful dining experience with authentic Thai cuisine and international favorites.
-      </p>
+      <ImageComponent src={imageOneHotelRestaurant } alt="imageOneHotelRRestaurant" />
+
 
       {/* Button to trigger the opening of the modal */}
       <p>
@@ -70,6 +78,95 @@ const HotelRestaurantSaffronBreezeCafé = () => {
         {/* Embed the PDF menu inside the modal using an iframe */}
         <iframe src={menuPDF} width="100%" height="100%" title="Restaurant Menu"></iframe>
       </Modal>
+
+      {/* Main title and description of the restaurant */}
+      <HeadingBlock
+        text="Hotel Resturant Saffron Breeze Café"
+      />
+
+      <YellowLine />
+
+
+      <SubHeading
+        text="Welcome to Saffron Breeze Café! Enjoy a delightful dining experience with authentic Thai cuisine and international favorites."
+       />
+
+      <TextBlock 
+        text="Located within the luxurious Laguna Pearl Retreat in Phuket,
+         Saffron Breeze Café invites you to experience the true essence of 
+         Thai cuisine in a stunning beachfront setting. With its vibrant 
+         atmosphere and exceptional culinary offerings, our restaurant is 
+         the perfect spot to savor the exotic tastes of Thailand, while 
+         enjoying breathtaking views of the Andaman Sea." 
+      />
+
+      <ImageComponent src={imageTwoHotelRestaurant } alt="imageTwoHotelRestaurant" />
+
+      <BlackLine/>
+
+      <SubHeading
+        text="A Menu Crafted to Delight Every Palate"
+      />
+
+
+       <TextBlock 
+        text="At Saffron Breeze Café, we celebrate Thailand’s rich culinary heritage by combining 
+        traditional recipes with a contemporary twist. Our all-inclusive menu features a diverse 
+        selection of authentic Thai dishes, prepared with the freshest local ingredients and bursting 
+        with bold, aromatic flavors. From spicy curries to delicate stir-fries and refreshing salads, 
+        there’s something to satisfy every craving. Our talented chefs are also happy to accommodate 
+        any dietary restrictions, offering a variety of vegetarian, vegan, gluten-free, and allergen-friendly 
+        options without compromising on flavor." 
+      />
+
+      <ImageComponent src={imageThreeHotelRestaurant } alt="imageThreeHotelRestaurant" />
+
+      <BlackLine/>
+
+      <SubHeading
+        text="Dine in Paradise"
+      />
+
+      <TextBlock 
+        text="Set against the backdrop of Phuket’s stunning coastline, Saffron Breeze Café offers both indoor and
+         outdoor dining experiences. Enjoy your meal on our sun-kissed terrace, with gentle ocean breezes and the 
+         sound of the waves creating the perfect atmosphere for a relaxing meal. Whether you’re starting your day 
+         with a fresh Thai breakfast, indulging in a leisurely lunch, or enjoying a romantic dinner under the stars,
+          every moment at Saffron Breeze Café is designed to delight the senses." 
+      />
+
+      <ImageComponent src={imageFourHotelRestaurant } alt="imageFourHotelRestaurant" />
+
+
+      <BlackLine/>
+
+      <SubHeading
+        text="An Unforgettable Dining Experience"
+      />
+
+
+       <TextBlock 
+        text="With its welcoming ambiance, exceptional service, and a menu that showcases the best of 
+        Thai cuisine, Saffron Breeze Café is a must-visit culinary destination in Phuket. Whether 
+        you’re a food enthusiast or simply looking for a relaxed yet refined dining experience, our 
+        restaurant promises a memorable meal in the heart of paradise." 
+      />
+
+      <ImageComponent src={imageFiveHotelRestaurant } alt="imageFiveHotelRestaurant" />
+
+      <BlackLine/>
+
+      <TextBlock 
+        text="Come discover the flavors of Thailand at Saffron Breeze Café—where every bite is a breeze 
+        of pure indulgence." 
+      />
+
+
+
+
+
+
+
 
       {/* Render the Footer component at the bottom of the page */}
       <Footer />
