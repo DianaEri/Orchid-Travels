@@ -31,6 +31,10 @@ import AboutUs from './AboutUs';
 // Import HotelRestaurantSaffronBreezeCafé component to display a specific hotel restaurant's details
 import HotelRestaurantSaffronBreezeCafé from './HotelRestaurantSaffronBreezeCafé.jsx'; 
 
+
+import Book from './hotels/book.jsx'; 
+
+
 // Create the root for React rendering, targeting the 'root' element in the HTML document
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -58,6 +62,10 @@ createRoot(document.getElementById('root')).render(
 
         {/* Route for displaying the specific hotel's restaurant page (Saffron Breeze Café) */}
         <Route path="/hotel-restaurant-saffron-breeze-café" element={<HotelRestaurantSaffronBreezeCafé />} />
+
+        <Route path="/hotels/laguna-pearl-retreat/book" element={<Book />} />
+
+
       </Routes>
     </BrowserRouter>
   </StrictMode>

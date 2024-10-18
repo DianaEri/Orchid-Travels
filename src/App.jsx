@@ -34,6 +34,7 @@ import YellowFlower from './YellowFlower'; // Import the Flower component to sep
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
 import ScrollToTopButton from './ScrollToTopButton'; 
 import Socials from './Socials'; 
+import book from './hotels/book.jsx';
 
 const App = () => {
   // State to store selected values for destination, adults, and children
