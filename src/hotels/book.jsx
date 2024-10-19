@@ -9,9 +9,16 @@ import BookingOptionsForm from '../BookingOptionsForm';
 import TotalPrice from '../TotalPrice'; 
 import HeadingBlock from '../HeadingBlock'; 
 import Footer from '../Footer'; 
+import Button from '../Button'; 
 
 
 const Booking = () => {
+
+  const handleProceedClick = () => {
+    console.log("Proceed with booking clicked");
+
+  };
+
   return (
     <div>
       <Header /> 
@@ -21,9 +28,12 @@ const Booking = () => {
       <TravelDetailsData /> 
       <BookingOptionsForm />
       <TotalPrice />
-      <Footer /> 
-      
 
+      <Button type="button" className="proceed-button" onClick={handleProceedClick}>
+        Proceed with booking
+      </Button>
+
+      <Footer /> 
     </div>
   );
 };
