@@ -6,13 +6,11 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 const BookingOptionsForm = () => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
-
   const [selectedAdults, setSelectedAdults] = useState('');
   const [selectedChildren, setSelectedChildren] = useState('');
   const [basePrice, setBasePrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [flightClassPrice, setFlightClassPrice] = useState(0); 
-
+  const [flightClassPrice, setFlightClassPrice] = useState(0);
 
   const roomPriceAdjustments = {
     doubleRoomBalcony1: 128950,
@@ -20,7 +18,6 @@ const BookingOptionsForm = () => {
     doubleRoomBalcony2: 139950,
     doubleRoomPool2: 142950,
   };
-
 
   const flightClassPrices = {
     premium: 7000, 
@@ -38,15 +35,12 @@ const BookingOptionsForm = () => {
 
         if (hotel) {
           const pricePerPerson = hotel.price_per_person; 
-
-          // Get the number of adults and children from localStorage
           const adults = localStorage.getItem('selectedAdults') || 0;
           const children = localStorage.getItem('selectedChildren') || 0;
 
           setSelectedAdults(adults);
           setSelectedChildren(children);
 
-          // Calculate base price based on total number of guests
           const totalGuests = parseInt(adults) + parseInt(children);
           const calculatedBasePrice = totalGuests * pricePerPerson; 
 
@@ -61,26 +55,24 @@ const BookingOptionsForm = () => {
     fetchHotelData();
   }, []);
 
+  useEffect(() => {
+    if (totalPrice > 0) {
+      localStorage.setItem('totalPrice', totalPrice);
+    }
+  }, [totalPrice]);
 
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
-
-   
     const selectedRoomPrice = roomPriceAdjustments[room];
-
-    
     setTotalPrice(selectedRoomPrice + flightClassPrice);
   };
 
-  
   const handleFlightClassSelection = (flightClass) => {
     setSelectedFlightClass(flightClass);
 
-    
     const selectedFlightClassPrice = flightClassPrices[flightClass];
     setFlightClassPrice(selectedFlightClassPrice);
 
-   
     setTotalPrice(prevTotalPrice => {
       const currentRoomPrice = roomPriceAdjustments[selectedRoom] || basePrice;
       return currentRoomPrice + selectedFlightClassPrice;
@@ -91,14 +83,14 @@ const BookingOptionsForm = () => {
     <div className="booking-options-form">
       <h2 className="booking-title">Booking Options</h2>
 
-      
+      {/* Number of Adults and Children */}
       <p><strong>Number of Adults:</strong> {selectedAdults ? selectedAdults : 'No adults selected'}</p>
       <p><strong>Number of Children:</strong> {selectedChildren ? selectedChildren : 'No children selected'}</p>
 
+      {/* Accommodation with 1 room */}
       <h2 className="booking-title">Select Room</h2> 
       <p className="accommodation-1-room">Accommodation with 1 room</p>
       
-     
       <div className="room-option">
         <input 
           type="radio" 
@@ -133,6 +125,7 @@ const BookingOptionsForm = () => {
         Direct access to the pool area from your room, perfect for a refreshing dip.
       </p>
 
+      {/* Accommodation with 2 rooms */}
       <p className="accommodation-2-rooms">Accommodation with 2 rooms</p>
 
       <div className="room-option">
@@ -169,7 +162,7 @@ const BookingOptionsForm = () => {
         Two interconnected rooms with exclusive access to the pool area.
       </p>
 
-     
+      {/* Flight Class Selection */}
       <div className="flight-class-section">
         <h2 className="booking-title">Select flight class</h2> 
         
@@ -182,7 +175,7 @@ const BookingOptionsForm = () => {
             checked={selectedFlightClass === 'premium'} 
             onChange={() => handleFlightClassSelection('premium')} 
             className="round-checkbox" 
-        />
+          />
           <label htmlFor="premiumFlight" className="flight-label">
             Premium <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} /> 
           </label>
@@ -200,7 +193,7 @@ const BookingOptionsForm = () => {
             checked={selectedFlightClass === 'plus'} 
             onChange={() => handleFlightClassSelection('plus')} 
             className="round-checkbox" 
-        />
+          />
           <label htmlFor="plusFlight" className="flight-label">
             Plus <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} /> 
           </label>
@@ -218,7 +211,7 @@ const BookingOptionsForm = () => {
             checked={selectedFlightClass === 'economy'} 
             onChange={() => handleFlightClassSelection('economy')} 
             className="round-checkbox" 
-        />
+          />
           <label htmlFor="economyFlight" className="flight-label">
             Economy <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} /> 
           </label>
@@ -228,7 +221,7 @@ const BookingOptionsForm = () => {
         </p>
       </div>
 
-     
+      {/* Display total price */}
       <h2 className="total-price">Total Price: {totalPrice.toLocaleString()} kr</h2>
     </div>
   );
