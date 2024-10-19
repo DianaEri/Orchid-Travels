@@ -779,6 +779,159 @@ button:focus-visible {
 /* TravelDetailsData Styling */
 
 
+/* BookingOptionsForm START */
+.booking-options-form {
+  border: 2px solid red;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.booking-title {
+  font-size: 1.3rem; 
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+
+.accommodation-1-room, .accommodation-2-rooms {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.accommodation-2-rooms {
+  margin-top: 3rem; 
+}
+
+.room-option, .flight-option {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.round-checkbox {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: white;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.round-checkbox:checked {
+  background-color: white;
+  border: 2px solid black;
+}
+
+.round-checkbox:checked::after {
+  content: '';
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0; 
+  padding: 0; 
+}
+
+.room-label, .flight-label {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.room-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.room-description, .flight-description {
+  font-size: 1rem;
+  color: black;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  margin-left: 2rem;
+  text-align: left;
+}
+
+.flight-class-section {
+  margin-top: 3rem; 
+}
+
+
+#premiumFlight + .flight-label,
+#plusFlight + .flight-label,
+#economyFlight + .flight-label {
+  color: #BE8730;
+}
+/* BookingOptionsForm END */
+
+/* TotalPrice START */
+
+.total-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  max-width: 100%; 
+  margin-top: 2rem;
+  border: 2px solid red;
+}
+
+.total-price-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: black;
+  text-align: center; 
+}
+
+.price-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem; 
+}
+
+.price-amount {
+  font-weight: bold;
+  margin-right: 0.2rem; 
+}
+
+.currency {
+  font-size: 1.2rem; 
+  color: black;
+  font-weight: bolder;
+}
+
+.pricing-details {
+  font-size: 1.1rem;
+  margin-left: 1rem; 
+  color: #BE8730; 
+  font-style: italic; 
+}
+
+.pricing-details-icon {
+  margin-left: 0.5rem; 
+  color: #BE8730; 
+  font-size: 1.1rem; 
+  vertical-align: middle; 
+}
+
+/* TotalPrice END */
+
+
 
 
 

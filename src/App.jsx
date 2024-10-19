@@ -35,7 +35,9 @@ import Gallery from './Gallery'; // Import the Gallery component. Displaying a g
 import ScrollToTopButton from './ScrollToTopButton'; 
 import Socials from './Socials'; 
 import book from './hotels/book.jsx';
+import TotalPrice from './TotalPrice'; 
 import TravelDetailsData from './TravelDetailsData'; 
+import BookingOptionsForm from './BookingOptionsForm'; 
 
 
 const App = () => {
