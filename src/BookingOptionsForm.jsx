@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
-import './index.css'; 
+import React, { useState, useEffect } from 'react';
+import './index.css';   
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';  
 
-const BookingOptionsForm = () => {
+const BookingOptionsForm = () => { 
   const [selectedRoom, setSelectedRoom] = useState('');
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
+
+  const [selectedAdults, setSelectedAdults] = useState('');
+  const [selectedChildren, setSelectedChildren] = useState('');
+
+  useEffect(() => {
+    const adults = localStorage.getItem('selectedAdults');
+    const children = localStorage.getItem('selectedChildren');
+    
+    setSelectedAdults(adults);
+    setSelectedChildren(children);
+  }, []); 
 
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
@@ -17,6 +28,11 @@ const BookingOptionsForm = () => {
 
   return (
     <div className="booking-options-form">
+      <h2 className="booking-title">Booking Options</h2>
+
+      <p><strong>Number of Adults:</strong> {selectedAdults ? selectedAdults : 'No adults selected'}</p>
+      <p><strong>Number of Children:</strong> {selectedChildren ? selectedChildren : 'No children selected'}</p>
+
       <h2 className="booking-title">Select Room</h2> 
 
       <p className="accommodation-1-room">Accommodation with 1 room</p>

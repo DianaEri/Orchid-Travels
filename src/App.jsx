@@ -46,6 +46,14 @@ const App = () => {
   const [selectedAdults, setSelectedAdults] = useState('Nr of adults');
   const [selectedChildren, setSelectedChildren] = useState('Nr of children');
 
+// UseEffect to store values in localStorage when they change. Number of adults and number
+//of children are stored for "Prices and booking (book)"
+useEffect(() => {
+  localStorage.setItem('selectedAdults', selectedAdults);
+  localStorage.setItem('selectedChildren', selectedChildren);
+}, [selectedAdults, selectedChildren]); // Run whenever selectedAdults or selectedChildren changes
+
+
   const navigate = useNavigate(); // Initialize useNavigate for handling navigation
 
   // Function to handle form submission from SearchForm
