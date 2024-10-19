@@ -2,7 +2,11 @@
 // page of the application. It allows users to select the point of departure, 
 // destination, date of departure, number of guests, and length of stay.
 
-import React, { useState } from 'react'; // Import React and the useState hook for state management
+//Madelene adds "local storage" to retrive data of "Date of departure"
+//"Point of departure", "Lenght of stay" and "Destination". This data is 
+//Retrieved in "Prices and booking" page (book)
+
+import React, { useState, useEffect } from 'react'; // Import React, useState, and useEffect hooks
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesome for icons
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'; // Import the ChevronDown icon for dropdowns
 import Button from './Button'; // Import the Button component for form submission
@@ -14,12 +18,14 @@ const SearchForm = ({
   selectedAdults, setSelectedAdults, // Adults state and setter
   selectedChildren, setSelectedChildren // Children state and setter
 }) => {
-  // Dropdown open/close state for each form section
-  const [dropdownOpen, setDropdownOpen] = useState({
-    city: false,
-    adults: false,
-    children: false,
-  });
+
+  // Get values from localStorage for "Date of departure", "Point of departure", "Length of stay", and "Destination"
+  const city = localStorage.getItem('selectedCity') || 'Not selected';
+  const day = localStorage.getItem('selectedDay') || 'DD';
+  const month = localStorage.getItem('selectedMonth') || 'MM';
+  const year = localStorage.getItem('selectedYear') || 'YYYY';
+  const lengthOfStay = localStorage.getItem('selectedLengthOfStay') || 'Not selected';
+  const destination = localStorage.getItem('selectedDestination') || 'Not selected';
 
   // Additional state variables for other selections
   const [selectedCity, setSelectedCity] = useState('Select City'); // City selection
@@ -27,6 +33,32 @@ const SearchForm = ({
   const [selectedMonth, setSelectedMonth] = useState('Month'); // Month of departure selection
   const [selectedYear, setSelectedYear] = useState('Year'); // Year of departure selection
   const [selectedLengthOfStay, setSelectedLengthOfStay] = useState('Length of stay'); // Length of stay selection
+
+  // Update localStorage when these values change
+  useEffect(() => {
+    localStorage.setItem('selectedCity', selectedCity);
+  }, [selectedCity]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedDay', selectedDay);
+    localStorage.setItem('selectedMonth', selectedMonth);
+    localStorage.setItem('selectedYear', selectedYear);
+  }, [selectedDay, selectedMonth, selectedYear]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
+  }, [selectedLengthOfStay]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedDestination', selectedDestination);
+  }, [selectedDestination]);
+
+  // Dropdown open/close state for each form section
+  const [dropdownOpen, setDropdownOpen] = useState({
+    city: false,
+    adults: false,
+    children: false,
+  });
 
   // Function to toggle dropdown visibility based on type (city, adults, children)
   const toggleDropdown = (type) => {
@@ -211,4 +243,4 @@ const SearchForm = ({
   );
 };
 
-export default SearchForm; // Export the SearchForm component
+export default SearchForm; //Export the SearchForm component
