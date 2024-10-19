@@ -62,7 +62,21 @@ app.get('/api/data', (req, res) => {
         price_per_person: 21100,
         location: "Phuket",
         image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
+      },
+      {
+        name: "Golden Orchid Beachfront Villas",
+        description: [
+          "Nearest beach 150m",
+          "2 pools and 1 children's pool",
+          "WiFi is included throughout the hotel",
+          "Gym",
+          "Meal packages can be purchased"
+        ],
+        price_per_person: 22200,
+        family: "Kids friendly", // Family-friendly indicator
+        location: "Phuket",
+        image: "https://images.unsplash.com/photo-1623718649591-311775a30c43?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }, 
     ],
 
     // Array of event data
