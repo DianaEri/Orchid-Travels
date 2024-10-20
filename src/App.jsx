@@ -39,6 +39,8 @@ import TotalPrice from './TotalPrice';
 import TravelDetailsData from './TravelDetailsData'; 
 import BookingOptionsForm from './BookingOptionsForm'; 
 import PaymentOptions from './PaymentOptions'; 
+import ChosenBookingOptions from './ChosenBookingOptions.jsx'; 
+
 
 
 const App = () => {
