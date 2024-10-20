@@ -785,6 +785,7 @@ button:focus-visible {
   padding: 1rem;
   width: 100%;
   margin: 0 auto;
+  border: 0.125rem solid red;
 }
 
 .booking-title {
