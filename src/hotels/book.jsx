@@ -10,6 +10,7 @@ import TotalPrice from '../TotalPrice';
 import HeadingBlock from '../HeadingBlock'; 
 import Footer from '../Footer'; 
 import Button from '../Button'; 
+import PaymentOptions from '../PaymentOptions'; 
 
 const Booking = () => {
   const [step, setStep] = useState('booking'); 
@@ -23,8 +24,6 @@ const Booking = () => {
 
   const handleConfirmClick = () => {
     console.log("Confirm and pay clicked");
- 
- 
   };
 
   return (
@@ -49,6 +48,7 @@ const Booking = () => {
         <div>
           <TravelDetailsData />
           <TotalPrice />
+          <PaymentOptions />
           <Button type="button" className="confirm-button" onClick={handleConfirmClick}>
             Confirm and pay
           </Button>

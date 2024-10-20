@@ -38,6 +38,7 @@ import book from './hotels/book.jsx';
 import TotalPrice from './TotalPrice'; 
 import TravelDetailsData from './TravelDetailsData'; 
 import BookingOptionsForm from './BookingOptionsForm'; 
+import PaymentOptions from './PaymentOptions'; 
 
 
 const App = () => {
