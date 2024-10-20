@@ -879,6 +879,39 @@ button:focus-visible {
 
 
 
+/* ChosenBookingOptions START */
+
+.chosen-booking-options {
+  width: 100%; 
+  margin: 1.25rem auto; 
+  border: 0.125rem solid red;
+  text-align: left; 
+}
+
+.chosen-booking-title, 
+.chosen-room-details, 
+.chosen-flight-class-details {
+  font-size: 1.2rem;
+  margin-bottom: 0.625rem; 
+  margin-left: 0; 
+}
+
+.chosen-room-details, 
+.chosen-flight-class-details {
+  color: black;
+  margin-bottom: 1.25rem;
+}
+
+.chosen-room-details span, 
+.chosen-flight-class-details span {
+  color: black;
+}
+
+.chosen-booking-options p {
+  margin: 0;
+}
+
+/* ChosenBookingOptions START */
 
 
 
