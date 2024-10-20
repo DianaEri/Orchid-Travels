@@ -1,44 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// This component, created by Madelene, displays a styled heading block for the website.
+// It allows customization of text, font size, color, alignment, and padding through props.
+// The HeadingBlock component is used to create consistent, responsive headers throughout the site.
 
-/*
-  Skapar en specifikt stylad textlåda (För "Headings") där innehåll, storlek, färg och 
-  andra egenskaper kan anpassas via props för återanvändbarhet. Istället 
-  för att TextBlock alltid visar samma text eller samma stil, kan man ändra 
-  dessa aspekter genom att skicka in olika props när komponenten används. 
-  Koden har anpassats för att uppfylla utseendemålen för "Orchid Travels 
-  "applikationen. Texten anpassas beroende på vad som skickas in som prop "text" 
-  när komponenten renderas.
-*/
-
-
+import React from 'react'; // Import React to create the component
 
 const HeadingBlock = ({ 
-  text, 
-  fontSize = '1.3rem',  
-  color = 'black', 
-  textAlign = 'center', 
-  margin = '1rem 0',
-  width = '88%',
-  paddingLeft = '1rem',  // Adding default value for paddingLeft
-  paddingRight = '1rem',  // Adding default value for paddingRight
-  paddingTop = '2.5rem'
+  text,                       // The text to display as the heading
+  fontSize = '1.3rem',         // Font size of the heading 
+  color = 'black',             // Text color 
+  textAlign = 'center',        // Text alignment 
+  margin = '1rem 0',           // Margin around the heading 
+  width = '88%',               // Width of the heading block
+  paddingLeft = '1rem',        // Padding on the left
+  paddingRight = '1rem',       // Padding on the right 
+  paddingTop = '2.5rem'        // Padding on the top 
 }) => {
   const style = {
-    fontSize: fontSize,   
-    color: color,        
-    textAlign: textAlign,   
-    paddingLeft: paddingLeft,  // Now paddingLeft is defined
-    paddingRight: paddingRight,  // Now paddingRight is defined
-    paddingTop: paddingTop,
-    fontFamily: 'Roboto, sans-serif !important',
-    width: width,
-    maxWidth: '1200px',  
-    boxSizing: 'border-box',  
-    margin: '0 auto' 
+    fontSize: fontSize,        // Apply the font size
+    color: color,              // Apply the text color
+    textAlign: textAlign,      // Apply the text alignment
+    paddingLeft: paddingLeft,  // Apply the left padding
+    paddingRight: paddingRight, // Apply the right padding
+    paddingTop: paddingTop,    // Apply the top padding
+    fontFamily: 'Roboto, sans-serif !important', // Apply the Roboto font family
+    width: width,              // Set the width of the heading block
+    maxWidth: '75rem',         // Set the maximum width to 75rem 
+    boxSizing: 'border-box',   // Include padding in the element's total width and height
+    margin: '0 auto'           // Center the block horizontally by setting left and right margins to auto
   };
 
-  return <h1 style={style}>{text}</h1>;  
+  return <h1 style={style}>{text}</h1>;  // Render the heading with the applied styles
 };
 
-export default HeadingBlock;
+export default HeadingBlock; // Export the component for use in other parts of the project
