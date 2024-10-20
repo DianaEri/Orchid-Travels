@@ -13,7 +13,7 @@ const ChosenBookingOptions = () => {
     const flightClass = localStorage.getItem('selectedFlightClass');
 
     if (room) setSelectedRoom(room);
-    if (roomPrice) setSelectedRoomPrice(roomPrice);
+    if (roomPrice) setSelectedRoomPrice(Number(roomPrice)); 
     if (flightClass) setSelectedFlightClass(flightClass);
   }, []);
 
@@ -21,7 +21,10 @@ const ChosenBookingOptions = () => {
     <div className="chosen-booking-options">
       <h2 className="chosen-booking-title">Chosen Room</h2>
       {selectedRoom && (
-        <p className="chosen-room-details">{selectedRoom} {selectedRoomPrice} kr</p>
+        <p className="chosen-room-details">
+          {selectedRoom}{' '}
+          <span className="bold-price">{selectedRoomPrice.toLocaleString()} kr</span>
+        </p>
       )}
 
       <h2 className="chosen-booking-title">Chosen Flight Class</h2>

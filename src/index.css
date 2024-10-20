@@ -912,9 +912,11 @@ button:focus-visible {
   margin: 0;
 }
 
+.bold-price {
+  font-weight: bold;
+}
+
 /* ChosenBookingOptions START */
-
-
 
 
 /* TotalPrice START */
