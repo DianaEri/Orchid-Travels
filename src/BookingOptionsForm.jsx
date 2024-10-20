@@ -3,6 +3,11 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
+// Helper function to format price with space as a thousand separator
+const formatPriceWithSpace = (price) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+};
+
 const BookingOptionsForm = () => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
@@ -108,7 +113,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomBalcony1" className="room-label">Dubbelroom with balcony</label>
-        <span className="room-price">128,950 kr</span>
+        <span className="room-price">{formatPriceWithSpace(128950)} kr</span>
       </div>
       <p className="room-description">A spacious room with a private balcony and breathtaking views. Perfect for relaxation.</p>
 
@@ -123,10 +128,9 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomPool1" className="room-label">Dubbelroom with pool access</label>
-        <span className="room-price">132,950 kr</span>
+        <span className="room-price">{formatPriceWithSpace(132950)} kr</span>
       </div>
       <p className="room-description">Direct access to the pool area from your room, perfect for a refreshing dip.</p>
-
 
       <p className="accommodation-2-rooms">Accommodation with 2 rooms</p>
 
@@ -141,7 +145,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomBalcony2" className="room-label">Dubbelroom with balcony</label>
-        <span className="room-price">139,950 kr</span>
+        <span className="room-price">{formatPriceWithSpace(139950)} kr</span>
       </div>
       <p className="room-description">Enjoy two rooms, both with private balconies offering stunning scenery.</p>
 
@@ -156,7 +160,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomPool2" className="room-label">Dubbelroom with pool access</label>
-        <span className="room-price">142,950 kr</span>
+        <span className="room-price">{formatPriceWithSpace(142950)} kr</span>
       </div>
       <p className="room-description">Two interconnected rooms with exclusive access to the pool area.</p>
 

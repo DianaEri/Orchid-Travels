@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 
+
+const formatPriceWithSpace = (price) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+};
+
 const ChosenBookingOptions = () => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [selectedRoomPrice, setSelectedRoomPrice] = useState(0);
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
-
 
   useEffect(() => {
     const room = localStorage.getItem('selectedRoom');
@@ -23,7 +27,7 @@ const ChosenBookingOptions = () => {
       {selectedRoom && (
         <p className="chosen-room-details">
           {selectedRoom}{' '}
-          <span className="bold-price">{selectedRoomPrice.toLocaleString()} kr</span>
+          <span className="bold-price">{formatPriceWithSpace(selectedRoomPrice)} kr</span>
         </p>
       )}
 
