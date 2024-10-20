@@ -15,4 +15,4 @@ const YellowFlower = () => {
   );
 };
 
-export default YellowFlower; // This exports the YellowFlower component, so it can be used in other files.
+export default YellowFlower;  // Export the component to be used in other parts of the project

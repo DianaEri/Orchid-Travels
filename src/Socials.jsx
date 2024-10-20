@@ -24,4 +24,4 @@ const Socials = () => {
   );
 };
 
-export default Socials;  // Export the Socials component for use in other parts of the project.
+export default Socials;  // Export the component to be used in other parts of the project
