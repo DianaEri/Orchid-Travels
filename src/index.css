@@ -742,6 +742,7 @@ button:focus-visible {
   align-items: center;
   width: 100%; 
   margin: 0 auto;
+  border: 0.125rem solid red;
 }
 
 .top-options, .bottom-options {
@@ -929,6 +930,7 @@ button:focus-visible {
   width: 100%; 
   max-width: 100%; 
   margin-top: 2rem;
+  border: 0.125rem solid red;
 }
 
 .total-price-text {
