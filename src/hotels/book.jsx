@@ -15,13 +15,19 @@ import ChosenBookingOptions from '../ChosenBookingOptions.jsx';
 
 const Booking = () => {
   const [step, setStep] = useState('booking'); 
+  const [receiptPrinted, setReceiptPrinted] = useState(false); 
 
   const handleProceedClick = () => {
     setStep('confirm'); 
   };
 
   const handleConfirmClick = () => {
-    console.log("Confirm and pay clicked");
+    setStep('receipt');  
+  };
+
+  const handlePrintReceipt = () => {
+    window.print();  
+    setReceiptPrinted(true); 
   };
 
   return (
@@ -54,9 +60,22 @@ const Booking = () => {
         </div>
       )}
 
+      {step === 'receipt' && (
+        <div>
+          <TravelDetailsData />
+          <ChosenBookingOptions /> 
+          <TotalPrice />
+          <Button type="button" className="print-receipt-button" onClick={handlePrintReceipt}>
+            Print receipt
+          </Button>
+       
+          {receiptPrinted && <p className="receipt-printed-message">Receipt printed</p>}
+        </div>
+      )}
+
       <Footer />
     </div>
   );
 };
 
-export default Booking
+export default Booking;
