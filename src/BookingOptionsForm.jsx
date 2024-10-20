@@ -160,7 +160,7 @@ const BookingOptionsForm = () => {
       </div>
       <p className="room-description">Two interconnected rooms with exclusive access to the pool area.</p>
 
-      <h2 className="booking-title">Select flight class</h2>
+      <h2 className="booking-title flight-class-title">Select flight class</h2>
 
       <div className="flight-option">
         <input

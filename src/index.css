@@ -876,6 +876,11 @@ button:focus-visible {
 #economyFlight + .flight-label {
   color: #BE8730;
 }
+
+.flight-class-title {
+  padding-top: 1.5rem; 
+}
+
 /* BookingOptionsForm END */
 
 
@@ -929,7 +934,6 @@ button:focus-visible {
   justify-content: center;
   width: 100%; 
   max-width: 100%; 
-  margin-top: 2rem;
   border: 0.125rem solid red;
 }
 
