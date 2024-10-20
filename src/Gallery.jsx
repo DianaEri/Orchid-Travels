@@ -1,5 +1,12 @@
+// This component, created by Madelene, displays a gallery of images. 
+// It renders a grid of images where each image links to the website's Instagram page. 
+// The component makes it easy to add, organize, and display multiple images while allowing users to view more images through external links.
+
+// Importing React library
 import React from 'react';
+// Importing the CSS file for styling
 import './index.css'; 
+// Importing image files that will be displayed in the gallery
 import imageOneGallery from './assets/imageOneGallery.svg'; 
 import imageTwoGallery from './assets/imageTwoGallery.svg'; 
 import imageThreeGallery from './assets/imageThreeGallery.svg'; 
@@ -28,7 +35,9 @@ import imageTwentyFiveGallery from './assets/imageTwentyFiveGallery.svg';
 import imageTwentySixGallery from './assets/imageTwentySixGallery.svg'; 
 import imageTwentySevenGallery from './assets/imageTwentySevenGallery.svg';
 
+// The Gallery component function
 const Gallery = () => {
+  // Array of image objects with their source (src) and alternate text (alt)
   const images = [
     { src: imageOneGallery, alt: 'ImageOne' },
     { src: imageTwoGallery, alt: 'ImageTwo' },
@@ -61,10 +70,14 @@ const Gallery = () => {
 
   return (
     <div className="gallery-container">
+      {/* Displaying a grid of images */}
       <div className="gallery-grid">
+        {/* Looping through the array of images and displaying each one */}
         {images.map((image, index) => (
           <div className="gallery-item" key={index}>
+            {/* Each image links to Instagram when clicked */}
             <a target="_blank" href="https://www.instagram.com/" rel="noreferrer">
+              {/* Displaying the image */}
               <img src={image.src} alt={`${image.alt} ${index + 1}`} />
             </a>
           </div>
@@ -74,4 +87,5 @@ const Gallery = () => {
   );
 };
 
+// Export the component to be used in other parts of the project
 export default Gallery;
