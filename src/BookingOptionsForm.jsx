@@ -25,7 +25,6 @@ const BookingOptionsForm = () => {
     economy: 0,
   };
 
-  // Mappings for user-friendly room and flight class names
   const roomNameMapping = {
     doubleRoomBalcony1: 'Double Room Balcony 1',
     doubleRoomPool1: 'Double Room Pool 1',
@@ -39,7 +38,6 @@ const BookingOptionsForm = () => {
     economy: 'Economy',
   };
 
-  // Fetch hotel data from the API
   useEffect(() => {
     const fetchHotelData = async () => {
       try {
@@ -78,23 +76,16 @@ const BookingOptionsForm = () => {
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
     const selectedRoomPrice = roomPriceAdjustments[room];
-
     localStorage.setItem('selectedRoom', roomNameMapping[room] || room);
     localStorage.setItem('selectedRoomPrice', selectedRoomPrice);
-
     setTotalPrice(selectedRoomPrice + flightClassPrice);
   };
 
   const handleFlightClassSelection = (flightClass) => {
     setSelectedFlightClass(flightClass);
-
     const selectedFlightClassPrice = flightClassPrices[flightClass];
-
-    
     localStorage.setItem('selectedFlightClass', flightClassNameMapping[flightClass] || flightClass);
-
     setFlightClassPrice(selectedFlightClassPrice);
-
     setTotalPrice((prevTotalPrice) => {
       const currentRoomPrice = roomPriceAdjustments[selectedRoom] || basePrice;
       return currentRoomPrice + selectedFlightClassPrice;
@@ -103,17 +94,6 @@ const BookingOptionsForm = () => {
 
   return (
     <div className="booking-options-form">
-      <h2 className="booking-title">Booking Options</h2>
-
-     
-      <p>
-        <strong>Number of Adults:</strong> {selectedAdults ? selectedAdults : 'No adults selected'}
-      </p>
-      <p>
-        <strong>Number of Children:</strong> {selectedChildren ? selectedChildren : 'No children selected'}
-      </p>
-
-     
       <h2 className="booking-title">Select Room</h2>
       <p className="accommodation-1-room">Accommodation with 1 room</p>
 
@@ -147,8 +127,8 @@ const BookingOptionsForm = () => {
       </div>
       <p className="room-description">Direct access to the pool area from your room, perfect for a refreshing dip.</p>
 
-     
-      <h2 className="booking-title">Accommodation with 2 rooms</h2>
+
+      <p className="accommodation-2-rooms">Accommodation with 2 rooms</p>
 
       <div className="room-option">
         <input
@@ -180,7 +160,6 @@ const BookingOptionsForm = () => {
       </div>
       <p className="room-description">Two interconnected rooms with exclusive access to the pool area.</p>
 
-      
       <h2 className="booking-title">Select flight class</h2>
 
       <div className="flight-option">
@@ -230,9 +209,6 @@ const BookingOptionsForm = () => {
         </label>
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
-
-     
-      <h2 className="total-price">Total Price: {totalPrice.toLocaleString()} kr</h2>
     </div>
   );
 };
