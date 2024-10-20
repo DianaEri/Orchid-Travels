@@ -3,7 +3,7 @@
 // props. The goal is to have consistent styling for the "body text" sections of the website, 
 // and this component helps achieve that.
 
-import React from 'react';
+import React from 'react'; // Import React to create the component
 
 const TextBlock = ({ 
   text,                    // Text to display

@@ -2,7 +2,7 @@
 // with the "HeadingBlock" component. Together, these two components will form a stylish header
 // for the website.
 
-import React from 'react';
+import React from 'react'; // Import React to create the component
 
 // Define the YellowLine component
 const YellowLine = () => {

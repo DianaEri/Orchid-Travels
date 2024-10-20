@@ -1,7 +1,7 @@
 // This component, created by Madelene, displays a yellow flower, which will be used as a section 
 //divider on the website to separate different content sections.
 
-import React from 'react';
+import React from 'react'; // Import React to create the component
 import goldLogo from './assets/goldLogo.svg'; // Importing the gold logo image from the assets folder.
 import './index.css'; // Importing the CSS file for styling.
 
