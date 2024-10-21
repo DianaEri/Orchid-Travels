@@ -2,8 +2,8 @@
 // page of the application. It allows users to select the point of departure, 
 // destination, date of departure, number of guests, and length of stay.
 
-//Madelene adds "local storage" to retrive data of "Date of departure"
-//"Point of departure", "Lenght of stay" and "Destination". This data is 
+//Madelene adds "local storage" to retrieve data of "Date of departure"
+//"Point of departure", "Length of stay" and "Destination". This data is 
 //Retrieved in "Prices and booking" page (book)
 
 import React, { useState, useEffect } from 'react'; // Import React, useState, and useEffect hooks
@@ -16,10 +16,10 @@ const SearchForm = ({
   onSubmit, // Parent function to handle form submission
   selectedDestination, setSelectedDestination, // Destination state and setter
   selectedAdults, setSelectedAdults, // Adults state and setter
-  selectedChildren, setSelectedChildren // Children state and setter
+  selectedChildren, setSelectedChildren // Adults state and setter
 }) => {
 
-  // Get values from localStorage for "Date of departure", "Point of departure", "Length of stay", and "Destination"
+  // Get values from localStorage for "Date of departure", "Point of departure", "Length of stay", "Destination", "Adults", and "Children"
   const city = localStorage.getItem('selectedCity') || 'Not selected';
   const day = localStorage.getItem('selectedDay') || 'DD';
   const month = localStorage.getItem('selectedMonth') || 'MM';
@@ -52,6 +52,16 @@ const SearchForm = ({
   useEffect(() => {
     localStorage.setItem('selectedDestination', selectedDestination);
   }, [selectedDestination]);
+
+  // Save number of adults to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('selectedAdults', selectedAdults);
+  }, [selectedAdults]);
+
+  // Save number of children to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('selectedChildren', selectedChildren);
+  }, [selectedChildren]);
 
   // Dropdown open/close state for each form section
   const [dropdownOpen, setDropdownOpen] = useState({

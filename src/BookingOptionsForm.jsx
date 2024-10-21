@@ -3,7 +3,7 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-// Helper function to format price with space as a thousand separator
+
 const formatPriceWithSpace = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
@@ -11,23 +11,26 @@ const formatPriceWithSpace = (price) => {
 const BookingOptionsForm = () => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
-  const [selectedAdults, setSelectedAdults] = useState('');
-  const [selectedChildren, setSelectedChildren] = useState('');
-  const [basePrice, setBasePrice] = useState(0);
+  const [selectedAdults, setSelectedAdults] = useState(localStorage.getItem('selectedAdults') || 1);
+  const [selectedChildren, setSelectedChildren] = useState(localStorage.getItem('selectedChildren') || 0);
+  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(localStorage.getItem('selectedLengthOfStay') || 1);
+  const [basePrice, setBasePrice] = useState(128950); 
   const [totalPrice, setTotalPrice] = useState(0);
   const [flightClassPrice, setFlightClassPrice] = useState(0);
+  const [roomUpgradePrice, setRoomUpgradePrice] = useState(0);
+
 
   const roomPriceAdjustments = {
-    doubleRoomBalcony1: 128950,
-    doubleRoomPool1: 132950,
-    doubleRoomBalcony2: 139950,
-    doubleRoomPool2: 142950,
+    doubleRoomBalcony1: 0, 
+    doubleRoomPool1: 4000, 
+    doubleRoomBalcony2: 11000, 
+    doubleRoomPool2: 14000,  
   };
 
   const flightClassPrices = {
-    premium: 7000,
+    premium: 7000, 
     plus: 5000,
-    economy: 0,
+    economy: 0
   };
 
   const roomNameMapping = {
@@ -44,33 +47,31 @@ const BookingOptionsForm = () => {
   };
 
   useEffect(() => {
-    const fetchHotelData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/data');
-        const data = await response.json();
-        const hotel = data.hotels.find(hotel => hotel.name === 'Laguna Pearl Retreat');
+    localStorage.setItem('selectedAdults', selectedAdults);
+  }, [selectedAdults]);
 
-        if (hotel) {
-          const pricePerPerson = hotel.price_per_person;
-          const adults = localStorage.getItem('selectedAdults') || 0;
-          const children = localStorage.getItem('selectedChildren') || 0;
+  useEffect(() => {
+    localStorage.setItem('selectedChildren', selectedChildren);
+  }, [selectedChildren]);
 
-          setSelectedAdults(adults);
-          setSelectedChildren(children);
+  useEffect(() => {
+    localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
+  }, [selectedLengthOfStay]);
 
-          const totalGuests = parseInt(adults) + parseInt(children);
-          const calculatedBasePrice = totalGuests * pricePerPerson;
-
-          setBasePrice(calculatedBasePrice);
-          setTotalPrice(calculatedBasePrice);
-        }
-      } catch (error) {
-        console.error('Error fetching hotel data:', error);
-      }
-    };
-
-    fetchHotelData();
-  }, []);
+  useEffect(() => {
+    const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
+    const totalBasePrice = basePrice;
+    const totalRoomUpgradePrice = roomUpgradePrice;
+    const totalFlightUpgradePrice = flightClassPrice;
+    
+ 
+    console.log(`Base Price: ${totalBasePrice}`);
+    console.log(`Room Upgrade: ${totalRoomUpgradePrice}`);
+    console.log(`Flight Upgrade: ${totalFlightUpgradePrice}`);
+    
+    const total = totalBasePrice + totalRoomUpgradePrice + totalFlightUpgradePrice;
+    setTotalPrice(total);
+  }, [basePrice, roomUpgradePrice, flightClassPrice]);
 
   useEffect(() => {
     if (totalPrice > 0) {
@@ -80,21 +81,14 @@ const BookingOptionsForm = () => {
 
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
-    const selectedRoomPrice = roomPriceAdjustments[room];
-    localStorage.setItem('selectedRoom', roomNameMapping[room] || room);
-    localStorage.setItem('selectedRoomPrice', selectedRoomPrice);
-    setTotalPrice(selectedRoomPrice + flightClassPrice);
+    const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
+    setRoomUpgradePrice(selectedRoomUpgradePrice);
   };
 
   const handleFlightClassSelection = (flightClass) => {
     setSelectedFlightClass(flightClass);
-    const selectedFlightClassPrice = flightClassPrices[flightClass];
-    localStorage.setItem('selectedFlightClass', flightClassNameMapping[flightClass] || flightClass);
+    const selectedFlightClassPrice = flightClassPrices[flightClass] || 0;
     setFlightClassPrice(selectedFlightClassPrice);
-    setTotalPrice((prevTotalPrice) => {
-      const currentRoomPrice = roomPriceAdjustments[selectedRoom] || basePrice;
-      return currentRoomPrice + selectedFlightClassPrice;
-    });
   };
 
   return (
@@ -132,6 +126,7 @@ const BookingOptionsForm = () => {
       </div>
       <p className="room-description">Direct access to the pool area from your room, perfect for a refreshing dip.</p>
 
+   
       <p className="accommodation-2-rooms">Accommodation with 2 rooms</p>
 
       <div className="room-option">
@@ -213,6 +208,9 @@ const BookingOptionsForm = () => {
         </label>
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
+
+  
+      <h3>Total Price: {formatPriceWithSpace(totalPrice)} kr</h3>
     </div>
   );
 };
