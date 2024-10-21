@@ -13,8 +13,8 @@ const BookingOptionsForm = () => {
   const [selectedAdults, setSelectedAdults] = useState(localStorage.getItem('selectedAdults') || 1);
   const [selectedChildren, setSelectedChildren] = useState(localStorage.getItem('selectedChildren') || 0);
   const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(localStorage.getItem('selectedLengthOfStay') || 1);
-  const [basePricePerPerson, setBasePricePerPerson] = useState(0); 
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [basePricePerPerson, setBasePricePerPerson] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0); 
   const [flightClassPrice, setFlightClassPrice] = useState(0);
   const [roomUpgradePrice, setRoomUpgradePrice] = useState(0);
 
@@ -31,16 +31,16 @@ const BookingOptionsForm = () => {
     economy: 0
   };
 
+
   useEffect(() => {
     const fetchHotelData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/data'); 
+        const response = await fetch('http://localhost:5000/api/data');
         const data = await response.json();
-
         const lagunaHotel = data.hotels.find(hotel => hotel.name === "Laguna Pearl Retreat");
 
         if (lagunaHotel) {
-          setBasePricePerPerson(lagunaHotel.price_per_person); 
+          setBasePricePerPerson(lagunaHotel.price_per_person);
         }
       } catch (error) {
         console.error('Error fetching hotel data:', error);
@@ -49,7 +49,6 @@ const BookingOptionsForm = () => {
 
     fetchHotelData();
   }, []);
-
 
   const roomNameMapping = {
     doubleRoomBalcony1: 'Dubbelroom with balcony 1 room',
@@ -64,6 +63,7 @@ const BookingOptionsForm = () => {
     economy: 'Economy',
   };
 
+ 
   useEffect(() => {
     localStorage.setItem('selectedAdults', selectedAdults);
   }, [selectedAdults]);
@@ -76,40 +76,43 @@ const BookingOptionsForm = () => {
     localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
   }, [selectedLengthOfStay]);
 
-  useEffect(() => {
-    const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
-    const totalBasePrice = basePricePerPerson * totalGuests;
-    const total = totalBasePrice + roomUpgradePrice + flightClassPrice;
-    
-    setTotalPrice(total);
-  }, [basePricePerPerson, roomUpgradePrice, flightClassPrice, selectedAdults, selectedChildren]);
 
   useEffect(() => {
-    if (totalPrice > 0) {
-      localStorage.setItem('totalPrice', totalPrice);
+    if (selectedRoom && selectedFlightClass) { 
+      const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
+      const totalBasePrice = basePricePerPerson * totalGuests;
+      const total = totalBasePrice + roomUpgradePrice + flightClassPrice;
+      setTotalPrice(total);
+
+     
+      localStorage.setItem('totalPrice', total);
+    } else {
+      setTotalPrice(0);
+      localStorage.setItem('totalPrice', 0); 
     }
-  }, [totalPrice]);
+  }, [basePricePerPerson, roomUpgradePrice, flightClassPrice, selectedRoom, selectedFlightClass, selectedAdults, selectedChildren]);
 
-
+  
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
     const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
     const roomPrice = basePricePerPerson + selectedRoomUpgradePrice;
-    
+
     setRoomUpgradePrice(selectedRoomUpgradePrice);
 
    
-    localStorage.setItem('selectedRoom', roomNameMapping[room]); 
-    localStorage.setItem('selectedRoomPrice', roomPrice); 
+    localStorage.setItem('selectedRoom', roomNameMapping[room]);
+    localStorage.setItem('selectedRoomPrice', roomPrice);
   };
 
+  
   const handleFlightClassSelection = (flightClass) => {
     setSelectedFlightClass(flightClass);
     const selectedFlightClassPrice = flightClassPrices[flightClass] || 0;
     setFlightClassPrice(selectedFlightClassPrice);
 
    
-    localStorage.setItem('selectedFlightClass', flightClassNameMapping[flightClass]); 
+    localStorage.setItem('selectedFlightClass', flightClassNameMapping[flightClass]);
   };
 
   return (
@@ -147,7 +150,6 @@ const BookingOptionsForm = () => {
       </div>
       <p className="room-description">Direct access to the pool area from your room, perfect for a refreshing dip.</p>
 
-  
       <p className="accommodation-2-rooms">Accommodation with 2 rooms</p>
 
       <div className="room-option">
