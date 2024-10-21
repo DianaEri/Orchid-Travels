@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 
-
 const formatPriceWithSpace = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
@@ -11,11 +10,13 @@ const ChosenBookingOptions = () => {
   const [selectedRoomPrice, setSelectedRoomPrice] = useState(0);
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
 
+ 
   useEffect(() => {
-    const room = localStorage.getItem('selectedRoom');
-    const roomPrice = localStorage.getItem('selectedRoomPrice');
-    const flightClass = localStorage.getItem('selectedFlightClass');
+    const room = localStorage.getItem('selectedRoom'); 
+    const roomPrice = localStorage.getItem('selectedRoomPrice'); 
+    const flightClass = localStorage.getItem('selectedFlightClass'); 
 
+ 
     if (room) setSelectedRoom(room);
     if (roomPrice) setSelectedRoomPrice(Number(roomPrice)); 
     if (flightClass) setSelectedFlightClass(flightClass);

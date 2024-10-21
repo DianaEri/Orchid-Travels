@@ -18,7 +18,6 @@ const BookingOptionsForm = () => {
   const [flightClassPrice, setFlightClassPrice] = useState(0);
   const [roomUpgradePrice, setRoomUpgradePrice] = useState(0);
 
-
   const roomPriceAdjustments = {
     doubleRoomBalcony1: 0, 
     doubleRoomPool1: 4000, 
@@ -32,14 +31,12 @@ const BookingOptionsForm = () => {
     economy: 0
   };
 
-
   useEffect(() => {
     const fetchHotelData = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/data'); 
         const data = await response.json();
 
-    
         const lagunaHotel = data.hotels.find(hotel => hotel.name === "Laguna Pearl Retreat");
 
         if (lagunaHotel) {
@@ -53,11 +50,12 @@ const BookingOptionsForm = () => {
     fetchHotelData();
   }, []);
 
+
   const roomNameMapping = {
-    doubleRoomBalcony1: 'Double Room Balcony 1',
-    doubleRoomPool1: 'Double Room Pool 1',
-    doubleRoomBalcony2: 'Double Room Balcony 2',
-    doubleRoomPool2: 'Double Room Pool 2',
+    doubleRoomBalcony1: 'Dubbelroom with balcony 1 room',
+    doubleRoomPool1: 'Dubbelroom with pool access 1 room',
+    doubleRoomBalcony2: 'Dubbelroom with balcony 2 rooms',
+    doubleRoomPool2: 'Dubbelroom with pool access 2 rooms',
   };
 
   const flightClassNameMapping = {
@@ -79,13 +77,8 @@ const BookingOptionsForm = () => {
   }, [selectedLengthOfStay]);
 
   useEffect(() => {
-
     const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
-
-
     const totalBasePrice = basePricePerPerson * totalGuests;
-
- 
     const total = totalBasePrice + roomUpgradePrice + flightClassPrice;
     
     setTotalPrice(total);
@@ -97,16 +90,26 @@ const BookingOptionsForm = () => {
     }
   }, [totalPrice]);
 
+
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
     const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
+    const roomPrice = basePricePerPerson + selectedRoomUpgradePrice;
+    
     setRoomUpgradePrice(selectedRoomUpgradePrice);
+
+   
+    localStorage.setItem('selectedRoom', roomNameMapping[room]); 
+    localStorage.setItem('selectedRoomPrice', roomPrice); 
   };
 
   const handleFlightClassSelection = (flightClass) => {
     setSelectedFlightClass(flightClass);
     const selectedFlightClassPrice = flightClassPrices[flightClass] || 0;
     setFlightClassPrice(selectedFlightClassPrice);
+
+   
+    localStorage.setItem('selectedFlightClass', flightClassNameMapping[flightClass]); 
   };
 
   return (
@@ -227,7 +230,6 @@ const BookingOptionsForm = () => {
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
 
- 
       <h3>Total Price: {formatPriceWithSpace(totalPrice)} kr</h3>
     </div>
   );
