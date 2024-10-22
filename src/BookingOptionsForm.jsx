@@ -1,3 +1,18 @@
+// This component, created by Madelene, displays a booking page. Here is an example
+// how this booking page works:
+
+// Example: If you choose 3 adults, 3 children, and stay for 2 weeks:
+//   Base price per person is 21,491 kr (fetched from API).
+//   Total guests = 3 adults + 3 children = 6 guests.
+//   Total base price is calculated as follows:
+//   Total base price = 21,491 kr * 6 guests = 128,946 kr (per week).
+//   Since the stay is for 2 weeks, total base price = 128,946 kr * 2 = 257,892 kr.
+//   Room upgrade and flight class costs are added to the total base price, 
+//   for Economy and Dubbelroom with balcony Room 1, there is no upgrade (0 kr),
+//   so the total remains 257,892 kr.
+//   Example formula: totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay
+//   Final total = totalBasePrice + roomUpgradePrice + flightClassPrice.
+
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +27,7 @@ const BookingOptionsForm = () => {
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
   const [selectedAdults, setSelectedAdults] = useState(parseInt(localStorage.getItem('selectedAdults')) || 1);
   const [selectedChildren, setSelectedChildren] = useState(parseInt(localStorage.getItem('selectedChildren')) || 0);
-  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(parseInt(localStorage.getItem('selectedLengthOfStay')) || 1); // Convert to number
+  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(parseInt(localStorage.getItem('selectedLengthOfStay')) || 1); 
   const [basePricePerPerson, setBasePricePerPerson] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0); 
   const [flightClassPrice, setFlightClassPrice] = useState(0);
@@ -74,6 +89,7 @@ const BookingOptionsForm = () => {
     localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
   }, [selectedLengthOfStay]);
 
+  // Update calculation to reflect weeks
   useEffect(() => {
     if (selectedRoom && selectedFlightClass) { 
       const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren); 
@@ -91,7 +107,7 @@ const BookingOptionsForm = () => {
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
     const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
-    const roomPrice = (basePricePerPerson + selectedRoomUpgradePrice) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)); // Updated for length of stay and number of guests
+    const roomPrice = (basePricePerPerson + selectedRoomUpgradePrice) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)); 
 
     setRoomUpgradePrice(selectedRoomUpgradePrice);
 
