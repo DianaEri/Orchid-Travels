@@ -8,7 +8,7 @@ const formatPriceWithSpace = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
-const TotalPrice = () => {
+const TotalPriceBooking = () => {
   const [price, setPrice] = useState(0);
 
   
@@ -40,4 +40,4 @@ const TotalPrice = () => {
   );
 };
 
-export default TotalPrice;
+export default TotalPriceBooking;

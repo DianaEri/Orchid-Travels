@@ -6,7 +6,7 @@ import ImageComponent from '../ImageComponent.jsx';
 import imageOneAboutUs from '../assets/imageOneAboutUs.svg';
 import TravelDetailsData from '../TravelDetailsData'; 
 import BookingOptionsForm from '../BookingOptionsForm'; 
-import TotalPrice from '../TotalPrice'; 
+import TotalPriceBooking from '../TotalPriceBooking'; 
 import HeadingBlock from '../HeadingBlock'; 
 import Footer from '../Footer'; 
 import Button from '../Button'; 
@@ -41,7 +41,7 @@ const Booking = () => {
         <div>
           <TravelDetailsData />
           <BookingOptionsForm />
-          <TotalPrice />
+          <TotalPriceBooking />
           <Button type="button" className="proceed-button" onClick={handleProceedClick}>
             Proceed with booking
           </Button>
@@ -52,7 +52,7 @@ const Booking = () => {
         <div>
           <TravelDetailsData />
           <ChosenBookingOptions /> 
-          <TotalPrice />
+          <TotalPriceBooking />
           <PaymentOptions />
           <Button type="button" className="confirm-button" onClick={handleConfirmClick}>
             Confirm and pay
@@ -64,7 +64,7 @@ const Booking = () => {
         <div>
           <TravelDetailsData />
           <ChosenBookingOptions /> 
-          <TotalPrice />
+          <TotalPriceBooking />
           <Button type="button" className="print-receipt-button" onClick={handlePrintReceipt}>
             Print receipt
           </Button>
