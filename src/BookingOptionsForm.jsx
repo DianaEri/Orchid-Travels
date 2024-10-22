@@ -10,9 +10,9 @@ const formatPriceWithSpace = (price) => {
 const BookingOptionsForm = () => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [selectedFlightClass, setSelectedFlightClass] = useState('');
-  const [selectedAdults, setSelectedAdults] = useState(localStorage.getItem('selectedAdults') || 1);
-  const [selectedChildren, setSelectedChildren] = useState(localStorage.getItem('selectedChildren') || 0);
-  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(localStorage.getItem('selectedLengthOfStay') || 1);
+  const [selectedAdults, setSelectedAdults] = useState(parseInt(localStorage.getItem('selectedAdults')) || 1);
+  const [selectedChildren, setSelectedChildren] = useState(parseInt(localStorage.getItem('selectedChildren')) || 0);
+  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(parseInt(localStorage.getItem('selectedLengthOfStay')) || 1); // Convert to number
   const [basePricePerPerson, setBasePricePerPerson] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0); 
   const [flightClassPrice, setFlightClassPrice] = useState(0);
@@ -21,16 +21,15 @@ const BookingOptionsForm = () => {
   const roomPriceAdjustments = {
     doubleRoomBalcony1: 0, 
     doubleRoomPool1: 4000, 
-    doubleRoomBalcony2: 11000, 
-    doubleRoomPool2: 14000,  
+    doubleRoomBalcony2: 7000, 
+    doubleRoomPool2: 10000,  
   };
 
   const flightClassPrices = {
-    premium: 7000, 
-    plus: 5000,
+    premium: 6000, 
+    plus: 3000,
     economy: 0
   };
-
 
   useEffect(() => {
     const fetchHotelData = async () => {
@@ -63,7 +62,6 @@ const BookingOptionsForm = () => {
     economy: 'Economy',
   };
 
- 
   useEffect(() => {
     localStorage.setItem('selectedAdults', selectedAdults);
   }, [selectedAdults]);
@@ -76,42 +74,36 @@ const BookingOptionsForm = () => {
     localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
   }, [selectedLengthOfStay]);
 
-
   useEffect(() => {
     if (selectedRoom && selectedFlightClass) { 
-      const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
-      const totalBasePrice = basePricePerPerson * totalGuests;
+      const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren); 
+      const totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay; 
       const total = totalBasePrice + roomUpgradePrice + flightClassPrice;
       setTotalPrice(total);
 
-     
       localStorage.setItem('totalPrice', total);
     } else {
       setTotalPrice(0);
       localStorage.setItem('totalPrice', 0); 
     }
-  }, [basePricePerPerson, roomUpgradePrice, flightClassPrice, selectedRoom, selectedFlightClass, selectedAdults, selectedChildren]);
+  }, [basePricePerPerson, roomUpgradePrice, flightClassPrice, selectedRoom, selectedFlightClass, selectedAdults, selectedChildren, selectedLengthOfStay]);
 
-  
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
     const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
-    const roomPrice = basePricePerPerson + selectedRoomUpgradePrice;
+    const roomPrice = (basePricePerPerson + selectedRoomUpgradePrice) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)); // Updated for length of stay and number of guests
 
     setRoomUpgradePrice(selectedRoomUpgradePrice);
 
-   
     localStorage.setItem('selectedRoom', roomNameMapping[room]);
     localStorage.setItem('selectedRoomPrice', roomPrice);
   };
 
-  
   const handleFlightClassSelection = (flightClass) => {
     setSelectedFlightClass(flightClass);
     const selectedFlightClassPrice = flightClassPrices[flightClass] || 0;
     setFlightClassPrice(selectedFlightClassPrice);
 
-   
     localStorage.setItem('selectedFlightClass', flightClassNameMapping[flightClass]);
   };
 
@@ -131,7 +123,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomBalcony1" className="room-label">Dubbelroom with balcony</label>
-        <span className="room-price">{formatPriceWithSpace(basePricePerPerson)} kr</span>
+        <span className="room-price">{formatPriceWithSpace((basePricePerPerson + roomPriceAdjustments.doubleRoomBalcony1) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)))} kr</span>
       </div>
       <p className="room-description">A spacious room with a private balcony and breathtaking views. Perfect for relaxation.</p>
 
@@ -146,7 +138,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomPool1" className="room-label">Dubbelroom with pool access</label>
-        <span className="room-price">{formatPriceWithSpace(basePricePerPerson + roomPriceAdjustments.doubleRoomPool1)} kr</span>
+        <span className="room-price">{formatPriceWithSpace((basePricePerPerson + roomPriceAdjustments.doubleRoomPool1) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)))} kr</span>
       </div>
       <p className="room-description">Direct access to the pool area from your room, perfect for a refreshing dip.</p>
 
@@ -163,7 +155,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomBalcony2" className="room-label">Dubbelroom with balcony</label>
-        <span className="room-price">{formatPriceWithSpace(basePricePerPerson + roomPriceAdjustments.doubleRoomBalcony2)} kr</span>
+        <span className="room-price">{formatPriceWithSpace((basePricePerPerson + roomPriceAdjustments.doubleRoomBalcony2) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)))} kr</span>
       </div>
       <p className="room-description">Enjoy two rooms, both with private balconies offering stunning scenery.</p>
 
@@ -178,7 +170,7 @@ const BookingOptionsForm = () => {
           className="round-checkbox"
         />
         <label htmlFor="doubleRoomPool2" className="room-label">Dubbelroom with pool access</label>
-        <span className="room-price">{formatPriceWithSpace(basePricePerPerson + roomPriceAdjustments.doubleRoomPool2)} kr</span>
+        <span className="room-price">{formatPriceWithSpace((basePricePerPerson + roomPriceAdjustments.doubleRoomPool2) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)))} kr</span>
       </div>
       <p className="room-description">Two interconnected rooms with exclusive access to the pool area.</p>
 
