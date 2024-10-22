@@ -14,7 +14,7 @@ const BookingOptionsForm = () => {
   const [selectedChildren, setSelectedChildren] = useState(localStorage.getItem('selectedChildren') || 0);
   const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(localStorage.getItem('selectedLengthOfStay') || 1);
   const [basePricePerPerson, setBasePricePerPerson] = useState(0);
-  const [TotalPriceBooking, setTotalPriceBooking] = useState(0); 
+  const [totalPrice, setTotalPrice] = useState(0); 
   const [flightClassPrice, setFlightClassPrice] = useState(0);
   const [roomUpgradePrice, setRoomUpgradePrice] = useState(0);
 
@@ -30,6 +30,7 @@ const BookingOptionsForm = () => {
     plus: 5000,
     economy: 0
   };
+
 
   useEffect(() => {
     const fetchHotelData = async () => {
@@ -75,18 +76,19 @@ const BookingOptionsForm = () => {
     localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
   }, [selectedLengthOfStay]);
 
+
   useEffect(() => {
     if (selectedRoom && selectedFlightClass) { 
       const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
       const totalBasePrice = basePricePerPerson * totalGuests;
       const total = totalBasePrice + roomUpgradePrice + flightClassPrice;
-      setTotalPriceBooking(total);
+      setTotalPrice(total);
 
      
-      localStorage.setItem('TotalPriceBooking', total);
+      localStorage.setItem('totalPrice', total);
     } else {
-      setTotalPriceBooking(0);
-      localStorage.setItem('TotalPriceBooking', 0); 
+      setTotalPrice(0);
+      localStorage.setItem('totalPrice', 0); 
     }
   }, [basePricePerPerson, roomUpgradePrice, flightClassPrice, selectedRoom, selectedFlightClass, selectedAdults, selectedChildren]);
 
@@ -230,7 +232,7 @@ const BookingOptionsForm = () => {
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
 
-      <h3>Total Price: {formatPriceWithSpace(TotalPriceBooking)} kr</h3>
+      <h3>Total Price: {formatPriceWithSpace(totalPrice)} kr</h3>
     </div>
   );
 };

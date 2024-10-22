@@ -2,9 +2,10 @@
 // page of the application. It allows users to select the point of departure, 
 // destination, date of departure, number of guests, and length of stay.
 
-//Madelene adds "local storage" to retrieve data of "Date of departure"
-//"Point of departure", "Length of stay" and "Destination". This data is 
-//Retrieved in "Prices and booking" page (book)
+// Madelene adds "local storage" to retrieve data for "Date of departure",
+// "Point of departure", "Length of stay", and "Destination". She also adds
+// local storage to retrieve the "Number of adults", "Number of children", 
+// and "Length of stay". This data is retrieved for the "Prices and booking" page (book).
 
 import React, { useState, useEffect } from 'react'; // Import React, useState, and useEffect hooks
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesome for icons
