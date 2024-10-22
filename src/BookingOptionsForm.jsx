@@ -10,8 +10,8 @@
 //   Room upgrade and flight class costs are added to the total base price, 
 //   for Economy and Dubbelroom with balcony Room 1, there is no upgrade (0 kr),
 //   so the total remains 257,892 kr.
-//   Example formula: totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay
-//   Final total = totalBasePrice + roomUpgradePrice + flightClassPrice.
+//   Room price: totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay
+//   Final price total = totalBasePrice + roomUpgradePrice + flightClassPrice.
 
 import React, { useState, useEffect } from 'react';
 import './index.css';
