@@ -2,10 +2,11 @@
 // with images and detailed information about the hotel. 
 // It uses several components, and the ones made by Diana are: 
 // ImageComponent, HotelReviews, SubHeading, EventCardComponent, Footer
-//and Button. 
+// and Button. 
 
-//The rest of the components, like HeadingBlock, Header,
-//YellowLine, and BlackLine, ScrollToTopButton, TextBlock are made by (Madelene).
+// The rest of the components, like HeadingBlock, Header,
+// YellowLine, YellowFlower and BlackLine, ScrollToTopButton, TextBlock are
+// made by (Madelene).
 
 import React from 'react'; // Import React for building components
 import { useLocation, useNavigate } from 'react-router-dom'; // Import hooks for routing
@@ -30,6 +31,7 @@ import EventCardComponent from './EventCardComponent'; // Import EventCardCompon
 import Divider from './Divider'; // Import Divider for visual separation
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
                                                      // the top of the page after scrolling down.
+import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually.
 
 // Main component definition
 const LagunaPearlRetreat = () => {
@@ -113,6 +115,10 @@ const LagunaPearlRetreat = () => {
       <TextBlock text="Whether you’re here for a romantic getaway, a fun-filled family vacation, or a serene escape, Laguna Pearl Retreat promises a luxurious and unforgettable experience. With world-class amenities, personalized service, and the perfect location just steps from the beach, we invite you to indulge in the best that Phuket has to offer." />
       <TextBlock text="Book your stay with us today, and let your journey to paradise begin." />
       <ImageComponent src={romance} alt="Drawn heart in sand" />
+
+      {/*Displays a yellow flower, which will be used as a section divider on the website 
+      to separate different content sections */}
+      <YellowFlower /> 
 
       {/* Display event information */}
       <HeadingBlock text="Hotel activities" />

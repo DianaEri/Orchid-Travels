@@ -168,6 +168,8 @@ const HotelRestaurantSaffronBreezeCafé = () => {
         of pure indulgence." 
       />
 
+       {/*Displays a yellow flower, which will be used as a section divider on the website 
+      to separate different content sections */}
       <YellowFlower /> 
 
       <Gallery />
