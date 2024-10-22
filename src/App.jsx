@@ -1,8 +1,11 @@
-// I (Diana) started implementing the basics for our main page in 
+// I (Diana) started implementing the basics for our "Main page" in 
 // app.jsx and added the following components made by me as well: Banner,
 // SearchForm, Divider, HotelInfoIcons, ImageComponent with CSS overlay 
-// and Footer. The components Header, HeadingBlock, YellowLine, TextBlock 
-// and slider were made and implemented by Madelene.
+// and Footer.
+
+// The components Header, HeadingBlock, YellowLine, TextBlock, ScrollToTopButton
+// and slider were made and implemented by (Madelene) for "Main Page".
+
 import React, { useEffect, useState } from 'react'; // Import React and hooks (useEffect, useState)
 import { useNavigate } from 'react-router-dom'; // For routing/navigation between pages
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For using FontAwesome icons
@@ -32,7 +35,8 @@ import location from './assets/location.jpg'; // Import an image for the locatio
 import ImageComponent from './ImageComponent'; // Import reusable ImageComponent for displaying images
 import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
-import ScrollToTopButton from './ScrollToTopButton'; 
+import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
+                                                     // the top of the page after scrolling down.
 import Socials from './Socials'; 
 import book from './hotels/book.jsx';
 import TotalPrice from './TotalPrice'; 
@@ -142,6 +146,10 @@ useEffect(() => {
         </div>
       </div>
 
+      {/*Displays a button that allows users to quickly return to the top of the page after
+      scrolling down.*/}
+      <ScrollToTopButton /> 
+                           
       {/* Render the Footer component at the bottom of the page */}
       <Footer />
     </div>

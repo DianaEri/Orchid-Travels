@@ -1,6 +1,7 @@
-// Diana started this element by creating the route, path, and 
+// (Diana) started this element by creating the route, path, and 
 // implemented the modal to display the PDF menu.
-// The rest of the functionality and code was developed by Madelene.
+
+// The rest of the functionality and code was developed by (Madelene).
 
 import React, { useState } from 'react'; // Import React and the useState hook
 import Modal from 'react-modal'; // Import the react-modal library for the modal popup
@@ -15,7 +16,8 @@ import HeadingBlock from './HeadingBlock';
 import SubHeading from './SubHeading';
 import ImageComponent from './ImageComponent';
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
-import ScrollToTopButton from './ScrollToTopButton';
+import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
+                                                     // the top of the page after scrolling down.
 import Socials from './Socials'; 
 import imageOneHotelRestaurant  from './assets/imageOneHotelRestaurant .svg';
 import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg';
@@ -172,8 +174,10 @@ const HotelRestaurantSaffronBreezeCafé = () => {
 
       <Socials />
 
+      {/*Displays a button that allows users to quickly return to the top of the page after
+      scrolling down.*/}
       <ScrollToTopButton />
-
+      
       {/* Render the Footer component at the bottom of the page */}
       <Footer />
     </div>

@@ -1,9 +1,11 @@
-// Diana made this element, which displays the travel destinations 
+// (Diana) made this element, which displays the travel destinations 
 // with images and detailed information. 
 // It uses several components, and the ones made by Diana are: 
 // ImageComponent, SubHeading, and Footer. 
+
 // The rest of the components, like HeadingBlock, 
-// YellowLine, and BlackLine, are made by Madelene.
+// YellowLine, and BlackLine, ScrollToTopButton, Header, Textblock 
+// are made by (Madelene).
 
 import React from 'react'; // Import React for building components
 import TextBlock from './TextBlock'; // Import TextBlock for rendering text sections
@@ -19,6 +21,8 @@ import beach from './assets/beach.jpg'; // Import additional image assets
 import getaway from './assets/getaway.jpg';
 import bangkok from './assets/bangkok.jpg';
 import BlackLine from './BlackLine'; // Import BlackLine, another horizontal line separator
+import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
+                                                     // the top of the page after scrolling down.
 
 // Main component definition
 const OurDestinations = () => {
@@ -155,6 +159,10 @@ const OurDestinations = () => {
       />
       
       <Divider /> {/* Final divider before the footer */}
+
+      {/*Displays a button that allows users to quickly return to the top of the page after
+      scrolling down.*/}
+      <ScrollToTopButton />
       
       {/* Render the Footer component */}
       <Footer />

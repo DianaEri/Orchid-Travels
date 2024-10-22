@@ -1,9 +1,11 @@
-// Diana made this element, which displays the hotel Laguna Pearl Retreat 
+// (Diana) made this element, which displays the hotel Laguna Pearl Retreat 
 // with images and detailed information about the hotel. 
 // It uses several components, and the ones made by Diana are: 
 // ImageComponent, HotelReviews, SubHeading, EventCardComponent, Footer
-//and Button. The rest of the components, like HeadingBlock, 
-//YellowLine, and BlackLine, are made by Madelene.
+//and Button. 
+
+//The rest of the components, like HeadingBlock, Header,
+//YellowLine, and BlackLine, ScrollToTopButton, TextBlock are made by (Madelene).
 
 import React from 'react'; // Import React for building components
 import { useLocation, useNavigate } from 'react-router-dom'; // Import hooks for routing
@@ -26,6 +28,8 @@ import Footer from './Footer'; // Import Footer for the bottom of the page
 import poolside from './assets/poolside.jpg'; // Import another image asset
 import EventCardComponent from './EventCardComponent'; // Import EventCardComponent to display event cards
 import Divider from './Divider'; // Import Divider for visual separation
+import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
+                                                     // the top of the page after scrolling down.
 
 // Main component definition
 const LagunaPearlRetreat = () => {
@@ -114,6 +118,10 @@ const LagunaPearlRetreat = () => {
       <HeadingBlock text="Hotel activities" />
       <YellowLine />
       <EventCardComponent hotelName={hotelName} />
+
+      {/*Displays a button that allows users to quickly return to the top of the page after
+      scrolling down.*/}
+      <ScrollToTopButton />
 
       {/* Render the Footer component */}
       <Footer />

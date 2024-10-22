@@ -8,7 +8,9 @@ import Divider from './Divider';
 import Footer from './Footer'; 
 import YellowLine from './YellowLine'; 
 import BlackLine from './BlackLine';
-import UnOrderedList from './UnOrderedList';  
+import UnOrderedList from './UnOrderedList';
+import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
+                                                     // the top of the page after scrolling down.  
 import imageOneAboutUs from './assets/imageOneAboutUs.svg';
 import imageTwoAboutUs from './assets/imageTwoAboutUs.svg';
 import imageThreeAboutUs from './assets/imageThreeAboutUs.svg';
@@ -136,6 +138,10 @@ const AboutUs = () => {
         text="Feel free to contact us for more information or to start 
         planning your dream vacation to Thailand today!" 
       />
+
+       {/*Displays a button that allows users to quickly return to the top of the page after
+      scrolling down.*/}
+      <ScrollToTopButton />
 
       <Footer />
     </div>
