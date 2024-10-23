@@ -18,6 +18,7 @@ const Booking = () => {
   const [receiptPrinted, setReceiptPrinted] = useState(false); 
   const [totalPrice, setTotalPrice] = useState(0);  
   const [errorMessage, setErrorMessage] = useState('');  
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');  
 
   const handleProceedClick = () => {
     if (totalPrice > 0) {
@@ -29,7 +30,11 @@ const Booking = () => {
   };
 
   const handleConfirmClick = () => {
-    setStep('receipt');  
+    if (selectedPaymentMethod) {
+      setStep('receipt');  
+    } else {
+      setErrorMessage('Please select a payment method to proceed.');  
+    }
   };
 
   const handlePrintReceipt = () => {
@@ -70,8 +75,17 @@ const Booking = () => {
           <TravelDetailsData />
           <ChosenBookingOptions /> 
           <TotalPrice />
-          <PaymentOptions />
-          <Button type="button" className="confirm-button" onClick={handleConfirmClick}>
+          <PaymentOptions onPaymentMethodSelect={setSelectedPaymentMethod} />  
+          
+        
+          {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
+          
+          <Button 
+            type="button" 
+            className="confirm-button" 
+            onClick={handleConfirmClick}
+            disabled={!selectedPaymentMethod}  
+          >
             Confirm and pay
           </Button>
         </div>

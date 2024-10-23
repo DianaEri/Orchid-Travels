@@ -3,17 +3,17 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-const PaymentOptions = () => {
+const PaymentOptions = ({ onPaymentMethodSelect }) => {  
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
 
   const handlePaymentMethodSelection = (method) => {
     setSelectedPaymentMethod(method);
+    onPaymentMethodSelect(method);  
   };
 
   return (
     <div className="booking-options-form">
       <h2 className="booking-title">Select Payment Method</h2>
-
 
       <div className="payment-option">
         <input 
@@ -33,7 +33,6 @@ const PaymentOptions = () => {
         Pay securely using your credit or debit card.
       </p>
 
- 
       <div className="payment-option">
         <input 
           type="radio" 
@@ -51,7 +50,6 @@ const PaymentOptions = () => {
       <p className="payment-description">
         Use your PayPal account for fast and secure payment.
       </p>
-
 
       <div className="payment-option">
         <input 
