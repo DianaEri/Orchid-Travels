@@ -891,7 +891,7 @@ button:focus-visible {
 .chosen-booking-options {
   width: 100%; 
   margin: 1.25rem auto; 
-  border: 0.125rem solid purple;
+  border: 0.125rem solid red;
   text-align: left; 
 }
 
