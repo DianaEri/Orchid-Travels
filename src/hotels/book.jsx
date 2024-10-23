@@ -106,7 +106,10 @@ const Booking = () => {
           <TravelDetailsData />
           <ChosenBookingOptions /> 
           <TotalPrice />
-          <PaymentOptions onPaymentMethodSelect={setSelectedPaymentMethod} />  
+
+          <div style={{ marginTop: '3em' }}>
+            <PaymentOptions onPaymentMethodSelect={setSelectedPaymentMethod} />  
+          </div>
           
           {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
           

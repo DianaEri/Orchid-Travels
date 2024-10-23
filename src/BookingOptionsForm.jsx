@@ -239,8 +239,6 @@ const BookingOptionsForm = () => {
         </label>
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
-
-      <h3>Total Price: {formatPriceWithSpace(totalPrice)} kr</h3>
     </div>
   );
 };
