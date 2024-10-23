@@ -47,7 +47,7 @@ const Booking = () => {
       <Header />
       <HeadingBlock text="Prices and booking" />
       <YellowLine />
-      <ImageComponent src={imageOneAboutUs} alt="imageOneAboutUs" />
+      {/* <ImageComponent src={imageOneAboutUs} alt="imageOneAboutUs" /> */}
 
       {step === 'booking' && (
         <div>
