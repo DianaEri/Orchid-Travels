@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../index.css'; 
 import Header from '../Header.jsx'; 
 import YellowLine from '../YellowLine.jsx'; 
-import ImageComponent from '../ImageComponent.jsx';
-import imageOneAboutUs from '../assets/imageOneAboutUs.svg';
 import TravelDetailsData from '../TravelDetailsData'; 
 import BookingOptionsForm from '../BookingOptionsForm'; 
 import TotalPrice from '../TotalPrice'; 
@@ -12,6 +10,7 @@ import Footer from '../Footer';
 import Button from '../Button'; 
 import PaymentOptions from '../PaymentOptions'; 
 import ChosenBookingOptions from '../ChosenBookingOptions.jsx'; 
+import ImageComponent from '../ImageComponent'; 
 
 const Booking = () => {
   const [step, setStep] = useState('booking'); 
@@ -19,6 +18,23 @@ const Booking = () => {
   const [totalPrice, setTotalPrice] = useState(0);  
   const [errorMessage, setErrorMessage] = useState('');  
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');  
+  const [hotelData, setHotelData] = useState(null); 
+  const [selectedHotel, setSelectedHotel] = useState(null); 
+
+  useEffect(() => {
+   
+    const fetchHotelData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/data');
+        const data = await response.json();
+        setHotelData(data.hotels); 
+        setSelectedHotel(data.hotels[0]); 
+      } catch (error) {
+        console.error('Error fetching hotel data:', error);
+      }
+    };
+    fetchHotelData();
+  }, []);
 
   const handleProceedClick = () => {
     if (totalPrice > 0) {
@@ -47,7 +63,23 @@ const Booking = () => {
       <Header />
       <HeadingBlock text="Prices and booking" />
       <YellowLine />
-      {/* <ImageComponent src={imageOneAboutUs} alt="imageOneAboutUs" /> */}
+
+      {selectedHotel && (
+        <div className="hotel-info-container">
+          <div className="image-container">
+            <ImageComponent 
+              src={selectedHotel.image} 
+              alt={selectedHotel.name} 
+            />
+         
+            {selectedHotel.family === 'Kids friendly' && (
+              <div className="kids-friendly-overlay">
+                Kids friendly
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {step === 'booking' && (
         <div>
@@ -56,7 +88,6 @@ const Booking = () => {
        
           <TotalPrice onPriceUpdate={setTotalPrice} />
 
-        
           {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
 
           <Button 
@@ -77,7 +108,6 @@ const Booking = () => {
           <TotalPrice />
           <PaymentOptions onPaymentMethodSelect={setSelectedPaymentMethod} />  
           
-        
           {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
           
           <Button 
