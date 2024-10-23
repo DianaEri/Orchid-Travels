@@ -44,11 +44,11 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
           className="round-checkbox" 
         />
         <label htmlFor="paypal" className="payment-label">
-          Klarna <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
+          Paypal <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
         </label>
       </div>
       <p className="payment-description">
-      With Klarna, you can split your purchase into interest-free installments, pay the full amount after 30 days, or choose financing options for larger purchases.
+      With PayPal, you can pay instantly, send money, and even use the "Pay in 4" option to split purchases into interest-free payments. It's trusted worldwide for its buyer protection and convenience.
       </p>
 
       <div className="payment-option">
@@ -62,11 +62,11 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
           className="round-checkbox" 
         />
         <label htmlFor="bankTransfer" className="payment-label">
-          Paypal <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
+          Swish<FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
         </label>
       </div>
       <p className="payment-description">
-      With PayPal, you can pay instantly, send money, and even use the "Pay in 4" option to split purchases into interest-free payments. It's trusted worldwide for its buyer protection and convenience.
+      With Swish, you can make instant, secure payments directly from your bank account using your mobile phone. It offers quick and easy transfers for online purchases. Just enter your phone number to complete the transaction in seconds, without the need for a card.
       </p>
     </div>
   );
