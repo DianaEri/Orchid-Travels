@@ -100,7 +100,7 @@ const Booking = () => {
             Print receipt
           </Button>
        
-          {receiptPrinted && <p className="receipt-printed-message">Receipt printed</p>}
+          {receiptPrinted && <p className="receipt-printed-message" style={{ color: 'green' }}>Receipt printed</p>}
         </div>
       )}
 
