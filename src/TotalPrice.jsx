@@ -3,29 +3,27 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';  
 
-
 const formatPriceWithSpace = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
-const TotalPrice = () => {
+const TotalPrice = ({ onPriceUpdate }) => {  
   const [price, setPrice] = useState(0);
 
-  
   useEffect(() => {
     const fetchStoredPrice = () => {
       const storedPrice = localStorage.getItem('totalPrice');
       if (storedPrice) {
-        setPrice(Number(storedPrice)); 
+        const parsedPrice = Number(storedPrice);
+        setPrice(parsedPrice);
+        onPriceUpdate(parsedPrice);  
       }
     };
 
-
     const intervalId = setInterval(fetchStoredPrice, 1000);
 
-  
     return () => clearInterval(intervalId);
-  }, []);
+  }, [onPriceUpdate]);
 
   return (
     <div className="total-price-container">

@@ -16,9 +16,16 @@ import ChosenBookingOptions from '../ChosenBookingOptions.jsx';
 const Booking = () => {
   const [step, setStep] = useState('booking'); 
   const [receiptPrinted, setReceiptPrinted] = useState(false); 
+  const [totalPrice, setTotalPrice] = useState(0);  
+  const [errorMessage, setErrorMessage] = useState('');  
 
   const handleProceedClick = () => {
-    setStep('confirm'); 
+    if (totalPrice > 0) {
+      setErrorMessage('');  
+      setStep('confirm'); 
+    } else {
+      setErrorMessage('Please select a room and flight class to proceed.');  
+    }
   };
 
   const handleConfirmClick = () => {
@@ -41,8 +48,18 @@ const Booking = () => {
         <div>
           <TravelDetailsData />
           <BookingOptionsForm />
-          <TotalPrice />
-          <Button type="button" className="proceed-button" onClick={handleProceedClick}>
+       
+          <TotalPrice onPriceUpdate={setTotalPrice} />
+
+        
+          {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
+
+          <Button 
+            type="button" 
+            className="proceed-button" 
+            onClick={handleProceedClick}
+            disabled={totalPrice === 0}  
+          >
             Proceed with booking
           </Button>
         </div>
