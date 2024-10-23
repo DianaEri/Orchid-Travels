@@ -139,6 +139,9 @@ const AboutUs = () => {
         planning your dream vacation to Thailand today!" 
       />
 
+      <Divider />
+
+
        {/*Displays a button that allows users to quickly return to the top of the page after
       scrolling down.*/}
       <ScrollToTopButton />
