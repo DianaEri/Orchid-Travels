@@ -48,9 +48,9 @@ const AboutUs = () => {
 
       <ImageComponent src={imageOneAboutUs} alt="imageOneAboutUs" />
 
-      <HeadingBlock
-        text="Who We Are"
-      />
+      <SubHeading
+        text="Who we are"
+       />
 
       <TextBlock 
         text="Founded in the heart of Bangkok, Orchid Travels has been dedicated 
