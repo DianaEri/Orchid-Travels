@@ -89,7 +89,7 @@ const BookingOptionsForm = () => {
     localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
   }, [selectedLengthOfStay]);
 
-  // Update calculation to reflect weeks
+
   useEffect(() => {
     if (selectedRoom && selectedFlightClass) { 
       const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren); 
@@ -112,7 +112,7 @@ const BookingOptionsForm = () => {
     setRoomUpgradePrice(selectedRoomUpgradePrice);
 
     localStorage.setItem('selectedRoom', roomNameMapping[room]);
-    localStorage.setItem('selectedRoomPrice', roomPrice);
+    localStorage.setItem('selectedRoomPrice', roomPrice);  
   };
 
   const handleFlightClassSelection = (flightClass) => {
