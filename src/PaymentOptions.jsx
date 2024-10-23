@@ -26,11 +26,11 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
           className="round-checkbox" 
         />
         <label htmlFor="creditCard" className="payment-label">
-          Credit Card <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
+        Visa or Mastercard <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
         </label>
       </div>
       <p className="payment-description">
-        Pay securely using your credit or debit card.
+      Simply enter your card details, and your payment will be processed instantly. Both Visa and Mastercard offer fraud protection, easy transaction tracking, and flexible payment options, ensuring a seamless and safe shopping experience.
       </p>
 
       <div className="payment-option">
@@ -44,11 +44,11 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
           className="round-checkbox" 
         />
         <label htmlFor="paypal" className="payment-label">
-          PayPal <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
+          Klarna <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
         </label>
       </div>
       <p className="payment-description">
-        Use your PayPal account for fast and secure payment.
+      With Klarna, you can split your purchase into interest-free installments, pay the full amount after 30 days, or choose financing options for larger purchases.
       </p>
 
       <div className="payment-option">
@@ -62,11 +62,11 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
           className="round-checkbox" 
         />
         <label htmlFor="bankTransfer" className="payment-label">
-          Bank Transfer <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
+          Paypal <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
         </label>
       </div>
       <p className="payment-description">
-        Transfer funds directly from your bank account.
+      With PayPal, you can pay instantly, send money, and even use the "Pay in 4" option to split purchases into interest-free payments. It's trusted worldwide for its buyer protection and convenience.
       </p>
     </div>
   );
