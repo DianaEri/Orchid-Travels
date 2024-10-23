@@ -675,7 +675,7 @@ button:focus-visible {
 /* ScrollToTopButton START */
 .scroll-to-top-container {
   position: fixed; 
-  bottom: 2rem; 
+  bottom: 0.5rem; 
   left: 50%; 
   transform: translateX(-50%); 
   display: flex;
