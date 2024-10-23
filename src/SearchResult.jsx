@@ -3,7 +3,7 @@
 // She also created the components HotelList and Footer. 
 
 // The rest of the components, such as Header, YellowLine
-// ScrollToTopButton are made by (Madelene).
+// ScrollToTopButton, TravelDetailsData are made by (Madelene).
 
 import React, { useEffect, useState } from 'react'; // Import React, useEffect, and useState hooks for state and lifecycle management
 import { useLocation } from 'react-router-dom'; // Import useLocation to access data passed through navigation
@@ -11,9 +11,11 @@ import './index.css'; // Import CSS for styling
 import HotelList from './HotelList'; // Import the HotelList component to display a list of hotels
 import Footer from './Footer'; // Import the Footer component for the page's footer
 import Header from './Header'; // Import the Header component for the page's header
+import TravelDetailsData from './TravelDetailsData'; 
 import YellowLine from './YellowLine'; // Import YellowLine component for a horizontal visual separator
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
                                                      // the top of the page after scrolling down.
+
 
 // Main component definition
 const SearchResult = () => {
@@ -69,6 +71,8 @@ const SearchResult = () => {
             
             {/* Render the YellowLine component for a visual divider */}
             <YellowLine />
+
+            <TravelDetailsData />
             
             {/* Render the HotelList component and pass down the list of hotels, totalPersons, and formatted text */}
             <HotelList hotels={hotels} adultsAndChildrenText={adultsAndChildrenText} totalPersons={totalPersons} />
