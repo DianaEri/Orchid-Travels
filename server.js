@@ -33,7 +33,7 @@ app.get('/api/data', (req, res) => {
           "Airport Pick-up and Drop-off",
           "Adapted accommodation for all types of families"
         ],
-        price_per_person: 21491, // Price per person in currency
+        price_per_person: 11491, // Price per person and week in currency
         family: "Kids friendly", // Family-friendly indicator
         location: "Phuket", // Location of the hotel
         image: "https://images.unsplash.com/photo-1651376318405-f1055f37a511?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Image URL for display
@@ -46,7 +46,7 @@ app.get('/api/data', (req, res) => {
           "WiFi is included throughout the hotel",
           "All-Inclusive at an additional cost"
         ],
-        price_per_person: 22150,
+        price_per_person: 12150,
         location: "Phuket",
         image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
@@ -59,7 +59,7 @@ app.get('/api/data', (req, res) => {
           "Gym",
           "Environmentally friendly"
         ],
-        price_per_person: 21100,
+        price_per_person: 11100,
         location: "Phuket",
         image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
@@ -72,7 +72,7 @@ app.get('/api/data', (req, res) => {
           "Gym",
           "Meal packages can be purchased"
         ],
-        price_per_person: 22200,
+        price_per_person: 12200,
         family: "Kids friendly", // Family-friendly indicator
         location: "Phuket",
         image: "https://images.unsplash.com/photo-1623718649591-311775a30c43?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -86,7 +86,7 @@ app.get('/api/data', (req, res) => {
           "Gym",
           "Environmentally freindly"
         ],
-        price_per_person: 20925,
+        price_per_person: 10925,
         location: "Phuket",
         image: "https://images.unsplash.com/photo-1659559108508-7f6340e45c23?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }
