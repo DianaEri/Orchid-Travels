@@ -15,6 +15,7 @@ import TravelDetailsData from './TravelDetailsData';
 import YellowLine from './YellowLine'; // Import YellowLine component for a horizontal visual separator
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
                                                      // the top of the page after scrolling down.
+import HeadingBlock from './HeadingBlock';
 
 
 // Main component definition
@@ -68,6 +69,10 @@ const SearchResult = () => {
         <div>
             {/* Render the Header component */}
             <Header />
+
+            {/* Render the Heading component */}
+            <HeadingBlock text="All available destinations that 
+            matches your search" />
             
             {/* Render the YellowLine component for a visual divider */}
             <YellowLine />
