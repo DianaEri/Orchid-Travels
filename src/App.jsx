@@ -35,8 +35,7 @@ import location from './assets/location.jpg'; // Import an image for the locatio
 import ImageComponent from './ImageComponent'; // Import reusable ImageComponent for displaying images
 import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
-import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
-                                                     // the top of the page after scrolling down.
+import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to
 import Socials from './Socials'; 
 import book from './hotels/book.jsx';
 import TotalPrice from './TotalPrice'; 
@@ -44,6 +43,7 @@ import TravelDetailsData from './TravelDetailsData';
 import BookingOptionsForm from './BookingOptionsForm'; 
 import PaymentOptions from './PaymentOptions'; 
 import ChosenBookingOptions from './ChosenBookingOptions.jsx'; 
+                                                     // the top of the page after scrolling down.
 
 
 

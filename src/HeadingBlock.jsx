@@ -8,7 +8,7 @@ const HeadingBlock = ({
   text,                       // The text to display as the heading
   fontSize = '1.3rem',         // Font size of the heading 
   color = 'black',             // Text color 
-  textAlign = 'left',        // Text alignment 
+  textAlign = 'center',        // Text alignment 
   margin = '1rem 0',           // Margin around the heading 
   width = '88%',               // Width of the heading block
   paddingLeft = '1rem',        // Padding on the left
