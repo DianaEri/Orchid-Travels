@@ -4,9 +4,10 @@ const TravelDetailsData = () => {
   const day = localStorage.getItem('selectedDay') || 'DD';
   const month = localStorage.getItem('selectedMonth') || 'MM';
   const year = localStorage.getItem('selectedYear') || 'YYYY';
-  const lengthOfStay = localStorage.getItem('selectedLengthOfStay') || 'Not selected';
+  const lengthOfStay = parseInt(localStorage.getItem('selectedLengthOfStay')) || 'Not selected';
   const destination = localStorage.getItem('selectedDestination') || 'Not selected';
 
+  const lengthOfStayText = lengthOfStay === 1 ? 'Week' : 'Weeks';
   return (
     <div className="travel-details-container">
       <div className="top-options">
@@ -23,7 +24,7 @@ const TravelDetailsData = () => {
       <div className="bottom-options">
         <div className="option">
           <label className="option-label">Length of stay:</label>
-          <span className="details-value">{lengthOfStay}</span> 
+          <span className="details-value">{lengthOfStay} {lengthOfStayText}</span> 
         </div>
         <div className="option">
           <label className="option-label">Destination:</label>
