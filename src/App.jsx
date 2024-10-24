@@ -59,6 +59,10 @@ useEffect(() => {
   localStorage.setItem('selectedChildren', selectedChildren);
 }, [selectedAdults, selectedChildren]); // Run whenever selectedAdults or selectedChildren changes
 
+useEffect(() => {
+  localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
+}, [selectedLengthOfStay]); // This ensures that the 'selectedLengthOfStay' value is updated in localStorage whenever it changes
+
 
   const navigate = useNavigate(); // Initialize useNavigate for handling navigation
 
