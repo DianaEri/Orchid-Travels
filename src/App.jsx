@@ -52,6 +52,7 @@ const App = () => {
   const [selectedDestination, setSelectedDestination] = useState('City');
   const [selectedAdults, setSelectedAdults] = useState('Nr of adults');
   const [selectedChildren, setSelectedChildren] = useState('Nr of children');
+  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState(1);
 
 // UseEffect to store values in localStorage when they change. Number of adults and number
 //of children are stored for "Prices and booking (book)"
@@ -106,6 +107,7 @@ useEffect(() => {
         setSelectedAdults={setSelectedAdults}
         selectedChildren={selectedChildren}
         setSelectedChildren={setSelectedChildren}
+        setSelectedLengthOfStay={setSelectedLengthOfStay}
       />
 
       {/* Render the Divider component to separate content */}

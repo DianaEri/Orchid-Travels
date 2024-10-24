@@ -15,12 +15,17 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons, selectedLength
   // Function to handle "Read more" button clicks
   const handleReadMore = (hotel) => {
     if (hotel.name === "Laguna Pearl Retreat") {
-      // Convert selectedLengthOfStay to a number if it isn't already
-      const lengthOfStay = parseInt(selectedLengthOfStay) || 1; // Default to 1 week if undefined or NaN
+      // Convert selectedLengthOfStay to a number if it's not already
+      const lengthOfStay = parseInt(selectedLengthOfStay, 10) || 1; // Default to 1 week if undefined or invalid
+
+      console.log("Price per person:", hotel.price_per_person);
+      console.log("Total persons:", totalPersons);
+      console.log("Length of stay (weeks):", lengthOfStay)
   
       // Calculate total price by multiplying price per person, total persons, and weeks
       const totalPrice = hotel.price_per_person * totalPersons * lengthOfStay;
-      
+  
+      // Navigate and pass the calculated totalPrice
       navigate('/laguna-pearl-retreat', { state: { totalPrice, hotelName: hotel.name } });
     } else {
       alert(`${hotel.name} does not have additional information available.`);

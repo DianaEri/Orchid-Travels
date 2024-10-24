@@ -232,7 +232,7 @@ const SearchForm = ({
         <h2>Length of stay</h2>
         <select 
           value={selectedLengthOfStay} 
-          onChange={(e) => handleOptionClick('lengthOfStay', parseInt(e.target.value))} // Ensure value is a number
+          onChange={(e) => handleOptionClick('lengthOfStay', parseInt(e.target.value, 10))}  // Ensure it's stored as a number
           className="select-dropdown"
         >
           <option value="1">1 week</option>
