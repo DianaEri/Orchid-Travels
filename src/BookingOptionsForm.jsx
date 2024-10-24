@@ -89,30 +89,44 @@ const BookingOptionsForm = () => {
     localStorage.setItem('selectedLengthOfStay', selectedLengthOfStay);
   }, [selectedLengthOfStay]);
 
-
   useEffect(() => {
-    if (selectedRoom && selectedFlightClass) { 
-      const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren); 
-      const totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay; 
-      const total = totalBasePrice + roomUpgradePrice + flightClassPrice;
-      setTotalPrice(total);
+    if (selectedRoom && selectedFlightClass) {
+      const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
 
+      const totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay;
+      const totalRoomUpgradePrice = roomUpgradePrice * totalGuests * selectedLengthOfStay;
+
+      
+      const totalFlightClassPrice = flightClassPrice * totalGuests;
+
+      const total = totalBasePrice + totalRoomUpgradePrice + totalFlightClassPrice;
+      
+      setTotalPrice(total);
       localStorage.setItem('totalPrice', total);
     } else {
       setTotalPrice(0);
       localStorage.setItem('totalPrice', 0); 
     }
-  }, [basePricePerPerson, roomUpgradePrice, flightClassPrice, selectedRoom, selectedFlightClass, selectedAdults, selectedChildren, selectedLengthOfStay]);
+  }, [
+    basePricePerPerson,
+    roomUpgradePrice,
+    flightClassPrice,
+    selectedRoom,
+    selectedFlightClass,
+    selectedAdults,
+    selectedChildren,
+    selectedLengthOfStay,
+  ]);
 
   const handleRoomSelection = (room) => {
     setSelectedRoom(room);
     const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
-    const roomPrice = (basePricePerPerson + selectedRoomUpgradePrice) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren)); 
-
+    
     setRoomUpgradePrice(selectedRoomUpgradePrice);
+    const roomPrice = (basePricePerPerson + selectedRoomUpgradePrice) * selectedLengthOfStay * (parseInt(selectedAdults) + parseInt(selectedChildren));
 
     localStorage.setItem('selectedRoom', roomNameMapping[room]);
-    localStorage.setItem('selectedRoomPrice', roomPrice);  
+    localStorage.setItem('selectedRoomPrice', roomPrice);
   };
 
   const handleFlightClassSelection = (flightClass) => {
@@ -239,6 +253,7 @@ const BookingOptionsForm = () => {
         </label>
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
+      <div className="total-price">Total Price: {totalPrice.toLocaleString()} kr</div>
     </div>
   );
 };
