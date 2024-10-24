@@ -17,7 +17,8 @@ const SearchForm = ({
   onSubmit, // Parent function to handle form submission
   selectedDestination, setSelectedDestination, // Destination state and setter
   selectedAdults, setSelectedAdults, // Adults state and setter
-  selectedChildren, setSelectedChildren // Adults state and setter
+  selectedChildren, setSelectedChildren, // Children state and setter
+  selectedLengthOfStay, setSelectedLengthOfStay, // Length of stay state and setter
 }) => {
 
   // Get values from localStorage for "Date of departure", "Point of departure", "Length of stay", "Destination", "Adults", and "Children"
@@ -33,7 +34,6 @@ const SearchForm = ({
   const [selectedDay, setSelectedDay] = useState('Day'); // Day of departure selection
   const [selectedMonth, setSelectedMonth] = useState('Month'); // Month of departure selection
   const [selectedYear, setSelectedYear] = useState('Year'); // Year of departure selection
-  const [selectedLengthOfStay, setSelectedLengthOfStay] = useState('Length of stay'); // Length of stay selection
 
   // Update localStorage when these values change
   useEffect(() => {
@@ -232,14 +232,13 @@ const SearchForm = ({
         <h2>Length of stay</h2>
         <select 
           value={selectedLengthOfStay} 
-          onChange={(e) => handleOptionClick('lengthOfStay', e.target.value)} 
+          onChange={(e) => handleOptionClick('lengthOfStay', parseInt(e.target.value))} // Ensure value is a number
           className="select-dropdown"
         >
-          <option value="">Select length of stay</option>
-          <option value="1 week">1 week</option>
-          <option value="2 weeks">2 weeks</option>
-          <option value="3 weeks">3 weeks</option>
-          <option value="4 weeks">4 weeks</option>
+          <option value="1">1 week</option>
+          <option value="2">2 weeks</option>
+          <option value="3">3 weeks</option>
+          <option value="4">4 weeks</option>
         </select>
 
         {/* Search button */}

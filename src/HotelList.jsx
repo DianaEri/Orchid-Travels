@@ -9,17 +9,20 @@ import Button from './Button'; // Button component for reusable buttons
 import SubHeading from './SubHeading'; // Subheading component for section titles
 import UnOrderedList from './UnOrderedList'; // UnorderedList component for displaying lists
 
-const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
+const HotelList = ({ hotels, adultsAndChildrenText, totalPersons, selectedLengthOfStay }) => {
   const navigate = useNavigate(); // Initialize the `useNavigate` hook for routing
 
   // Function to handle "Read more" button clicks
   const handleReadMore = (hotel) => {
     if (hotel.name === "Laguna Pearl Retreat") {
-      // If the hotel is Laguna Pearl Retreat, calculate total price and navigate to its detailed page
-      const totalPrice = hotel.price_per_person * totalPersons; 
-      navigate('/laguna-pearl-retreat', { state: { totalPrice, hotelName: hotel.name } }); // Pass total price and hotel name as state
+      // Convert selectedLengthOfStay to a number if it isn't already
+      const lengthOfStay = parseInt(selectedLengthOfStay) || 1; // Default to 1 week if undefined or NaN
+  
+      // Calculate total price by multiplying price per person, total persons, and weeks
+      const totalPrice = hotel.price_per_person * totalPersons * lengthOfStay;
+      
+      navigate('/laguna-pearl-retreat', { state: { totalPrice, hotelName: hotel.name } });
     } else {
-      // If it's not Laguna Pearl Retreat, show an alert saying no additional info is available
       alert(`${hotel.name} does not have additional information available.`);
     }
   };
@@ -82,7 +85,7 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons }) => {
           <div className="info-container">
             <div className='textMargin'>Flight and hotel</div>
             <div>{adultsAndChildrenText}</div> {/* Display number of adults and children */}
-            <div className='Right'>{(hotel.price_per_person * totalPersons).toLocaleString('sv-SE')}kr</div> {/* Total price */}
+            <div className='Right'>{(hotel.price_per_person * totalPersons * selectedLengthOfStay).toLocaleString('sv-SE')}kr</div> {/* Total price, including length of stay */}
             <div className='box'>
               <div className='linkStyle'>Pricing Details &gt;</div>
               <div className='push'>{hotel.price_per_person.toLocaleString('sv-SE')}kr/person</div> {/* Price per person */}

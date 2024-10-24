@@ -23,9 +23,9 @@ const SearchResult = () => {
     const [loading, setLoading] = useState(true); // State to handle loading status while fetching data
     const [error, setError] = useState(null); // State to manage any errors during the fetch operation
 
-    // Extract the number of adults and children passed via the location state (from the previous page/form)
+    // Extract the number of adults, children, and length of stay passed via the location state
     const location = useLocation();
-    const { adults, children } = location.state || { adults: 0, children: 0 }; // If no data, default to 0 adults and 0 children
+    const { adults = 0, children = 0, lengthOfStay = 1 } = location.state || {}; // Default to 0 adults, 0 children, and 1 week length of stay
 
     // Function to fetch hotel data from the API
     const fetchHotelData = async () => {
@@ -75,7 +75,12 @@ const SearchResult = () => {
             <TravelDetailsData />
             
             {/* Render the HotelList component and pass down the list of hotels, totalPersons, and formatted text */}
-            <HotelList hotels={hotels} adultsAndChildrenText={adultsAndChildrenText} totalPersons={totalPersons} />
+            <HotelList 
+            hotels={hotels} 
+            adultsAndChildrenText={adultsAndChildrenText} 
+            totalPersons={totalPersons} 
+            selectedLengthOfStay={lengthOfStay}  // Pass the length of stay
+            />
             
             {/*Displays a button that allows users to quickly return to the top of the page after
             scrolling down.*/}
