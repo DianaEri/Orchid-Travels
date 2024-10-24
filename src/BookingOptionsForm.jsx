@@ -253,7 +253,6 @@ const BookingOptionsForm = () => {
         </label>
       </div>
       <p className="flight-description">Standard class. Seat in the rear of the plane.</p>
-      <div className="total-price">Total Price: {totalPrice.toLocaleString()} kr</div>
     </div>
   );
 };
