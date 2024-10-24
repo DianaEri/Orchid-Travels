@@ -10,7 +10,6 @@ import Footer from '../Footer';
 import Button from '../Button'; 
 import PaymentOptions from '../PaymentOptions'; 
 import ChosenBookingOptions from '../ChosenBookingOptions.jsx'; 
-import ImageComponent from '../ImageComponent'; 
 
 const Booking = () => {
   const [step, setStep] = useState('booking'); 
@@ -22,7 +21,6 @@ const Booking = () => {
   const [selectedHotel, setSelectedHotel] = useState(null); 
 
   useEffect(() => {
-   
     const fetchHotelData = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/data');
@@ -63,23 +61,6 @@ const Booking = () => {
       <Header />
       <HeadingBlock text="Prices and booking" />
       <YellowLine />
-
-      {selectedHotel && (
-        <div className="hotel-info-container">
-          <div className="image-container">
-            <ImageComponent 
-              src={selectedHotel.image} 
-              alt={selectedHotel.name} 
-            />
-         
-            {selectedHotel.family === 'Kids friendly' && (
-              <div className="kids-friendly-overlay">
-                Kids friendly
-              </div>
-            )}
-          </div>
-        </div>
-      )}
 
       {step === 'booking' && (
         <div>
