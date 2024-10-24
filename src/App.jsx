@@ -76,6 +76,7 @@ useEffect(() => {
           destination: selectedDestination,
           adults: selectedAdults,
           children: selectedChildren,
+          lengthOfStay: selectedLengthOfStay,
         },
       });
     } else {
