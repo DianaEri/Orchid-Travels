@@ -3,6 +3,7 @@
 // from local storage from SearchForm.jsx
 
 import React from 'react'; // Import React to create the component
+import './index.css'; //Import styling
 
 // Displays travel details based on values stored in localStorage.
 const TravelDetailsData = () => {
