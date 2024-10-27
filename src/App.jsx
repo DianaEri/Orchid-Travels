@@ -22,7 +22,7 @@ import HotelInfoIcons from './HotelInfoIcons'; // Import custom HotelInfoIcons c
 import Divider from './Divider'; // Import Divider component to separate sections visually
 import BlackLogo from './assets/Black logo.svg'; // Import a logo (SVG format)
 import TripadvisorLogo from './assets/tripadvisor.svg'; // Import another logo (Tripadvisor)
-import Header from './Header'; // Import Header component for the top of the page
+import Header from './Header'; // //Displays a header with hamburger menu component 
 import Slider from './Slider'; // Import Slider component (likely for image or content carousel)
 import YellowLine from './YellowLine'; // Import a styled horizontal line component
 import BlackLine from './BlackLine'; // Import another styled line component (black color)
@@ -38,7 +38,7 @@ import Socials from './Socials';
 import book from './hotels/book.jsx';
 import TotalPrice from './TotalPrice'; 
 import TravelDetailsData from './TravelDetailsData'; 
-import BookingOptionsForm from './BookingOptionsForm'; 
+import BookingOptionsForm from './BookingOptionsForm';  // Displays a component with choices for what you can book with radio buttons. You have Room choices and Select flight choices. 
 import PaymentOptions from './PaymentOptions'; 
 import ChosenBookingOptions from './ChosenBookingOptions.jsx'; 
                                                  
