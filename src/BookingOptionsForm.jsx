@@ -28,7 +28,7 @@ import './index.css'; // Import the CSS file for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the font awesome icon
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';  // Import the font awesome icon
 
-// Function to format price with spaces (e.g.,10 000)
+// Function to format price with spaces (e.g., 10 000)
 const formatPriceWithSpace = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
@@ -46,8 +46,7 @@ const BookingOptionsForm = () => {
   const [flightClassPrice, setFlightClassPrice] = useState(0); // Stores the additional cost based on flight class selection
   const [roomUpgradePrice, setRoomUpgradePrice] = useState(0); // Stores the additional cost based on room upgrade selection
 
-
-  // Object containing price adjustments for each room type, the upgrade prices for each room. 
+  // Object containing price adjustments for each room type, the upgrade prices for each room.
   const roomPriceAdjustments = {
     doubleRoomBalcony1: 0, 
     doubleRoomPool1: 4000, 
@@ -55,7 +54,7 @@ const BookingOptionsForm = () => {
     doubleRoomPool2: 10000,  
   };
 
-  // Object containing additional prices for each flight class, the upgrade prices for each flight class. 
+  // Object containing additional prices for each flight class, the upgrade prices for each flight class.
   const flightClassPrices = {
     premium: 6000, 
     plus: 3000,
@@ -82,7 +81,7 @@ const BookingOptionsForm = () => {
     fetchHotelData();
   }, []);
 
-  // Object to map room IDs to format and display room names correcly
+  // Object to map room IDs to format and display room names correctly
   const roomNameMapping = {
     doubleRoomBalcony1: 'Dubbelroom with balcony 1 room',
     doubleRoomPool1: 'Dubbelroom with pool access 1 room',
@@ -90,7 +89,7 @@ const BookingOptionsForm = () => {
     doubleRoomPool2: 'Dubbelroom with pool access 2 rooms',
   };
 
-  // Object to map flight class IDs to display names correcly
+  // Object to map flight class IDs to display names correctly
   const flightClassNameMapping = {
     premium: 'Premium',
     plus: 'Plus',
@@ -129,10 +128,12 @@ const BookingOptionsForm = () => {
       
       setTotalPrice(total);
       localStorage.setItem('totalPrice', total);
+      localStorage.setItem('selectedRoomPrice', totalPriceWithRoomUpgrade); // Save room price specifically
     } else {
       // Reset total price if no room or flight class is selected
       setTotalPrice(0);
       localStorage.setItem('totalPrice', 0); 
+      localStorage.setItem('selectedRoomPrice', 0); // Reset room price
     }
   }, [
     basePricePerPerson,
@@ -152,7 +153,12 @@ const BookingOptionsForm = () => {
     const selectedRoomUpgradePrice = roomPriceAdjustments[room] || 0;
     // Update the state with the new room upgrade price
     setRoomUpgradePrice(selectedRoomUpgradePrice);
-    // Save the selected room name in local storage
+
+    // Calculate and save the price for this room in local storage
+    const totalGuests = parseInt(selectedAdults) + parseInt(selectedChildren);
+    const totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay;
+    const totalPriceWithRoomUpgrade = totalBasePrice + selectedRoomUpgradePrice;
+    localStorage.setItem('selectedRoomPrice', totalPriceWithRoomUpgrade);
     localStorage.setItem('selectedRoom', roomNameMapping[room]);
   };
 
@@ -185,7 +191,7 @@ const BookingOptionsForm = () => {
       <h2 className="booking-title">Select Room</h2>
       <p className="accommodation-1-room">Accommodation with 1 room</p>
 
-      {/* Room options for 1 room radio buttons, price, text e.g.*/}
+      {/* Room options for 1 room radio buttons, price, text e.g. */}
       <div className="room-option">
         <input
           type="radio"
