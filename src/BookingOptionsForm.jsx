@@ -23,6 +23,8 @@
 // If you chose flight class it is flight class price per person. So if it is 6 guests. Its Economy = 6*0 
 // Plus = 6*3000 Premium = 6*6000
 
+
+// Import React and hooks (useState, useEffect)
 import React, { useState, useEffect } from 'react';
 import './index.css'; // Import the CSS file for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the font awesome icon

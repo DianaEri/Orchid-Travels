@@ -1,7 +1,7 @@
 // This component, created by (Madelene), retrieves and displays "chosen Room with price" and 
 // "chosen flight class". The data is retrieved from locasl storage from "BookingOptionsForm.jsx"
 
-// Import React and hooks useEffect and useState from the 'react' library.
+// Import React and hooks (useEffect, useState)
 import React, { useEffect, useState } from 'react';
 // Import the CSS file for styling.
 import './index.css';
