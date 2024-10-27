@@ -1,5 +1,6 @@
 // This component, created by (Madelene), displays payment options. This component allows the user to choose a payment
-// method for their booking. The user can select from various payment systems.
+// method for their booking. The user can select from various payment systems. "Visa or Mastercard", "Paypal", och
+//"Klarna".
 
 // Import React and hooks (useState)
 import React, { useState } from 'react';
@@ -67,7 +68,7 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
         With PayPal, you can pay instantly, send money, and even use the "Pay in 4" option to split purchases into interest-free payments. It's trusted worldwide for its buyer protection and convenience.
       </p>
 
-      {/* Option for bank transfer payment (Swish) */}
+      {/* Option for bank transfer payment (Klarna) */}
       <div className="payment-option">
         <input 
           type="radio" 
@@ -79,12 +80,12 @@ const PaymentOptions = ({ onPaymentMethodSelect }) => {
           className="round-checkbox" 
         />
         <label htmlFor="bankTransfer" className="payment-label">
-          Swish <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
+          Klarna <FontAwesomeIcon icon={faAngleDown} style={{ color: '#BE8730' }} />
         </label>
       </div>
-      {/* Description for Swish payment */}
+      {/* Description for Klarna payment */}
       <p className="payment-description">
-        With Swish, you can make instant, secure payments directly from your bank account using your mobile phone. It offers quick and easy transfers for online purchases. Just enter your phone number to complete the transaction in seconds, without the need for a card.
+      With Klarna, you can split your purchase into interest-free installments, pay the full amount after 30 days, or choose financing options for larger purchases.
       </p>
     </div>
   );
