@@ -1,12 +1,12 @@
 // This component, created by (Madelene), retrieves and displays "chosen Room with price" and 
-// "chosen flight class". The data is retrieved from locasl storage from "BookingOptionsForm.jsx"
+// "chosen flight class". The data is retrieved from local storage from "BookingOptionsForm.jsx"
 
 // Import React and hooks (useEffect, useState)
 import React, { useEffect, useState } from 'react';
 // Import the CSS file for styling.
 import './index.css';
 
-// Function to format the price so it adds space, instead of having 13000 it will be 13 000.
+// // Function to format price with spaces (e.g., 10 000)
 const formatPriceWithSpace = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };

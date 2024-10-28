@@ -1,21 +1,33 @@
-import React from 'react';
-import TextBlock from './TextBlock';
-import HeadingBlock from './HeadingBlock';
-import SubHeading from './SubHeading';
-import Header from './Header'; 
-import ImageComponent from './ImageComponent';
-import Divider from './Divider'; 
-import Footer from './Footer'; 
-import YellowLine from './YellowLine'; 
-import BlackLine from './BlackLine';
-import UnOrderedList from './UnOrderedList';
+// (Madelene) made this component, which displays the about us page.
+// This component presents information about Orchid Travels. It includes text blocks with the company’s background, 
+// information about their hotels, the benefits of choosing them, and contact information. The component's layout uses
+// headings, images, lines, and lists to structure the content.
+
+// It uses several components, and the ones made by (Madelene) are: 
+// YellowLine, and BlackLine, ScrollToTopButton, TextBlock, Header, HeadingBlock
+
+// The rest of the components, like HeadingBlock, Header,
+// ImageComponent,  SubHeading,  Footer, UnOrderedList, ImageComponent, Divider are made by (Diana).
+
+
+import React from 'react'; // Import React 
+import TextBlock from './TextBlock'; // This component displays a block of text with customizable styles.
+import HeadingBlock from './HeadingBlock'; // This component displays a styled heading block for the website.
+import SubHeading from './SubHeading'; // This component displays a styled heading block for the website. Lower-level heading.
+import Header from './Header'; // Displays a header with hamburger menu component 
+import ImageComponent from './ImageComponent';  // Import reusable ImageComponent for displaying images
+import Divider from './Divider'; // Import Divider component to separate sections visually
+import Footer from './Footer'; // Import Footer component
+import YellowLine from './YellowLine';  // This component displays a yellow line
+import BlackLine from './BlackLine'; // This component displays a black divider to separate different sections of the website.
+import UnOrderedList from './UnOrderedList'; //// Component made  to store and display unordered lists.
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
                                                      // the top of the page after scrolling down.  
-import imageOneAboutUs from './assets/imageOneAboutUs.svg';
-import imageTwoAboutUs from './assets/imageTwoAboutUs.svg';
-import imageThreeAboutUs from './assets/imageThreeAboutUs.svg';
-import imageFourAboutUs from './assets/imageFourAboutUs.svg';
-import imageFiveAboutUs from './assets/imageFiveAboutUs.svg';
+import imageOneAboutUs from './assets/imageOneAboutUs.svg';  // Importing svg image
+import imageTwoAboutUs from './assets/imageTwoAboutUs.svg';  // Importing svg image
+import imageThreeAboutUs from './assets/imageThreeAboutUs.svg';  // Importing svg image
+import imageFourAboutUs from './assets/imageFourAboutUs.svg';  // Importing svg image
+import imageFiveAboutUs from './assets/imageFiveAboutUs.svg';  // Importing svg image
 
 const AboutUs = () => {
   const destinations = [

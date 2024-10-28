@@ -25,7 +25,7 @@
 
 
 // Import React and hooks (useState, useEffect)
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // Import React and hooks (useEffect, useState)
 import './index.css'; // Import the CSS file for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the font awesome icon
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';  // Import the font awesome icon

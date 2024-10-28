@@ -1,4 +1,4 @@
-// (Madelene) made this element, which displays the booking website. 
+// (Madelene) made this component, which displays the booking website. 
 // This component manages a booking process that renders three steps. Step 1: Booking, where the user 
 // selects a room and flight, views the total price, and sees a table with information about departure date,
 //  departure location, length of stay, and destination. Step 2: A table, the selected room and flight 
@@ -16,17 +16,17 @@
 // The rest of the components, like button, footer are made by (Diana).
 
 import React, { useState, useEffect } from 'react';
-import '../index.css'; 
+import '../index.css'; // Import the CSS file for styling
 import Header from '../Header.jsx'; //Displays a header with hamburger menu component 
 import YellowLine from '../YellowLine.jsx'; // Displays a yellow line component
-import TravelDetailsData from '../TravelDetailsData'; 
+import TravelDetailsData from '../TravelDetailsData'; // Retrieves and displays travel information
 import BookingOptionsForm from '../BookingOptionsForm'; // Displays a component with choices for what you can book with radio buttons. You have Room choices and Select flight choices. 
-import TotalPrice from '../TotalPrice'; 
+import TotalPrice from '../TotalPrice'; // This component displays the total price for a booking.
 import HeadingBlock from '../HeadingBlock'; //This component,displays a styled heading block for the website.
 import Footer from '../Footer'; // A  footer component which includes logos, social media icons, and links to various sections of the website.
 import Button from '../Button'; // This component is a reusable button element that can be customized with props.
-import PaymentOptions from '../PaymentOptions'; 
-import ChosenBookingOptions from '../ChosenBookingOptions.jsx'; 
+import PaymentOptions from '../PaymentOptions'; // This component displays payment options
+import ChosenBookingOptions from '../ChosenBookingOptions.jsx'; // This component, created by (Madelene), retrieves and displays "chosen Room with price" and  "chosen flight class"
 
 // This component, created by Madelene, displays a booking page.
 const Booking = () => {

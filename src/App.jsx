@@ -22,26 +22,27 @@ import HotelInfoIcons from './HotelInfoIcons'; // Import custom HotelInfoIcons c
 import Divider from './Divider'; // Import Divider component to separate sections visually
 import BlackLogo from './assets/Black logo.svg'; // Import a logo (SVG format)
 import TripadvisorLogo from './assets/tripadvisor.svg'; // Import another logo (Tripadvisor)
-import Header from './Header'; // //Displays a header with hamburger menu component 
+import Header from './Header'; // Displays a header with hamburger menu component 
 import Slider from './Slider'; // Import Slider component (likely for image or content carousel)
-import YellowLine from './YellowLine'; // Import a styled horizontal line component
-import BlackLine from './BlackLine'; // Import another styled line component (black color)
-import TextBlock from './TextBlock'; // Import TextBlock component to display text blocks
+import YellowLine from './YellowLine'; // This component displays a yellow line
+import BlackLine from './BlackLine'; // This component displays a black divider to separate different sections of the website.
+import TextBlock from './TextBlock'; // This component displays a block of text with customizable styles.
 import Banner from './Banner'; // Import Banner component for a top-banner or hero section
-import HeadingBlock from './HeadingBlock'; // Import HeadingBlock for rendering section headings
+import HeadingBlock from './HeadingBlock'; // This component displays a styled heading block for the website.
 import location from './assets/location.jpg'; // Import an image for the location section
 import ImageComponent from './ImageComponent'; // Import reusable ImageComponent for displaying images
 import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to the top of the page after scrolling down.
-import Socials from './Socials'; 
-import book from './hotels/book.jsx';
-import TotalPrice from './TotalPrice'; 
-import TravelDetailsData from './TravelDetailsData'; 
+import Socials from './Socials'; // This component directs users to check the social media of the website.
+import book from './hotels/book.jsx'; //This component displays the booking website. 
+import TotalPrice from './TotalPrice'; // This component displays the total price for a booking.
+import TravelDetailsData from './TravelDetailsData'; // Retrieves and displays travel information
 import BookingOptionsForm from './BookingOptionsForm';  // Displays a component with choices for what you can book with radio buttons. You have Room choices and Select flight choices. 
-import PaymentOptions from './PaymentOptions'; 
-import ChosenBookingOptions from './ChosenBookingOptions.jsx'; 
-                                                 
+import PaymentOptions from './PaymentOptions'; // This component displays payment options
+import ChosenBookingOptions from './ChosenBookingOptions.jsx'; //This component retrieves and displays "chosen Room with price" and "chosen flight class".
+import SubHeading from './SubHeading.jsx'; // This component displays a styled heading block for the website. Lower-level heading.
+import UnOrderedList from './UnOrderedList'; //// Component made  to store and display unordered lists.                                              
 
 
 

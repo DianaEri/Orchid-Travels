@@ -1,7 +1,14 @@
 // (Diana) started this element by creating the route, path, and 
-// implemented the modal to display the PDF menu.
+// implemented the modal to display the PDF menu. Diana made 
+// SubHeading, Footer, Divider, Button, ImageComponent component. 
 
-// The rest of the functionality and code was developed by (Madelene).
+// The rest of the components, like HeadingBlock, Header,
+// YellowLine, YellowFlower and BlackLine, ScrollToTopButton, TextBlock, HeadingBlock, Header, Gallery, Socials are
+// made by (Madelene).
+
+// This component presents detailed information about the hotel's restaurant using images, body text, main headings, and
+// section dividers. It includes a modal to display the restaurant's menu in PDF format and features a gallery function as 
+// well as social media links.
 
 import React, { useState } from 'react'; // Import React and the useState hook
 import Modal from 'react-modal'; // Import the react-modal library for the modal popup
@@ -9,21 +16,21 @@ import Header from './Header'; // Import the Header component for the top of the
 import Footer from './Footer'; // Import the Footer component for the bottom of the page
 import menuPDF from './assets/menu.pdf'; // Import the PDF file that contains the restaurant menu
 import YellowFlower from './YellowFlower'; // Import the Flower component to separate sections visually
-import YellowLine from './YellowLine'; 
-import BlackLine from './BlackLine';
-import TextBlock from './TextBlock';
-import HeadingBlock from './HeadingBlock';
-import SubHeading from './SubHeading';
-import ImageComponent from './ImageComponent';
+import YellowLine from './YellowLine';  // This component displays a yellow line
+import BlackLine from './BlackLine'; // This component displays a black divider to separate different sections of the website.
+import TextBlock from './TextBlock'; // This component displays a block of text with customizable styles.
+import HeadingBlock from './HeadingBlock'; // This component displays a styled heading block for the website.
+import SubHeading from './SubHeading'; // This component displays a styled heading block for the website. Lower-level heading.
+import ImageComponent from './ImageComponent'; // Import reusable ImageComponent for displaying images
 import Gallery from './Gallery'; // Import the Gallery component. Displaying a gallery of images. 
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
                                                      // the top of the page after scrolling down.
-import Socials from './Socials'; 
-import imageOneHotelRestaurant  from './assets/imageOneHotelRestaurant .svg';
-import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg';
-import imageThreeHotelRestaurant  from './assets/imageThreeHotelRestaurant .svg';
-import imageFourHotelRestaurant  from './assets/imageFourHotelRestaurant .svg';
-import imageFiveHotelRestaurant  from './assets/imageFiveHotelRestaurant .svg';
+import Socials from './Socials'; // This component directs users to check the social media of the website.
+import imageOneHotelRestaurant  from './assets/imageOneHotelRestaurant .svg'; // Importing svg image
+import imageTwoHotelRestaurant  from './assets/imageTwoHotelRestaurant .svg'; // Importing svg image
+import imageThreeHotelRestaurant  from './assets/imageThreeHotelRestaurant .svg'; // Importing svg image
+import imageFourHotelRestaurant  from './assets/imageFourHotelRestaurant .svg'; // Importing svg image
+import imageFiveHotelRestaurant  from './assets/imageFiveHotelRestaurant .svg'; // Importing svg image
 
 
 // Set the app element for accessibility purposes (used by Modal)
@@ -90,14 +97,15 @@ const HotelRestaurantSaffronBreezeCafé = () => {
       <HeadingBlock
         text="Hotel Resturant Saffron Breeze Café"
       />
-
+       
+      {/*  This component displays a yellow line */}
       <YellowLine />
 
-
+       {/* This component displays a styled heading block for the website. Lower-level heading. */}
       <SubHeading
         text="Welcome to Saffron Breeze Café! Enjoy a delightful dining experience with authentic Thai cuisine and international favorites."
        />
-
+       {/*  This component displays a block of text with customizable styles. */}
       <TextBlock 
         text="Located within the luxurious Laguna Pearl Retreat in Phuket,
          Saffron Breeze Café invites you to experience the true essence of 
@@ -106,16 +114,18 @@ const HotelRestaurantSaffronBreezeCafé = () => {
          the perfect spot to savor the exotic tastes of Thailand, while 
          enjoying breathtaking views of the Andaman Sea." 
       />
-
+       {/* Import reusable ImageComponent for displaying images */}
       <ImageComponent src={imageTwoHotelRestaurant } alt="imageTwoHotelRestaurant" />
 
+       {/* This component displays a black divider to separate different sections of the website. */}
       <BlackLine/>
 
+       {/* This component displays a styled heading block for the website. Lower-level heading. */}
       <SubHeading
         text="A Menu Crafted to Delight Every Palate"
       />
 
-
+      {/*  This component displays a block of text with customizable styles. */}
        <TextBlock 
         text="At Saffron Breeze Café, we celebrate Thailand’s rich culinary heritage by combining 
         traditional recipes with a contemporary twist. Our all-inclusive menu features a diverse 
@@ -126,14 +136,18 @@ const HotelRestaurantSaffronBreezeCafé = () => {
         options without compromising on flavor." 
       />
 
+      {/* Import reusable ImageComponent for displaying images */}
       <ImageComponent src={imageThreeHotelRestaurant } alt="imageThreeHotelRestaurant" />
 
+      {/* This component displays a black divider to separate different sections of the website. */}
       <BlackLine/>
 
+       {/* This component displays a styled heading block for the website. Lower-level heading. */}
       <SubHeading
         text="Dine in Paradise"
       />
 
+       {/*  This component displays a block of text with customizable styles. */}
       <TextBlock 
         text="Set against the backdrop of Phuket’s stunning coastline, Saffron Breeze Café offers both indoor and
          outdoor dining experiences. Enjoy your meal on our sun-kissed terrace, with gentle ocean breezes and the 
@@ -142,16 +156,18 @@ const HotelRestaurantSaffronBreezeCafé = () => {
           every moment at Saffron Breeze Café is designed to delight the senses." 
       />
 
+      {/* Import reusable ImageComponent for displaying images */}
       <ImageComponent src={imageFourHotelRestaurant } alt="imageFourHotelRestaurant" />
 
-
+       {/* This component displays a black divider to separate different sections of the website. */}
       <BlackLine/>
 
+      {/* This component displays a styled heading block for the website. Lower-level heading. */}
       <SubHeading
         text="An Unforgettable Dining Experience"
       />
 
-
+      {/*  This component displays a block of text with customizable styles. */}
        <TextBlock 
         text="With its welcoming ambiance, exceptional service, and a menu that showcases the best of 
         Thai cuisine, Saffron Breeze Café is a must-visit culinary destination in Phuket. Whether 
@@ -159,10 +175,13 @@ const HotelRestaurantSaffronBreezeCafé = () => {
         restaurant promises a memorable meal in the heart of paradise." 
       />
 
+      {/* Import reusable ImageComponent for displaying images */}
       <ImageComponent src={imageFiveHotelRestaurant } alt="imageFiveHotelRestaurant" />
 
+      {/* This component displays a black divider to separate different sections of the website. */}
       <BlackLine/>
 
+      {/*  This component displays a block of text with customizable styles. */}
       <TextBlock 
         text="Come discover the flavors of Thailand at Saffron Breeze Café—where every bite is a breeze 
         of pure indulgence." 
@@ -172,8 +191,10 @@ const HotelRestaurantSaffronBreezeCafé = () => {
       to separate different content sections */}
       <YellowFlower /> 
 
+      {/* Import the Gallery component. Displaying a gallery of images. */}
       <Gallery />
 
+      {/* This component directs users to check the social media of the website. */}
       <Socials />
 
       {/*Displays a button that allows users to quickly return to the top of the page after

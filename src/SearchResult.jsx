@@ -11,11 +11,11 @@ import './index.css'; // Import CSS for styling
 import HotelList from './HotelList'; // Import the HotelList component to display a list of hotels
 import Footer from './Footer'; // Import the Footer component for the page's footer
 import Header from './Header'; // Import the Header component for the page's header
-import TravelDetailsData from './TravelDetailsData'; 
+import TravelDetailsData from './TravelDetailsData'; // Retrieves and displays travel information
 import YellowLine from './YellowLine'; // Import YellowLine component for a horizontal visual separator
 import ScrollToTopButton from './ScrollToTopButton'; // Displays a button that allows users to quickly return to 
                                                      // the top of the page after scrolling down.
-import HeadingBlock from './HeadingBlock';
+import HeadingBlock from './HeadingBlock'; // This component displays a styled heading block for the website.
 
 
 // Main component definition
