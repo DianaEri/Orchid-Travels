@@ -1,5 +1,5 @@
 // This component, created by (Madelene), displays the total price for a booking.
-// It retrieves the calculated total price in "BookingOptionsForm.jsx" form a local storage and 
+// It retrieves the calculated total price in "BookingOptionsForm.jsx" from a local storage and 
 // then displays the total price in this separate component. 
 
 import React, { useEffect, useState } from 'react'; // Import React and hooks (useState, useEffect)

@@ -1,4 +1,4 @@
-// This component, created by Madelene, displays a black divider to separate 
+// This component, created by (Madelene), displays a black divider to separate 
 // different sections of the website. It is a simple horizontal line that helps 
 // to visually break up content into  distinct sections. The black line adds 
 // structure and clarity to the layout, making it easier for users to follow the flow of 

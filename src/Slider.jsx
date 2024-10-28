@@ -1,4 +1,4 @@
-// This component, created by Madelene, displays a slider where images are 
+// This component, created by (Madelene), displays a slider where images are 
 // presented. It cycles through multiple images automatically and allows users 
 //to navigate through them manually using navigation arrows and dots. This
 //slider component is displayed at the start page. 
@@ -7,14 +7,14 @@ import React, { useState, useEffect } from 'react';
 import './index.css'; // Import the CSS file for styling.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons'; // Import icons for navigation arrows.
-import SliderOne from './assets/SliderOne.svg'; // Importing images that will be displayed in the slider
-import SliderTwo from './assets/SliderTwo.svg';
-import SliderThree from './assets/SliderThree.svg';
-import SliderFour from './assets/SliderFour.svg';
-import SliderFive from './assets/SliderFive.svg';
-import SliderSix from './assets/SliderSix.svg';
-import SliderSeven from './assets/SliderSeven.svg';
-import SliderEight from './assets/SliderEight.svg';
+import SliderOne from './assets/SliderOne.svg'; // Importing the svg images that will be displayed in the slider
+import SliderTwo from './assets/SliderTwo.svg'; // Importing the svg images that will be displayed in the slider
+import SliderThree from './assets/SliderThree.svg'; // Importing the svg images that will be displayed in the slider
+import SliderFour from './assets/SliderFour.svg'; // Importing the svg images that will be displayed in the slider
+import SliderFive from './assets/SliderFive.svg'; // Importing the svg images that will be displayed in the slider
+import SliderSix from './assets/SliderSix.svg'; // Importing the svg images that will be displayed in the slider
+import SliderSeven from './assets/SliderSeven.svg'; // Importing the svg images that will be displayed in the slider
+import SliderEight from './assets/SliderEight.svg'; // Importing the svg images that will be displayed in the slider
 
 // Array containing the images for the slider
 const slides = [

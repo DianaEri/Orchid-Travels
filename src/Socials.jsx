@@ -1,4 +1,4 @@
-// This component, created by Madelene, directs users to check the social media 
+// This component, created by (Madelene), directs users to check the social media 
 // of the website. It is displayed on the subpage "Hotel Restaurant Saffron Breeze Cafe" 
 // and shows the text "Check more images on" followed by a FontAwesome icon. 
 // This component is reusable for directing users to different social media platforms.

@@ -1,4 +1,4 @@
-// This component, created by Madelene, displays a yellow line that is meant to be combined 
+// This component, created by (Madelene), displays a yellow line that is meant to be combined 
 // with the "HeadingBlock" component. Together, these two components will form a stylish header
 // for the website.
 

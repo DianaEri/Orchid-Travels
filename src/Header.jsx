@@ -1,6 +1,7 @@
-// This component, created by Madelene, displays a mobile responsive header for the Orchid Travels website. 
+// This component, created by (Madelene), displays header for the Orchid Travels website. 
 // It includes a logo and a navigation menu that can be toggled open and closed using a button. 
-// The menu items direct the user to different pages on the website, such as "About Us" and "Our Travel Destinations." 
+// The menu items direct the user to different pages on the website, such as "About Us" and "Our Travel Destinations."
+// and the start page/main page with "Orchid travels" 
 // The component also incorporates FontAwesome icons for the menu toggle buttons.
 
 import React, { useState } from 'react';  // Import React to create the component.

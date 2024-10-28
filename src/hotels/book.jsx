@@ -15,7 +15,7 @@
 
 // The rest of the components, like button, footer are made by (Diana).
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // Import React and hooks (useEffect, useState)
 import '../index.css'; // Import the CSS file for styling
 import Header from '../Header.jsx'; //Displays a header with hamburger menu component 
 import YellowLine from '../YellowLine.jsx'; // Displays a yellow line component

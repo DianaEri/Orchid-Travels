@@ -1,4 +1,4 @@
-// This component, created by Madelene, displays a styled heading block for the website.
+// This component, created by (Madelene), displays a styled heading block for the website.
 // It allows customization of text, font size, color, alignment, and padding through props.
 // The HeadingBlock component is used to create consistent, responsive headers throughout the site.
 

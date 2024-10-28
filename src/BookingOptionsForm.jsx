@@ -3,8 +3,8 @@
 // The user can select a room type from the options available, each with different amenities and price adjustments.
 // Additionally, the user can choose their flight class, such as Economy, Plus, or Premium, each with specific benefits.
 // The component calculates the total price based on the user's selections, including the number of guests and the length of stay.
-// Im getting data for "price per person" from API. "Lenght of stay" "Selected adults"
-// "Selected children" data from App.jsx from local storage.  
+// Im getting data for "price per person" from API. 
+// "Lenght of stay" "Selected adults" "Selected children" data from App.jsx from local storage.  
 
 // Here is an example how this booking page is intended to work:
 // Example: If you choose 3 adults, 3 children, and stay for 2 weeks:
@@ -16,7 +16,7 @@
 //   Room upgrade and flight class costs are added to the total base price, 
 //   for Economy and Dubbelroom with balcony Room 1, there is no upgrade (0 kr),
 //   so the total remains 137892 kr.
-//   Room price: totalBasePrice = basePricePerPerson * totalGuests * selectedLengthOfStay
+//   Room price: totalBasePrice + roomUpgrade
 //   Final price total = totalBasePrice + roomUpgradePrice + flightClassPrice.
 
 // If you chose room upgrades the upgrade is TotalBasePrice (11491 kr * guests * selectedLengthOfStay) + room upgrade (+0 or +4000 or +7000 or +1000)

@@ -1,5 +1,5 @@
 // This component, created by (Madelene), displays payment options. This component allows the user to choose a payment
-// method for their booking. The user can select from various payment systems. "Visa or Mastercard", "Paypal", och
+// method for their booking. The user can select from various payment systems. "Visa or Mastercard", "Paypal", and
 //"Klarna".
 
 // Import React and hooks (useState)

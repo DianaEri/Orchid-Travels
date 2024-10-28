@@ -1,5 +1,7 @@
-// This component, created by (Madelene), retrieves and displays "chosen Room with price" and 
-// "chosen flight class". The data is retrieved from local storage from "BookingOptionsForm.jsx"
+// This component, created by (Madelene)
+// This component displays the user's choice of room and flight class. It retrieves information about the selected room, price, and flight class
+// from localStorage from "BookingOptionsForm.jsx  and displays these details on the page. The price is formatted with spaces for better 
+// readability.
 
 // Import React and hooks (useEffect, useState)
 import React, { useEffect, useState } from 'react';

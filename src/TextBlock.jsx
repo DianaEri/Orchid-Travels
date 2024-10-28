@@ -1,4 +1,4 @@
-// This component, created by Madelene, displays a block of text with customizable styles.
+// This component, created by (Madelene), displays a block of text with customizable styles.
 // It allows you to adjust the font size, color, text alignment, padding, and width through 
 // props. The goal is to have consistent styling for the "body text" sections of the website, 
 // and this component helps achieve that.
