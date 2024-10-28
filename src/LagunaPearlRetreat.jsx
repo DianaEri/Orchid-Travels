@@ -58,7 +58,7 @@ const LagunaPearlRetreat = () => {
 
       {/* Button to book the hotel */}
       <div className="button-container">
-        <button type="submit" className="search-button">
+        <button type="submit" className="search-button" onClick={() => navigate('/hotels/laguna-pearl-retreat/book')}>
           Book now
         </button>
       </div>
