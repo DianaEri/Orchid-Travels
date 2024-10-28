@@ -77,7 +77,16 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons, selectedLength
                   <FontAwesomeIcon icon={faPhone} />   {/* Phone icon */}
                   <FontAwesomeIcon icon={faLocationDot} /> {/* Location icon */}
                   <FontAwesomeIcon icon={faPlaneArrival} /> {/* Arrivals icon */}
-                  <FontAwesomeIcon icon={faUtensils} /> {/* Restaurant icon */}
+                  <FontAwesomeIcon 
+                    icon={faUtensils} 
+                    // Conditionally link faUtensils icon to restaurant page for Laguna Pearl Retreat
+                    onClick={() => {
+                      if (hotel.name === "Laguna Pearl Retreat") {
+                        navigate('/hotel-restaurant-saffron-breeze-café');
+                      }
+                    }}
+                    style={{ cursor: hotel.name === "Laguna Pearl Retreat" ? 'pointer' : 'default' }}
+                  /> {/* Restaurant icon with conditional link */}
                 </div>
                 <div className="wordsRow">
                   <span>Reviews</span>
