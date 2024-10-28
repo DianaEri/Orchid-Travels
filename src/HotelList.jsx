@@ -103,7 +103,7 @@ const HotelList = ({ hotels, adultsAndChildrenText, totalPersons, selectedLength
               <div className='textMargin'>Flight and hotel</div>
               <div>{adultsAndChildrenText}</div> {/* Display number of adults and children */}
               
-              {/* Total price, including length of stay, ensure lengthOfStay is a valid number */}
+              {/* Total price, including length of stay */}
               <div className='Right'>{(hotel.price_per_person * totalPersons * lengthOfStay).toLocaleString('sv-SE')}kr</div>
               
               <div className='box'>
