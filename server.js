@@ -1,5 +1,5 @@
-// Diana created the server.js file and implemented the first three hotels 
-// for the web API. Madelene filled in the last two hotels. Then Diana 
+// (Diana) created the server.js file and implemented the first three hotels 
+// for the web API. (Madelene) filled in the last two hotels. Then Diana 
 // filled in all the data for the events.
 
 import express from 'express'; // Import Express to create the server

@@ -63,6 +63,7 @@ createRoot(document.getElementById('root')).render(
         {/* Route for displaying the specific hotel's restaurant page (Saffron Breeze Café) */}
         <Route path="/hotel-restaurant-saffron-breeze-café" element={<HotelRestaurantSaffronBreezeCafé />} />
 
+        {/* Route for displaying booking page */}
         <Route path="/hotels/laguna-pearl-retreat/book" element={<Book />} />
 
 

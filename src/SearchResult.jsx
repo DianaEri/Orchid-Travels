@@ -3,7 +3,7 @@
 // She also created the components HotelList and Footer. 
 
 // The rest of the components, such as Header, YellowLine
-// ScrollToTopButton, TravelDetailsData are made by (Madelene).
+// ScrollToTopButton, TravelDetailsData, HeadingBlock are made by (Madelene).
 
 import React, { useEffect, useState } from 'react'; // Import React, useEffect, and useState hooks for state and lifecycle management
 import { useLocation } from 'react-router-dom'; // Import useLocation to access data passed through navigation

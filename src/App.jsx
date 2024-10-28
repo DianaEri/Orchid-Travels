@@ -2,8 +2,9 @@
 // Home.jsx and added the following components made by me as well: Banner,
 // SearchForm, Divider, HotelInfoIcons and ImageComponent with CSS overlay.
 
-// The components HeadingBlock, YellowLine, TextBlock, ScrollToTopButton
+// The components HeadingBlock, YellowLine, TextBlock, ScrollToTopButton, Slider, Header,
 // and slider were made and implemented by (Madelene) for "Main Page".
+
 import React, { useEffect, useState } from 'react'; // Import React and hooks (useEffect, useState)
 import { useNavigate } from 'react-router-dom'; // For routing/navigation between pages
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For using FontAwesome icons

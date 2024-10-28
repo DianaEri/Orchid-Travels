@@ -11,7 +11,7 @@
 // not selected because the handleConfirmClick function checks if the selectedPaymentMethod state is empty.
 
 // The components Header, YellowLine, TravelDetailsData, BokingOptionsForm, TotalPrice, headingBlock, 
-// PaymentOptions, ChosenBookingOptions is made by (Madelene)
+// PaymentOptions, ChosenBookingOptions is made by (Madelene) The "Route" to the booking page is implemented by (Madelene)
 
 // The rest of the components, like button, footer are made by (Diana).
 
